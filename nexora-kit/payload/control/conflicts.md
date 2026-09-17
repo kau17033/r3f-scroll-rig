@@ -13,7 +13,7 @@
 | CONF-06 | モデル選定の衝突（履歴 qwen3:8b / SRC-03 DEFER / 過去モデル持込禁止） | 履歴 / SRC-03 / SRC-02 ISO§2 | **前提が誤り**。`qwen3:8b` は会話文脈の残滓ではなく、`PROTOCOL_LOCK.md` Class-A に人間決定として固定済（REPO-001 §2）。ISO§2 の禁止対象は会話由来の持込であり、リポジトリに永続化された決定ではない | DEC-003 | **RESOLVED**（VEA-G3 スコープ内） |
 | CONF-07 | 標本数の衝突（155 と n_pair=153・生成 184） | vea-g3 PROTOCOL_LOCK / SRC-03 | **訂正（REPO-002 §2）**: 別量ではない。同一入力（α=0.05 片側・検出力 0.80・ψ=0.25・τ=0.10）に対し、155 は単純形 `(z_a+z_b)^2*psi/tau^2`、153 は Connor 形 `[z_a√psi+z_b√(psi-tau^2)]^2/tau^2` の結果。**実測で確認済**。差は 2 対（1.31%）。矛盾ではなく式の選択であり、155 が保守的 | DEC-004 | **RESOLVED**（VEA-G3 スコープ内） |
 | CONF-08 | コスト方針の緊張（ローカル優先 vs 有料 API 前提） | SRC-01 SOV§104・§175 / SRC-04 / SRC-05 | スコープで分割 | DEC-009 | OPEN |
-| CONF-09 | 判定語彙が **6 系統以上**に分岐（LoopCell の証拠レベル E0–E4 と FACT/PREVIOUS OBSERVATION/INFERENCE/UNCONFIRMED を追加、REPO-003 §8） | 全正本 | 層別対応表（glossary.md）。強制変換禁止 | DEC-001 | OPEN |
+| CONF-09 | 判定語彙と **ID 名前空間**の氾濫。LoopCell 単体で 8 系統が併存し、同一接頭辞が別体系で再利用されている（`D-03` は判断ログ、`D-M0-1` は SPEC §19）。REPO-003 §8・§10.5 | 全正本 | 層別対応表（glossary.md）。強制変換禁止 | DEC-001 | OPEN |
 | CONF-10 | Gate 番号の多重化 | SRC-01 / 履歴 / SRC-04 | 名前空間分離（SRC-01 SOV§13 準拠） | DEC-001 | OPEN |
 | CONF-11 | 任意停止の可否（517/1055/1056 が禁止、1173 が適応的 argmax IG/cost を要求） | SRC-01（節番号は外部提出物からの参照。原文未投入のため未照合） | 外部提出物は e-value による解決を主張。M1–M4 は PASS（EXTERNAL-001）。採用は未決 | DEC-004 | OPEN |
 | CONF-12 | 統治系が**三重**（`vea-g3` の PROTOCOL_LOCK / GATE_C_SPECIFICATION / RESEARCH_STATE、外部 kernel の 27 不変条件、本キットの control/ 台帳） | vea-g3 / EXTERNAL-001 / 本キット | どちらを正とするか、または責務を分割するか | DEC-010 | OPEN |

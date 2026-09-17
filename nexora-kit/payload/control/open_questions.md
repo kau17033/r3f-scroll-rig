@@ -7,9 +7,9 @@
 |---|---|---|---|---|---|
 | OQ-001 | `master_seed_source` の導出式が原文に無い | UNSPECIFIED | SRC-03 §9.5 | T-1xx | OPEN |
 | OQ-002 | LoopCell の A1–A13 の定義本文 | — | `loopcell:experiments/loopcell_phase0/spec/reference/assertions.json` | T-2xx | **CLOSED_RECOVERED**（13 件すべて定義あり） |
-| OQ-003 | LoopCell の N-01–N-12 の定義本文 | NOT_IDENTIFIABLE | SRC-04 | T-2xx | OPEN。候補: `spec/reference/reject_reasons.json`（REPO-003 §2） |
-| OQ-004 | LoopCell の D-M0-1–6 の定義本文 | NOT_IDENTIFIABLE | SRC-04 | T-2xx, DEC-006 | OPEN。候補: `DECISIONS/decision-log.md`（REPO-003 §2） |
-| OQ-005 | LoopCell の R-04 の定義本文 | NOT_IDENTIFIABLE | SRC-04 | T-2xx | OPEN。候補: `spec/reference/` 配下（REPO-003 §2） |
+| OQ-003 | LoopCell の N-01–N-12 の定義本文 | NOT_IDENTIFIABLE | SRC-04 | T-2xx | OPEN。`reject_reasons.json` には**無い**ことを確認（候補から除外）。残る候補は SPEC 本文または `schemas/`（REPO-003 §10.4） |
+| OQ-004 | LoopCell の D-M0-1–6 の定義本文 | **所在確定・本文未読** | `loopcell:experiments/loopcell_phase0/spec/SPEC_v1.1.md` §19 | DEC-006 | OPEN（所在は確定。SPEC §19「DESIGN DECISION（v1.1 で確定）」が正本。decision-log は所在のみ示す） |
+| OQ-005 | LoopCell の R-04 の定義本文 | NOT_IDENTIFIABLE | SRC-04 | T-2xx | OPEN。`spec/reference/` の 4 ファイルには無い。残る候補は SPEC 本文（REPO-003 §10.4） |
 | OQ-006 | SRC-06（過去セッション）は認証が必要で内容取得不可 | INFRASTRUCTURE_BLOCKED | SRC-06 | — | CLOSED_AS_NON_AUTHORITATIVE |
 | OQ-007 | リポジトリ本体（96a87f4 を含む履歴）の所在 | — | `kau17033/VEA-G3` | T-010 | **CLOSED_RECOVERED**（2026-09-17） |
 | OQ-008 | SRC-05 末尾に仕様外の会話断片が混入している | 要判断 | SRC-05 末尾 | T-3xx, DEC-007 | OPEN |
@@ -21,6 +21,7 @@
 | OQ-014 | `vea-g3` の既存統治文書と本キットの責務分担 | 要判断 | REPO-001 | DEC-010 | OPEN。ただし構成 A により物理的な衝突は解消済。残るのは権威の重複のみ |
 | OQ-016 | `SPEC.md` v2.0 が unrecovered。コードが引用する §9.1/9.2/9.3/9.5 は現行 v2.1 に存在しない（grep 0 件） | NOT_IDENTIFIABLE | REPO-001 §7 | T-040 | OPEN |
 | OQ-017 | `LLMClient.__init__` が Ollama でも非空 api_key を要求する。実クライアント構築を塞ぐ | 実装待ち（人間判断は不要） | REPO-002 §5 | 実行フェーズ | OPEN |
+| OQ-019 | `LOOPCELL_API_KEY` が実行環境に存在しない（3 経路すべて UNAVAILABLE `[E4]`）。LoopCell は課金を許可しても実行できない | INFRASTRUCTURE_BLOCKED | REPO-003 §10.1 | T-2xx 実行 | OPEN |
 | OQ-018 | `complete()` の状態が 2 文書で不整合。Manifest は `NotImplementedError` スタブ、PROTOCOL_LOCK は `think` パラメータを既存機能として記述 | NOT_IDENTIFIABLE | REPO-001 §4 / REPO-002 §5 | 実行フェーズ | OPEN。コードの直接確認を要する |
 | OQ-015 | `vea-g3` の `tests/` は pytest 構成。本キットの `tests/`（unittest）を同一ディレクトリに置くと衝突し得る | 要判断 | vea-g3 リポジトリ構成 | DEC-002 | **RESOLVED**（キットは `nexora-core` に置く。同居しない） |
 
