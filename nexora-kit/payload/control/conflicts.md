@@ -16,7 +16,8 @@
 | CONF-09 | 判定語彙が 5 系統に分岐 | 全正本 | 層別対応表（glossary.md）。強制変換禁止 | DEC-001 | OPEN |
 | CONF-10 | Gate 番号の多重化 | SRC-01 / 履歴 / SRC-04 | 名前空間分離（SRC-01 SOV§13 準拠） | DEC-001 | OPEN |
 | CONF-11 | 任意停止の可否（517/1055/1056 が禁止、1173 が適応的 argmax IG/cost を要求） | SRC-01（節番号は外部提出物からの参照。原文未投入のため未照合） | 外部提出物は e-value による解決を主張。M1–M4 は PASS（EXTERNAL-001）。採用は未決 | DEC-004 | OPEN |
-| CONF-12 | 統治系が二重（外部 27 不変条件 vs 本キットの control/ 台帳） | EXTERNAL-001 / 本キット | どちらを正とするか、または責務を分割するか | DEC-010 | OPEN |
+| CONF-12 | 統治系が**三重**（`vea-g3` の PROTOCOL_LOCK / GATE_C_SPECIFICATION / RESEARCH_STATE、外部 kernel の 27 不変条件、本キットの control/ 台帳） | vea-g3 / EXTERNAL-001 / 本キット | どちらを正とするか、または責務を分割するか | DEC-010 | OPEN |
+| CONF-14 | リポジトリ名 `ORP` が、CONF-13 の処置（裸の `ORP` の使用禁止）を無効化する。URL・clone パス・import パスは最も撤回しにくい層である | DEC-011 (APPROVED) / 本指定 | `SOV-ORP` か、内部コード名由来の別名にする | DEC-002 | OPEN |
 | CONF-13 | `ORP` に 3 つの意味（SRC-01 の行動選択仮説 / Outlier Protocol / ブランド層の統合・運用基盤） | SRC-01, SRC-05, 命名体系案 | `SOV-ORP` / `OUTLIER-ORP` / `BRAND-ORP` に分離し、裸の `ORP` を禁止（RQ3 と同処置） | DEC-011 (APPROVED) | **RESOLVED**（glossary.md に処置を適用。表記の分離のみで、いずれの定義も変更していない） |
 
 ## 記録フォーマット（新規追加時）

@@ -128,3 +128,57 @@ Status: PENDING / APPROVED / REJECTED / DEFERRED。
 候補の選択より先に、**選定手続き**（下記）を固定するほうが費用対効果が高い。
 
 **いずれも自律で選ばない。** 商標・ドメインの可否は法的判断であり、断定不可である。
+
+## DEC-002 対象リポジトリ — 調査結果（2026-09-17、暫定指定を受けて）
+
+指定: 「とりあえず VEA-G3 / LoopCell / ORP をリポジトリ名とする」
+
+### 実在確認
+
+| 名前 | 実在 | 可視性 | 最終 push | 備考 |
+|---|---|---|---|---|
+| `kau17033/VEA-G3` | **あり** | private | 2026-09-09 | 下記のとおり原文と統治文書を既に含む |
+| `kau17033/LoopCell` | **あり** | private | 2026-08-10 | 未調査 |
+| `ORP` | **なし** | — | — | 新規作成が必要。名称は CONF-14 |
+
+参考: `kau17033/focal`（private）と `kau17033/-home-user-outlier-kill-bench-`（private）も存在する。
+SRC-05 FOCAL / Outlier に対応する可能性があるが未確認。
+
+### 履歴事実の照合（T-010 の一部が完了）
+
+`96a87f45d3b08f26d8f3658d3c0ca42d0cbb6041`（2026-08-27、`kau17033/VEA-G3`）を確認した。
+**OQ-007 は CLOSED_RECOVERED。** 当該 commit の記述は次を含む。
+
+- 全テスト 337/337 PASS（既存 325 + 新規 12）— 本キットが記録していた履歴事実と一致
+- 根本原因 A（`log_sink` 未配線）と C（`parse_failure_count >= 0` が常に真）
+- 「19/19 pairs、C1=SOURCE_SELECTION_FAILED（19/19、source attempts 57/57）」
+- 「Batch 14: NOT RUN. Human Re-Approval required」
+
+**注意**: 337/337 は commit メッセージ内の記述であり、再実行による確認はしていない。
+本キットの扱いでは `RECOVERED`（現物の存在を確認）であって、`VERIFIED`（再現）ではない。
+
+### 前提の訂正
+
+`vea-g3` は次を既に含む。**「原文がリポジトリに無い」という前提は SRC-02 について成立しない。**
+
+```
+SSOT.md  SPEC.md  PROTOCOL_LOCK.md  PREREGISTRATION.md  COMPLIANCE_MANIFEST.md
+GATE_C_SPECIFICATION.md  GATE_STATUS.json  CLAIM_STATUS.md  RESEARCH_STATE.md
+CORPUS_CONVERGED_SPEC.md  SERVICE_IMPLEMENTATION_SSOT.md  RECONCILIATION.md
+canonical/  evidence/  runs/  research/  intake/  src/  tests/  scripts/  configs/
+```
+
+`COMPLIANCE_MANIFEST.md` が既に存在するため、**T-020 は未着手ではない可能性が高い**。
+投入前に既存の内容を読み、重複作成しないこと。
+
+### 構成の選択肢（未決）
+
+| 案 | 構成 | 帰結 |
+|---|---|---|
+| A | 統治リポジトリを 1 つ新設し、SRC-01 と control/ をそこに置く。VEA-G3 / LoopCell / ORP は各スコープの実装 | 横断する矛盾（CONF-01..14）と全節 disposition に居場所ができる。リポジトリが 4 つになる |
+| B | `vea-g3` をハブとし、キットをその root に置く | 既存の統治文書と三重化する（CONF-12）。`tests/` が衝突し得る（OQ-015） |
+| C | 3 リポジトリそれぞれにキットを複製 | **禁止**。SSOT が 3 つに分岐し、キットの目的と正面から矛盾する |
+
+**推奨は A。** 理由は 2 つ。SRC-01（1,423 節）は 3 スコープすべてに跨るため、
+どれか 1 つのリポジトリに置くと残り 2 つから参照できない。また `gate_check.py` は
+単一の `disposition.csv` 上で判定するため、リポジトリを分けると全体の完遂条件が定義できない。

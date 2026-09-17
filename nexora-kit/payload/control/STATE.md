@@ -14,8 +14,12 @@
 | DEC 全件決定済 | NO | DEC-011 は APPROVED（案 C）。残る DEC-001..010 が PENDING |
 
 ## 直近の実測
-（T-000 実行後に追記する。未実行を実行済みと書かない。）
+- 2026-09-17: `kau17033/VEA-G3` に `96a87f45d3b08f2...`（2026-08-27）の実在を確認。
+  OQ-007 を CLOSED_RECOVERED とした。337/337 は commit 記述であり再実行していない（RECOVERED ≠ VERIFIED）。
+- 2026-09-17: `vea-g3` が SSOT.md / SPEC.md / COMPLIANCE_MANIFEST.md 等を既に含むことを確認。
+  「原文がリポジトリに無い」前提は SRC-02 について不成立。
 
 ## 停止理由
-原文（SRC-01..05, 07）がリポジトリに存在しない。要約は正本の代替にならない（CLAUDE.md §1）。
-投入手順は `sources/README.md` と `tasks/T-010-state-freeze.md` を参照。
+SRC-02 相当は `kau17033/vea-g3` に既に存在する（SSOT.md / SPEC.md ほか）。
+SRC-01（ULTRACODE 1,423 節）、SRC-03、SRC-04、SRC-07 は未投入。
+配置先の構成が未決（DEC-002 の A/B/C）。決定するまでキットを配置しない。
