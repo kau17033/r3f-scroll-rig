@@ -18,6 +18,9 @@
   OQ-007 を CLOSED_RECOVERED とした。337/337 は commit 記述であり再実行していない（RECOVERED ≠ VERIFIED）。
 - 2026-09-17: `vea-g3` が SSOT.md / SPEC.md / COMPLIANCE_MANIFEST.md 等を既に含むことを確認。
   「原文がリポジトリに無い」前提は SRC-02 について不成立。
+- 2026-09-17: `GATE_STATUS.json` を確認。`truth_state: NOT_DETERMINABLE`、
+  `current_blocker_gate: G4`。source leg が terminate せず D が空、tau は計算不能。
+  実行は `INFRASTRUCTURE_BLOCKED`（計算資源。科学的未準備ではない）。
 
 ## 停止理由
 SRC-02 相当は `kau17033/vea-g3` に既に存在する（SSOT.md / SPEC.md ほか）。

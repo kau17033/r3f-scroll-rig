@@ -21,6 +21,8 @@
 | OQ-014 | `vea-g3` の既存統治文書と本キットの責務分担 | 要判断 | REPO-001 | DEC-010 | OPEN。ただし構成 A により物理的な衝突は解消済。残るのは権威の重複のみ |
 | OQ-016 | `SPEC.md` v2.0 が unrecovered。コードが引用する §9.1/9.2/9.3/9.5 は現行 v2.1 に存在しない（grep 0 件） | NOT_IDENTIFIABLE | REPO-001 §7 | T-040 | OPEN |
 | OQ-017 | `LLMClient.__init__` が Ollama でも非空 api_key を要求する | **仕様（バグではない）** | INV-9、`llm_client.py` 冒頭 | 実行フェーズ | **RESOLVED**。意図的な不変条件。解消はコード変更ではなく設定（任意の非空値を環境変数に置く） |
+| OQ-021 | R5@640 が `INFRASTRUCTURE_BLOCKED`。ローカルホストは RAM 7.65GB/空き 0.4GB・37.2 s/step で 1 episode 約 6.6 時間。≥8GB 専有ホストが必要 | INFRASTRUCTURE_BLOCKED | REPO-004 §4 | 実行フェーズ | OPEN。**費用を伴うため委任範囲外** |
+| OQ-022 | 正典テスト数が 372（DECISION-1, 2026-09-09）。本キットが記録していた 337 は 96a87f4 時点の値 | — | REPO-004 §5 | T-010 | **CLOSED（訂正済）** |
 | OQ-020 | `COMPLIANCE_MANIFEST.md` が少なくとも 2 箇所で現状より古い（行 7/8/9・39、行 42 の `complete()` 記述）。再生成が必要 | 作業（人間判断は不要） | REPO-002 §1・§5-bis | T-020 照合 | OPEN |
 | OQ-019 | `LOOPCELL_API_KEY` が実行環境に存在しない（3 経路すべて UNAVAILABLE `[E4]`）。LoopCell は課金を許可しても実行できない | INFRASTRUCTURE_BLOCKED | REPO-003 §10.1 | T-2xx 実行 | OPEN |
 | OQ-018 | `complete()` の状態が 2 文書で不整合 | — | `llm_client.py` 直接確認 | 実行フェーズ | **CLOSED**。`complete()` は Ollama に対し**実装済み**。Manifest 行 42 が stale（REPO-002 §5-bis） |
