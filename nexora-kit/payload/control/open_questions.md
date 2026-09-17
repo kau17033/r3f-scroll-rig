@@ -20,7 +20,8 @@
 | OQ-013 | 「75 件の outcome（NOT ASSESSABLE）」「19/19 pairs」「57/57 source attempts」は時点も単位も異なる 3 つの量である。**等値してはならない** | 確認済（判断は不要） | 96a87f4 / REPO-001 §6 | T-010 | **CLOSED_AS_DISTINCT** |
 | OQ-014 | `vea-g3` の既存統治文書と本キットの責務分担 | 要判断 | REPO-001 | DEC-010 | OPEN。ただし構成 A により物理的な衝突は解消済。残るのは権威の重複のみ |
 | OQ-016 | `SPEC.md` v2.0 が unrecovered。コードが引用する §9.1/9.2/9.3/9.5 は現行 v2.1 に存在しない（grep 0 件） | NOT_IDENTIFIABLE | REPO-001 §7 | T-040 | OPEN |
-| OQ-017 | `llm_client.py` の `complete()` が `NotImplementedError` スタブ。実行を止めている唯一の工学的要因 | 実装待ち（人間判断は不要） | REPO-001 §4 | 実行フェーズ | OPEN |
+| OQ-017 | `LLMClient.__init__` が Ollama でも非空 api_key を要求する。実クライアント構築を塞ぐ | 実装待ち（人間判断は不要） | REPO-002 §5 | 実行フェーズ | OPEN |
+| OQ-018 | `complete()` の状態が 2 文書で不整合。Manifest は `NotImplementedError` スタブ、PROTOCOL_LOCK は `think` パラメータを既存機能として記述 | NOT_IDENTIFIABLE | REPO-001 §4 / REPO-002 §5 | 実行フェーズ | OPEN。コードの直接確認を要する |
 | OQ-015 | `vea-g3` の `tests/` は pytest 構成。本キットの `tests/`（unittest）を同一ディレクトリに置くと衝突し得る | 要判断 | vea-g3 リポジトリ構成 | DEC-002 | **RESOLVED**（キットは `nexora-core` に置く。同居しない） |
 
 ## 種別
