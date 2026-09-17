@@ -53,14 +53,18 @@
 | 155 vs 153 | 別文書の別量 | **同一設計・2 つの標準式**。単純形→155、Connor 形→153。差 2 対（実測確認） | 本キットで計算 |
 | `complete()` | 未実装スタブ | **Ollama に対し実装済**。Manifest 行 42 が stale | `llm_client.py` 直接確認 |
 | api_key 要求 | バグ | **意図的な不変条件 INV-9**。解消は設定 1 行 | 同上 |
-| ≥8GB ホスト | G4 解決より後の投資 | **R-b により失敗様式を ESTABLISH しゲートを閉じるために必要** | ROOT_CAUSE §結語 |
+| ≥8GB ホスト | 調達が必要 | **不要**。GitHub Actions で 2026-09-09 に完了済。`GATE_STATUS.json` 内の 09-08 ローカル評価層を現状と誤読した | REPO-006 §0 |
 | 「75」 | 75/75 SOURCE_SELECTION_FAILED | **75 = 25 instance × 3 attempt**。当該 outcome は**一度も保存されていない**（NOT ASSESSABLE） | ROOT_CAUSE §13 |
 
 ---
 
 ## 4. 何が何を塞いでいるか（種別ごとに異なる）
 
-### VEA-G3 — 科学
+### VEA-G3 — **完了済（G4 CLOSED）**
+
+**2026-09-09 に GitHub Actions 上で serial spine が完走し、G4 は閉じている。**
+残るのは人間の宣言（HD-53）と 155-pair の GO のみ。以下の連鎖は「塞いでいるもの」ではなく
+**確定した因果**である。
 
 ```
 方策が action 3(pickup) / 5(toggle) を一度も出力しない        [C0 25/25、640/640 steps]
@@ -70,14 +74,15 @@
         → tau が計算不能 → G8 に到達しない                     [CONFIRMED]
 ```
 
-- 現在の閉塞ゲート: **G4（selection）**。G0/G1/G2 は PASS、G7 は PASS_CONTRACT。
-- 原因仮説 **H_A / WS-C（退化した非終端方策）**: **SUPPORTED, NOT ESTABLISHED**。
-  source leg の per-step trace が保存されていないため直接確認できない。
-- 次の一手 **R-b**（R5@640 で失敗様式を ESTABLISH）は **AUTHORIZED 済**。**H-2 ホスト待ち**。
-- 実行環境: ローカルは RAM 7.65GB / 空き 0.4GB、37.2 s/step、1 episode 6.6h、R5 全体 40h。
-  → `INFRASTRUCTURE_BLOCKED`。必要条件は ≥8GB 専有 Linux ホスト。
-- **到達し得る終端**: `FAIL / NOT_IDENTIFIABLE with full evidence`。
-  **これは有効な科学的終端状態であり、プログラムの失敗ではない。**
+- **G4 = `FAIL / NOT_IDENTIFIABLE`（CLOSED、有効な科学的終端状態）**。run `34294080720` / `34296827883` / `34301420718`。
+- **R5@640 は DETERMINED**: 6/6 TRUNCATED、A/B byte-identical、3 seed すべて非終端。
+  行動集合は seed ごとに `[2]` / `[2,4]` / `[1,2]`。**いずれも action 3(pickup) と 5(toggle) を含まない。**
+- 「なぜ非終端か」の機序は依然 **NOT_IDENTIFIABLE**（source leg の per-step trace 非保存）。
+- 実行基盤 **H-2 は ESTABLISHED**: GitHub Actions `ubuntu-latest`、**5.37 s/step**（ローカルの 7 倍）。
+  **費用は不要。**
+- τ = **UNCOMPUTABLE**（D 空）。VEA-G3 efficacy = **NOT DETERMINABLE**。
+- **MANDATORY STOP に到達済。** 155-pair は明示的な人間 GO を要し、standing authorization は無い。
+  First-Completion の宣言は **HD-53**（人間の権限）。
 
 ### LoopCell — インフラ
 
@@ -97,7 +102,8 @@
 
 | ID | 内容 | 種別 |
 |---|---|---|
-| **H-2** | 実験ホストの調達（≥8GB 専有 Linux） | **費用**。R5@640 全体で約 40h ≈ $3–7（$0.08–0.17/h 想定） |
+| **HD-53** | First-Completion の宣言（証拠パッケージは完成済） | **人間の権限** |
+| **155-pair GO** | 確証実験の開始可否。standing authorization は無い | **人間判断** |
 | DEC-001 | 権威階層の承認（CONF-01/02） | 人間判断 |
 | DEC-004 残 | Class C の 4 件（`cf_operator` / `afr_definition` / `afr_threshold` / `human_hourly_rate`）。SPEC §63 により MVP 外 | 人間判断（先送り可） |
 | CONF-04 | 解析対象集団（ITT か pair-complete ∩ received-valid か）。`primary_endpoint` も `effect_estimator` も規定していない | 人間判断 |

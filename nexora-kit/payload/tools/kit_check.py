@@ -39,7 +39,8 @@ REQUIRED = [
     "tools/verify_evalue.py", "control/EXTERNAL-001-evidence-kernel.md",
     "control/REPO-001-vea-g3.md", "control/REPO-002-protocol-lock.md", "control/REPO-003-loopcell.md", "control/REPO-004-gate-status.md",
     "control/REPO-005-source-selection-root-cause.md",
-    "control/INDEX-cross-repo.md",
+    "control/INDEX-cross-repo.md", "control/REPO-006-r5-640-result.md", "control/REPO-007-loopcell-gaps.md",
+    "control/PROPOSAL-001-compliance-manifest.md",
 ]
 
 log = []
