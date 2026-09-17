@@ -28,7 +28,7 @@ python3 nexora-kit/install.py --target /path/to/target-repo
 
 詳細は `INSTALL.md`。
 
-## 構成（62 ファイル）
+## 構成（63 ファイル）
 
 ```
 payload/
@@ -80,8 +80,10 @@ G4 traceability 完備 / G5 AUDIT§70 の 11 項目が 0。
 | guard.py の fail-closed | 不正入力で exit 2 |
 | seed 導出ゴールデン | 18 ベクタ一致（`status: UNVERIFIED_AGAINST_SOURCE`） |
 | 索引器の回帰（`→` を含む見出し） | 取りこぼしなし |
-| unittest | 36 件 OK |
+| unittest | 41 件 OK |
 | インストール後の単独動作 | T-000 PASS |
+| 通し検査（合成 SRC-01: 1,423 節） | 番号付き節 1,423/1,423、ブロック 35/74/1314、`→` を含む見出しの取りこぼしなし、欠番なし |
+| ゲートの開閉 | 台帳を全件埋めると UNLOCKED、正本を 1 行改変すると即 BLOCKED |
 
 **断定不可**: 上記はキットの健全性であり、NEXORA 仕様への適合ではない。
 仕様適合は原文投入後（T-010 以降）にしか判定できない。
