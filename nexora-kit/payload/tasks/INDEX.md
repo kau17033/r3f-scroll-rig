@@ -1,0 +1,23 @@
+# TASKS — 実行順序と依存
+
+規則: `blocked_by` が空でないタスクは開始しない。1 ターン 1 タスク。
+監査（T-0xx）が実装（T-1xx 以降）より先である。順序を越えない。
+
+| ID | タスク | blocked_by | 判定 | 状態 |
+|---|---|---|---|---|
+| T-000 | キット自己検証 | — | `tools/kit_check.py` exit 0 | TODO |
+| T-010 | 状態固定（原文投入・履歴照合） | T-000, DEC-002 | `tools/manifest.py verify` PASS | BLOCKED |
+| T-020 | VEA-G3 Compliance Manifest 作成 | T-010, DEC-001, DEC-003 | manifest 文書が全項目埋め | BLOCKED |
+| T-030 | 全節 disposition | T-010 | `disposition.csv` PENDING=0 | BLOCKED |
+| T-040 | 要求正規化 | T-030 | `requirements.csv` 全行 verifiable 判定済 | BLOCKED |
+| T-050 | 矛盾監査 | T-040 | `conflicts.md` 全件 DEC 紐付け | BLOCKED |
+| T-060 | 実態照合（リポジトリ vs 要求） | T-040, DEC-002 | `traceability.csv` 全行埋め | BLOCKED |
+| T-070 | 収束成果物 | T-050, T-060, DEC-008 | `tools/gate_check.py` exit 0 | BLOCKED |
+| T-100 | seed 導出の原文照合 | T-010 | ゴールデン再検証 PASS | BLOCKED |
+| T-110 | VEA-G3 Phase A 設計固定 | T-020, DEC-004 | 固定値表に PENDING なし | BLOCKED |
+| T-200 | LoopCell Phase 0 SSOT v1.1 投入 | DEC-006 | 参照 A1–A13 等が解決 | BLOCKED |
+| T-300 | Outlier v1.0 法務ゲート | DEC-007 | 法務判断の記録 | BLOCKED |
+
+## 状態語
+`TODO` / `IN_PROGRESS` / `BLOCKED` / `DONE` / `ABANDONED`。
+`DONE` にするには、判定列のコマンドの実測出力を `evidence/` に残すこと。
