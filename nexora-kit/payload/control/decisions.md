@@ -10,7 +10,7 @@ Status: PENDING / APPROVED / REJECTED / DEFERRED。
 | DEC-003 | VEA-G3 モデル束縛（provider / model_id / snapshot / endpoint / decoding） | 06 | T-020, T-1xx | PENDING |
 | DEC-004 | Phase A 固定値一式（下表） | 04, 07 | T-1xx | PENDING |
 | DEC-005 | RQ 番号の名前空間化 | 03 | T-040 | PENDING |
-| DEC-006 | LoopCell Phase 0 SSOT v1.1 本文の投入、D-M0-2 の承認、モデル/価格の決定 | — | T-2xx | PENDING |
+| DEC-006 | LoopCell Phase 0（SSOT 本文・D-M0-2・モデル/価格） | — | T-2xx | **大半が解決済**（REPO-003）。SSOT v1.1.2 は凍結済で存在、モデル/価格も決定済。残るのは **D-M0-2 の承認状態の確認**のみ |
 | DEC-007 | Outlier v1.0 の現行性確認と法務ゲート | — | T-3xx | PENDING |
 | DEC-008 | 優先順位は SOV§114 と SOV§181 のどちらか | 05 | T-070 | PENDING |
 | DEC-009 | コスト方針のスコープ分割 | 08 | T-2xx, T-3xx | PENDING |
@@ -237,3 +237,21 @@ DEC-011（案 C）により対外名は未定であるから、ブランド層�
 
 - `vea-g3` / `LoopCell` の中身は**変更しない**。本決定は配置先の決定であり、既存資産の改変ではない。
 - T-020 の既着手範囲。`vea-g3/COMPLIANCE_MANIFEST.md` を読むまで断定不可。
+
+## 委任の境界（2026-09-17、人間による恒常的委任を受けて記録）
+
+指示: 「今後全ての許可を設計に理にかなっており、無料なら君に任せる」
+
+### 委任される（自律で実行する）
+- 読み取り調査、台帳の更新、キットの実装・検証、commit / push、PR 運用
+- 構造的・機械的な決定（配置、命名、索引、回帰テストの追加）
+
+### 委任されない（条件により範囲外）
+| 事項 | 理由 |
+|---|---|
+| LoopCell の API 呼び出し（determinism 30 calls / t0 / learn / t1） | **課金を伴う**（input 1.0 / output 5.0 USD per MTok）。「無料なら」の条件を満たさない |
+| 研究目的・仮説・推定対象・指標・MDE・N・α・seed・除外・停止規則・モデル束縛 | **設計自身が人間判断を要求している**（CLAUDE.md §6）。委任で自動化すると、キットが防ぐはずの事故そのものになる |
+| 凍結値の変更（`min_discordant` 等） | 同上。凍結の意味が失われる |
+| `sources/` `CLAUDE.md` `.claude/` `AUTHORITY.md` の改変 | 同上 |
+
+「設計に理にかなっており」という条件が、設計自身の禁止を上書きしないという読みに拠る。

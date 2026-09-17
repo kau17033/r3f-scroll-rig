@@ -6,10 +6,10 @@
 | ID | 事項 | 種別 | 出典 | blocks | status |
 |---|---|---|---|---|---|
 | OQ-001 | `master_seed_source` の導出式が原文に無い | UNSPECIFIED | SRC-03 §9.5 | T-1xx | OPEN |
-| OQ-002 | LoopCell の A1–A13 の定義本文が全ファイルに無い | NOT_IDENTIFIABLE | SRC-04 参照のみ | T-2xx | OPEN |
-| OQ-003 | LoopCell の N-01–N-12 の定義本文が無い | NOT_IDENTIFIABLE | SRC-04 参照のみ | T-2xx | OPEN |
-| OQ-004 | LoopCell の D-M0-1–6 の定義本文が無い | NOT_IDENTIFIABLE | SRC-04 参照のみ | T-2xx, DEC-006 | OPEN |
-| OQ-005 | LoopCell の R-04 の定義本文が無い | NOT_IDENTIFIABLE | SRC-04 参照のみ | T-2xx | OPEN |
+| OQ-002 | LoopCell の A1–A13 の定義本文 | — | `loopcell:experiments/loopcell_phase0/spec/reference/assertions.json` | T-2xx | **CLOSED_RECOVERED**（13 件すべて定義あり） |
+| OQ-003 | LoopCell の N-01–N-12 の定義本文 | NOT_IDENTIFIABLE | SRC-04 | T-2xx | OPEN。候補: `spec/reference/reject_reasons.json`（REPO-003 §2） |
+| OQ-004 | LoopCell の D-M0-1–6 の定義本文 | NOT_IDENTIFIABLE | SRC-04 | T-2xx, DEC-006 | OPEN。候補: `DECISIONS/decision-log.md`（REPO-003 §2） |
+| OQ-005 | LoopCell の R-04 の定義本文 | NOT_IDENTIFIABLE | SRC-04 | T-2xx | OPEN。候補: `spec/reference/` 配下（REPO-003 §2） |
 | OQ-006 | SRC-06（過去セッション）は認証が必要で内容取得不可 | INFRASTRUCTURE_BLOCKED | SRC-06 | — | CLOSED_AS_NON_AUTHORITATIVE |
 | OQ-007 | リポジトリ本体（96a87f4 を含む履歴）の所在 | — | `kau17033/VEA-G3` | T-010 | **CLOSED_RECOVERED**（2026-09-17） |
 | OQ-008 | SRC-05 末尾に仕様外の会話断片が混入している | 要判断 | SRC-05 末尾 | T-3xx, DEC-007 | OPEN |
