@@ -46,6 +46,17 @@ except OSError:
     out.append("SOURCES_INTEGRITY: NOT_IDENTIFIABLE (MANIFEST.sha256 missing) "
                "— 原文未投入。T-000 と T-010 のみ実行可。")
 
+# 1b) 外部保持の正本（複製せず blob SHA で固定しているもの）
+ext = os.path.join(ROOT, "sources", "EXTERNAL.csv")
+if os.path.exists(ext):
+    try:
+        import subprocess
+        r = subprocess.run([sys.executable, os.path.join(ROOT, "tools", "external_sources.py"),
+                            "verify"], capture_output=True, text=True, timeout=25)
+        out.append((r.stdout or r.stderr).strip().splitlines()[0])
+    except Exception as e:
+        out.append("EXTERNAL_SOURCES: NOT_IDENTIFIABLE (%r)" % (e,))
+
 # 2) 現在状態
 st = os.path.join(ROOT, "control", "STATE.md")
 if os.path.exists(st):

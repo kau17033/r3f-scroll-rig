@@ -40,6 +40,11 @@ def auto_check(cid):
             return False, "staging（nexora-kit/payload/）。install.py で対象リポジトリのルートへ配置すること"
         return files_ok, "ルート配置 %s" % ("あり" if files_ok else "なし")
     if cid == "R-02":
+        r = subprocess.run([sys.executable, os.path.join(ROOT, "tools", "external_sources.py"),
+                            "verify"], capture_output=True, text=True)
+        line = (r.stdout or r.stderr).strip().splitlines()
+        return r.returncode == 0, line[0] if line else "出力なし"
+    if cid == "R-02b":
         r = subprocess.run([sys.executable, os.path.join(ROOT, "tools", "manifest.py"), "verify"],
                            capture_output=True, text=True)
         line = (r.stdout or r.stderr).strip().splitlines()

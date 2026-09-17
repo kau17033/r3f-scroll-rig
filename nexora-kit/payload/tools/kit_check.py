@@ -42,6 +42,7 @@ REQUIRED = [
     "control/INDEX-cross-repo.md", "control/REPO-006-r5-640-result.md", "control/REPO-007-loopcell-gaps.md",
     "control/PROPOSAL-001-compliance-manifest.md",
     "control/STANDING-ORDER-001.md", "control/readiness.csv", "tools/readiness_check.py",
+    "sources/EXTERNAL.csv", "tools/external_sources.py",
 ]
 
 log = []

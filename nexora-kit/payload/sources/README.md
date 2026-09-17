@@ -3,13 +3,30 @@
 **このディレクトリのファイルは編集禁止である。** 要約・整形・誤字修正も禁止する。
 要約を正本の代替にすると、仕様からのずれは検出できなくなる。
 
+## 2 つの保持形態
+
+正本には **ローカル投入**と**外部参照**の 2 形態がある。どちらも不変性は担保されるが、
+機構が異なる。
+
+| 形態 | 対象 | 機構 | 検証 |
+|---|---|---|---|
+| ローカル投入 | SRC-01 / SRC-03 / SRC-05 / SRC-07 | ファイルを `sources/` に置き `MANIFEST.sha256` で固定 | `tools/manifest.py verify` |
+| **外部参照** | **SRC-02 / SRC-04** | **既存リポジトリの git blob SHA を `EXTERNAL.csv` に登録**。複製しない | `tools/external_sources.py verify` |
+
+**外部参照を採る理由**: SRC-02（`kau17033/vea-g3`）と SRC-04（`kau17033/loopcell`）は、
+それぞれ自前の凍結機構（`PROTOCOL_LOCK.md` / `FREEZE_MANIFEST.json`）を持つリポジトリに
+既に存在する。ここへ複製すると SSOT が 2 つに分岐し、本キットの目的と正面から矛盾する。
+
+blob SHA は内容アドレスであるため、1 バイトでも変われば一致しなくなる。
+**複製せずに不変性を検証できる。**
+
 ## 収容物
 | ID | ファイル名（推奨） | 内容 | 状態 |
 |---|---|---|---|
 | SRC-01 | `SRC-01-ultracode.md` | ULTRACODE 指令群（CONV§0–34 / AUDIT§0–73 / SOV§0–1313、計 1,423 節） | 未投入 |
-| SRC-02 | `SRC-02-vea-g3-ssot.md` | VEA-G3 実装仕様 SSOT v2.0 | 未投入 |
+| SRC-02 | **外部参照** `kau17033/vea-g3` | VEA-G3 実装仕様 SSOT v2.1 ほか 26 件 | **登録済・検証 PASS** |
 | SRC-03 | `SRC-03-paper4.md` | 論文4（実証なし・Freeze 未通過） | 未投入 |
-| SRC-04 | `SRC-04-loopcell.md` | LoopCell Phase 0 | 未投入 |
+| SRC-04 | **外部参照** `kau17033/loopcell` | LoopCell Phase 0 SPEC v1.1.2 ほか 8 件 | **登録済・検証 PASS** |
 | SRC-05 | `SRC-05-outlier.md` | Outlier v1.0 製品仕様 | 未投入 |
 | SRC-06 | `SRC-06-session.md` | セッション共有 URL（**非権威**） | 未投入 |
 | SRC-07 | `SRC-07-dev-protocol.md` | 開発プロトコル | 未投入 |

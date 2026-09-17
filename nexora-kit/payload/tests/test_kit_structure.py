@@ -85,5 +85,5 @@ class KitStructure(unittest.TestCase):
     def test_sources_holds_no_original_yet(self):
         """原文を勝手に生成していないこと。要約を正本に昇格させない。"""
         entries = [e for e in os.listdir(os.path.join(ROOT, "sources"))
-                   if e not in (".gitkeep", "README.md", "MANIFEST.sha256")]
+                   if e not in (".gitkeep", "README.md", "MANIFEST.sha256", "EXTERNAL.csv")]
         self.assertEqual([], entries, "sources/ に未検証の生成物がある: %s" % entries)

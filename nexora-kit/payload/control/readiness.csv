@@ -1,6 +1,7 @@
 id,scope,condition,check_type,status,blocks
 R-01,W1,nexora-core リポジトリが作成されキットが配置されている,AUTO,,W1
-R-02,W1,sources/ に SRC-01..07 の原文が投入されハッシュ固定されている,AUTO,,W1
+R-02,W1,外部保持の正本（SRC-02 / SRC-04）が EXTERNAL.csv で blob SHA 一致,AUTO,,W1
+R-02b,W1,ローカル投入の正本（SRC-01 / SRC-03 / SRC-07）が MANIFEST.sha256 で固定済み,AUTO,,W1
 R-03,W1,control/disposition.csv が索引化済みで行数 > 0,AUTO,,W1
 R-04,W2,PROPOSAL-001 の適用可否が人間により判断された,HUMAN,PENDING,W2
 R-05,W2,HD-53 First-Completion 宣言が人間により行われた,HUMAN,PENDING,W2
