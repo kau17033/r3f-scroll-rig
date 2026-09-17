@@ -7,7 +7,7 @@
 |---|---|---|---|---|
 | T-000 | キット自己検証 | — | `tools/kit_check.py` exit 0 | TODO |
 | T-010 | 状態固定（原文投入・履歴照合） | T-000, DEC-002 | `tools/manifest.py verify` PASS | BLOCKED |
-| T-020 | VEA-G3 Compliance Manifest 作成 | T-010, DEC-001, DEC-003 | manifest 文書が全項目埋め | BLOCKED |
+| T-020 | VEA-G3 Compliance Manifest **照合**（作成ではない） | T-010 | 既存 Manifest の 42 項目 + Addendum を一次資料と突合 | **REDEFINED**（REPO-001 §1: 既存 Manifest は完成済） |
 | T-030 | 全節 disposition | T-010 | `disposition.csv` PENDING=0 | BLOCKED |
 | T-040 | 要求正規化 | T-030 | `requirements.csv` 全行 verifiable 判定済 | BLOCKED |
 | T-050 | 矛盾監査 | T-040 | `conflicts.md` 全件 DEC 紐付け | BLOCKED |

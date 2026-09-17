@@ -6,7 +6,7 @@ Status: PENDING / APPROVED / REJECTED / DEFERRED。
 | ID | 内容 | 依存 CONF | 影響タスク | Status |
 |---|---|---|---|---|
 | DEC-001 | 権威階層の承認（CONF-01）と SRC-02 のロック状態確定（CONF-02） | 01, 02, 09, 10 | T-020 以降すべて | PENDING |
-| DEC-002 | 対象リポジトリ（既存 / 新規） | — | T-010 | PENDING |
+| DEC-002 | 対象リポジトリ（既存 / 新規） | — | T-010 | **APPROVED**（案 A、2026-09-17。構成の決定は委任された） |
 | DEC-003 | VEA-G3 モデル束縛（provider / model_id / snapshot / endpoint / decoding） | 06 | T-020, T-1xx | PENDING |
 | DEC-004 | Phase A 固定値一式（下表） | 04, 07 | T-1xx | PENDING |
 | DEC-005 | RQ 番号の名前空間化 | 03 | T-040 | PENDING |
@@ -182,3 +182,58 @@ canonical/  evidence/  runs/  research/  intake/  src/  tests/  scripts/  config
 **推奨は A。** 理由は 2 つ。SRC-01（1,423 節）は 3 スコープすべてに跨るため、
 どれか 1 つのリポジトリに置くと残り 2 つから参照できない。また `gate_check.py` は
 単一の `disposition.csv` 上で判定するため、リポジトリを分けると全体の完遂条件が定義できない。
+
+## DEC-002 決定 — **構成 A、リポジトリ 3 つ（2026-09-17、委任により決定）**
+
+### 決定内容
+
+| リポジトリ | 状態 | 役割 | 収容物 |
+|---|---|---|---|
+| `kau17033/nexora-core` | **新規作成が必要** | 横断統治 + 統合・運用基盤 | 本キット、SRC-01（ULTRACODE 1,423 節）、SRC-03、SRC-07、`control/` 台帳一式、`sources/MANIFEST.sha256` |
+| `kau17033/VEA-G3` | 既存 | VEA-G3 実験スコープ | 既存の SSOT.md / SPEC.md / PROTOCOL_LOCK.md / evidence/ を**そのまま維持** |
+| `kau17033/LoopCell` | 既存 | LoopCell Phase 0 スコープ | 同上（未調査） |
+
+**`ORP` という名前のリポジトリは作らない。**
+
+### 決定 1: 構成 A を採る理由
+
+| # | 根拠 |
+|---|---|
+| 1 | SRC-01 は 3 スコープすべてに跨る。`vea-g3` の中に置けば、リポジトリ全体の統治が 1 スコープに従属する。`control/AUTHORITY.md` §1 のスコープ分割と矛盾する |
+| 2 | `gate_check.py` は単一の `disposition.csv` 上で判定する。統治を分散させると全体の完遂条件が定義不能になる |
+| 3 | `vea-g3` は既に PROTOCOL_LOCK / GATE_C_SPECIFICATION / RESEARCH_STATE を持つ。その root に第二の統治層を重ねる行為は、三重統治（CONF-12）を最も悪い場所——実行中のリポジトリの内部——に持ち込む |
+| 4 | `vea-g3` の `tests/` は pytest 構成。本キットの unittest を同居させると衝突し得る（OQ-015） |
+| 5 | **可逆性**。新規リポジトリは削除できる。既存リポジトリの root を書き換える行為は、実行中の研究の作業手順を一方的に変える |
+
+### 決定 2: 3 つ目の名前を `ORP` にしない理由と、代替
+
+`ORP` をリポジトリ名にすると、URL・clone パス・import パスという**最も撤回しにくい層**に
+裸の `ORP` が焼き付く。DEC-011 で確定した処置（CONF-13: `SOV-ORP` / `OUTLIER-ORP` /
+`BRAND-ORP` に分離、裸の `ORP` は使用禁止）が形骸化する。
+
+さらに、指定された `ORP = 統合・運用基盤` は**ブランド層の役割名**（`BRAND-ORP`）である。
+DEC-011（案 C）により対外名は未定であるから、ブランド層の語をリポジトリ名に固定するのは早い。
+
+採用: **`nexora-core`**
+
+| 条件 | 適合 |
+|---|---|
+| DEC-011 と整合 | `NEXORA` は承認済みの**内部コード名**。private リポジトリでの使用は対外ブランドの使用ではない |
+| CONF-13 / CONF-14 と整合 | 裸の `ORP` を含まない |
+| 役割を表す | `-core` は横断層であることを示し、特定スコープを含意しない |
+| 形式 | 小文字・空白なし・GitHub のリポジトリ名として有効 |
+
+統合・運用基盤の役割は当面 `nexora-core` が担う。実行時コードが分離を要する規模になった
+時点で別リポジトリへ切り出す。そのときも裸の `ORP` は使わない。
+
+### 付随して解決した項目
+
+- **CONF-14**: RESOLVED。`ORP` というリポジトリ名を作らないことで解決した。
+- **OQ-015**: RESOLVED。キットは `nexora-core` に置くため、`vea-g3` の `tests/` と衝突しない。
+- **OQ-014**: OPEN のまま。`vea-g3` の既存統治文書と本キットの責務分担は、
+  実際に読んでから決める（次の作業）。
+
+### 決定が固定しないこと
+
+- `vea-g3` / `LoopCell` の中身は**変更しない**。本決定は配置先の決定であり、既存資産の改変ではない。
+- T-020 の既着手範囲。`vea-g3/COMPLIANCE_MANIFEST.md` を読むまで断定不可。

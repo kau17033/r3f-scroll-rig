@@ -16,10 +16,12 @@
 | OQ-009 | 外部 kernel の 27 不変条件の本文が本リポジトリに無い | NOT_IDENTIFIABLE | EXTERNAL-001 | DEC-010 | OPEN |
 | OQ-010 | A1–A13 / N-01–N-12 / D-M0-1–6 / R-04 の定義が外部 kernel 側に在るか未確認 | NOT_IDENTIFIABLE | EXTERNAL-001 | T-2xx | OPEN |
 | OQ-011 | 外部 `release_check.py` が要求する 4 値（著作権者・著者・URL・セキュリティ連絡先）は実装者が供給できない | UNSPECIFIED | EXTERNAL-001 | 公開判断 | OPEN |
-| OQ-012 | `historical_gamma()` の 75/75 は CLASS_H（未検証・ハッシュ無し）。R0=0 の読みが履歴事実に依存する | 要判断 | EXTERNAL-001 | T-010 | OPEN |
-| OQ-013 | 「75/75」と、96a87f4 が記録する「19/19 pairs・57/57 source attempts」が一致しない。**同一の量ではない可能性が高く、等値してはならない** | 要判断 | 96a87f4 / EXTERNAL-001 | T-010, T-2xx | OPEN |
-| OQ-014 | `vea-g3` に既存の統治文書（PROTOCOL_LOCK / GATE_C_SPECIFICATION / RESEARCH_STATE / COMPLIANCE_MANIFEST）がある。本キットとの責務分担が未定 | 要判断 | vea-g3 リポジトリ構成 | DEC-002, DEC-010 | OPEN |
-| OQ-015 | `vea-g3` の `tests/` は pytest 構成。本キットの `tests/`（unittest）を同一ディレクトリに置くと衝突し得る | 要判断 | vea-g3 リポジトリ構成 | DEC-002 | OPEN |
+| OQ-012 | `historical_gamma()` の 75/75 と R0=0 の読み | **誤用の疑い** | EXTERNAL-001 / REPO-001 §6 | T-010 | **OPEN（重大度上昇）**。リポジトリは当該 75 件を `NOT ASSESSABLE` としている。評価不能な対象に確定値を与える読みであり、R0=0 を事実として使ってはならない |
+| OQ-013 | 「75 件の outcome（NOT ASSESSABLE）」「19/19 pairs」「57/57 source attempts」は時点も単位も異なる 3 つの量である。**等値してはならない** | 確認済（判断は不要） | 96a87f4 / REPO-001 §6 | T-010 | **CLOSED_AS_DISTINCT** |
+| OQ-014 | `vea-g3` の既存統治文書と本キットの責務分担 | 要判断 | REPO-001 | DEC-010 | OPEN。ただし構成 A により物理的な衝突は解消済。残るのは権威の重複のみ |
+| OQ-016 | `SPEC.md` v2.0 が unrecovered。コードが引用する §9.1/9.2/9.3/9.5 は現行 v2.1 に存在しない（grep 0 件） | NOT_IDENTIFIABLE | REPO-001 §7 | T-040 | OPEN |
+| OQ-017 | `llm_client.py` の `complete()` が `NotImplementedError` スタブ。実行を止めている唯一の工学的要因 | 実装待ち（人間判断は不要） | REPO-001 §4 | 実行フェーズ | OPEN |
+| OQ-015 | `vea-g3` の `tests/` は pytest 構成。本キットの `tests/`（unittest）を同一ディレクトリに置くと衝突し得る | 要判断 | vea-g3 リポジトリ構成 | DEC-002 | **RESOLVED**（キットは `nexora-core` に置く。同居しない） |
 
 ## 種別
 - `UNSPECIFIED`: 実行に必要だが原文に値が無い。

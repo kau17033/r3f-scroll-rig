@@ -10,14 +10,15 @@
 | CONF-03 | `RQ3` の意味衝突（経済余剰 / TPS 解釈） | SRC-02, SRC-03 | `VEA-RQ3` / `P4-RQ3` へ分離 | DEC-005 | OPEN |
 | CONF-04 | 主推定対象の衝突（ITT vs pair-complete ∩ received-valid） | SRC-01 SOV§7.1 / SRC-03 U-A-12 | Phase A 前に確定。受領で条件付ける集団は ITT と一致しない | DEC-004 | OPEN |
 | CONF-05 | 優先順位の衝突（P0–P22 と 27 段） | SRC-01 SOV§114 / SOV§181 | 時系列で解決し §181 を採用（提案） | DEC-008 | OPEN |
-| CONF-06 | モデル選定の衝突（履歴 qwen3:8b / SRC-03 DEFER / 過去モデル持込禁止） | 履歴 / SRC-03 / SRC-02 ISO§2 | 新規に人間が決定 | DEC-003 | OPEN |
-| CONF-07 | 標本数の衝突（履歴 155/arm と計画 n_pair=153・生成 184） | 履歴 / SRC-03 | 混同禁止。現行値は未ロック | DEC-004 | OPEN |
+| CONF-06 | モデル選定の衝突（履歴 qwen3:8b / SRC-03 DEFER / 過去モデル持込禁止） | 履歴 / SRC-03 / SRC-02 ISO§2 | **前提が誤り**。`qwen3:8b` は会話文脈の残滓ではなく、`PROTOCOL_LOCK.md` Class-A に人間決定として固定済（REPO-001 §2）。ISO§2 の禁止対象は会話由来の持込であり、リポジトリに永続化された決定ではない | DEC-003 | **RESOLVED**（VEA-G3 スコープ内） |
+| CONF-07 | 標本数の衝突（155 と n_pair=153・生成 184） | vea-g3 PROTOCOL_LOCK / SRC-03 | **155 は LOCKED**（`psi=0.25` から McNemar 標本数式で導出、REPO-001 §2）。153 は SRC-03 の候補値（τ=0.10）。**別文書の別量であり、混同禁止**。VEA-G3 スコープでは 155 が権威 | DEC-004 | **RESOLVED**（VEA-G3 スコープ内） |
 | CONF-08 | コスト方針の緊張（ローカル優先 vs 有料 API 前提） | SRC-01 SOV§104・§175 / SRC-04 / SRC-05 | スコープで分割 | DEC-009 | OPEN |
 | CONF-09 | 判定語彙が 5 系統に分岐 | 全正本 | 層別対応表（glossary.md）。強制変換禁止 | DEC-001 | OPEN |
 | CONF-10 | Gate 番号の多重化 | SRC-01 / 履歴 / SRC-04 | 名前空間分離（SRC-01 SOV§13 準拠） | DEC-001 | OPEN |
 | CONF-11 | 任意停止の可否（517/1055/1056 が禁止、1173 が適応的 argmax IG/cost を要求） | SRC-01（節番号は外部提出物からの参照。原文未投入のため未照合） | 外部提出物は e-value による解決を主張。M1–M4 は PASS（EXTERNAL-001）。採用は未決 | DEC-004 | OPEN |
 | CONF-12 | 統治系が**三重**（`vea-g3` の PROTOCOL_LOCK / GATE_C_SPECIFICATION / RESEARCH_STATE、外部 kernel の 27 不変条件、本キットの control/ 台帳） | vea-g3 / EXTERNAL-001 / 本キット | どちらを正とするか、または責務を分割するか | DEC-010 | OPEN |
-| CONF-14 | リポジトリ名 `ORP` が、CONF-13 の処置（裸の `ORP` の使用禁止）を無効化する。URL・clone パス・import パスは最も撤回しにくい層である | DEC-011 (APPROVED) / 本指定 | `SOV-ORP` か、内部コード名由来の別名にする | DEC-002 | OPEN |
+| CONF-14 | リポジトリ名 `ORP` が、CONF-13 の処置（裸の `ORP` の使用禁止）を無効化する。URL・clone パス・import パスは最も撤回しにくい層である | DEC-011 (APPROVED) / 本指定 | `SOV-ORP` か、内部コード名由来の別名にする | DEC-002 (APPROVED) | **RESOLVED**（`ORP` という名前のリポジトリを作らない） |
+| CONF-15 | `vea-g3/COMPLIANCE_MANIFEST.md` の内部矛盾。行 39 と行 42 が、行 7–9 および行 11・25–30 と整合しない | vea-g3 COMPLIANCE_MANIFEST.md | 更新漏れの可能性が高いが確定できない。`PROTOCOL_LOCK.md` の一次確認を要する | DEC-004 | OPEN |
 | CONF-13 | `ORP` に 3 つの意味（SRC-01 の行動選択仮説 / Outlier Protocol / ブランド層の統合・運用基盤） | SRC-01, SRC-05, 命名体系案 | `SOV-ORP` / `OUTLIER-ORP` / `BRAND-ORP` に分離し、裸の `ORP` を禁止（RQ3 と同処置） | DEC-011 (APPROVED) | **RESOLVED**（glossary.md に処置を適用。表記の分離のみで、いずれの定義も変更していない） |
 
 ## 記録フォーマット（新規追加時）

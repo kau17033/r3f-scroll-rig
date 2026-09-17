@@ -2,7 +2,7 @@
 
 - Phase: **P0 / KIT_BOOTSTRAP**
 - 次タスク: **T-000（キット自己検証）**
-- 実装解禁: **NO**（理由: sources 未投入、disposition PENDING≠0、DEC 10 件が未決）
+- 実装解禁: **NO**（理由: sources 未投入、disposition PENDING≠0、DEC 9 件が未決）
 - 最終更新: kit generation（人間承認なし）
 
 ## ゲート状態
@@ -22,4 +22,4 @@
 ## 停止理由
 SRC-02 相当は `kau17033/vea-g3` に既に存在する（SSOT.md / SPEC.md ほか）。
 SRC-01（ULTRACODE 1,423 節）、SRC-03、SRC-04、SRC-07 は未投入。
-配置先の構成が未決（DEC-002 の A/B/C）。決定するまでキットを配置しない。
+配置先は DEC-002 で決定済み（構成 A、`kau17033/nexora-core`）。当該リポジトリが未作成のため未配置。
