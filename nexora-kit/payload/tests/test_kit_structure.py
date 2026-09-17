@@ -66,7 +66,7 @@ class KitStructure(unittest.TestCase):
     def test_decisions_are_all_pending_until_a_human_approves(self):
         body = read("control/decisions.md")
         ids = set(re.findall(r"^\|\s*(DEC-\d{3})\s*\|", body, re.M))
-        self.assertEqual(10, len(ids), "DEC-001..010 が揃っていない: %s" % sorted(ids))
+        self.assertEqual(11, len(ids), "DEC-001..011 が揃っていない: %s" % sorted(ids))
 
     def test_authority_is_marked_unapproved(self):
         self.assertIn("PROPOSED", read("control/AUTHORITY.md"))
