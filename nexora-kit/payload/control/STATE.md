@@ -22,6 +22,11 @@
   `current_blocker_gate: G4`。source leg が terminate せず D が空、tau は計算不能。
   実行は `INFRASTRUCTURE_BLOCKED`（計算資源。科学的未準備ではない）。
 
+## 横断索引
+
+所在・既決事項・訂正・閉塞要因の一覧は `control/INDEX-cross-repo.md` を参照。
+セッション開始時はまずそこを読むこと。
+
 ## 停止理由
 SRC-02 相当は `kau17033/vea-g3` に既に存在する（SSOT.md / SPEC.md ほか）。
 SRC-01（ULTRACODE 1,423 節）、SRC-03、SRC-04、SRC-07 は未投入。
