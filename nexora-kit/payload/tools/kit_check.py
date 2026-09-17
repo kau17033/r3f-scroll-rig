@@ -41,6 +41,7 @@ REQUIRED = [
     "control/REPO-005-source-selection-root-cause.md",
     "control/INDEX-cross-repo.md", "control/REPO-006-r5-640-result.md", "control/REPO-007-loopcell-gaps.md",
     "control/PROPOSAL-001-compliance-manifest.md",
+    "control/STANDING-ORDER-001.md", "control/readiness.csv", "tools/readiness_check.py",
 ]
 
 log = []

@@ -22,6 +22,12 @@
   `current_blocker_gate: G4`。source leg が terminate せず D が空、tau は計算不能。
   実行は `INFRASTRUCTURE_BLOCKED`（計算資源。科学的未準備ではない）。
 
+## 恒常命令
+
+`control/STANDING-ORDER-001.md`（2026-09-17 受領）。発動条件は
+`python3 tools/readiness_check.py` が当該ワークストリームを READY と判定したとき。
+条件を満たすまで着手しない。**待機は設計である。**
+
 ## 横断索引
 
 所在・既決事項・訂正・閉塞要因の一覧は `control/INDEX-cross-repo.md` を参照。
