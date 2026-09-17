@@ -72,6 +72,56 @@ Class B は実値で埋まっているが、**ゲートはそれを要求して�
    ただし本書は `complete()` の `think` パラメータを既存機能として記述しており、
    **2 文書の記述が整合しない。** コードの直接確認を要する（OQ-018）。
 
+## 5-bis. 訂正 — `complete()` は実装済みである（`llm_client.py` の直接確認）
+
+出典: `src/veag3_dk/llm_client.py`（blob `5b9bdde382d1766ae242e4de6e66c26c08c1e9cf`）。**一次資料。**
+
+### OQ-018 CLOSED — Manifest 側が stale
+
+`COMPLIANCE_MANIFEST.md` 行 42 は「`complete()` は意図的な `NotImplementedError` スタブであり、
+実際の Ollama HTTP 統合の構築が次の具体的な工学作業」と記す。**これは古い。**
+
+実際のコードは `provider == "Ollama"` に対する**完全な実装**を持つ。
+
+- `/api/generate` への非ストリーミング POST（`urllib.request`）
+- `NotImplementedError` は **Ollama 以外の provider に対してのみ**送出される
+- `api_endpoint` / `temperature` / `top_p` / `max_output_tokens` は既定値を持たず、
+  `None` なら `ValueError`。PROTOCOL_LOCK のロック値を呼び出し側が必ず渡す設計
+- `think` パラメータ実装済み（top-level フィールドとして送出。`options` 内ではない）
+- 失敗は `ProviderRequestError` として送出し、**プレースホルダ文字列を返さない**
+
+`COMPLIANCE_MANIFEST.md` は少なくとも 2 箇所（行 7/8/9・39 と行 42 の `complete()` 記述）で
+現状より古い。**Manifest の再生成が具体的な作業として存在する。**
+
+### OQ-017 の再分類 — バグではなく不変条件である
+
+`LLMClient.__init__` が Ollama でも非空の環境変数値を要求する件は、**意図的な不変条件**だった。
+
+```
+# INVARIANT (INV-9): this module must not make a network call when no API
+#            key is configured. The constructor raises before any request
+#            path is reachable.
+# FORBIDDEN: No mock/stub response substituted for a real model call. No
+#            "if no key, return a placeholder action" branch.
+```
+
+docstring も「Ollama は認証に使わないが、『暗黙の既定値を置かない』不変条件を
+全 provider で一様に保つ」と明記する。**修正すべき欠陥ではない。**
+
+解消方法は**コード変更ではなく設定**である。当該環境変数に任意の非空値を置けばよい
+（Ollama は内容を検証しない）。
+
+### 結果 — VEA-G3 の残る障害
+
+| 種別 | 内容 | 状態 |
+|---|---|---|
+| 工学 | `complete()` の実装 | **解消済み**（実装されている） |
+| 設定 | `api_key_env_var` に非空値 | 1 行の設定で解消 |
+| 環境 | Ollama デーモン（`127.0.0.1:11434`）と qwen3:8b の可用性 | 実行環境に依存 |
+| **科学** | **CONF-17（639/640 が同一応答）** | **未解決。実行前に決着を要する** |
+
+**工学的な障害は残っていない。残るのは環境と科学である。**
+
 ## 6. 解釈上の重大な留保 — 639/640 が同一応答
 
 Bridge Probe（run `32696823173`、think:false 下の 640 step 全走）で、

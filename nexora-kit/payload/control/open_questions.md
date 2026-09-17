@@ -20,9 +20,10 @@
 | OQ-013 | 「75 件の outcome（NOT ASSESSABLE）」「19/19 pairs」「57/57 source attempts」は時点も単位も異なる 3 つの量である。**等値してはならない** | 確認済（判断は不要） | 96a87f4 / REPO-001 §6 | T-010 | **CLOSED_AS_DISTINCT** |
 | OQ-014 | `vea-g3` の既存統治文書と本キットの責務分担 | 要判断 | REPO-001 | DEC-010 | OPEN。ただし構成 A により物理的な衝突は解消済。残るのは権威の重複のみ |
 | OQ-016 | `SPEC.md` v2.0 が unrecovered。コードが引用する §9.1/9.2/9.3/9.5 は現行 v2.1 に存在しない（grep 0 件） | NOT_IDENTIFIABLE | REPO-001 §7 | T-040 | OPEN |
-| OQ-017 | `LLMClient.__init__` が Ollama でも非空 api_key を要求する。実クライアント構築を塞ぐ | 実装待ち（人間判断は不要） | REPO-002 §5 | 実行フェーズ | OPEN |
+| OQ-017 | `LLMClient.__init__` が Ollama でも非空 api_key を要求する | **仕様（バグではない）** | INV-9、`llm_client.py` 冒頭 | 実行フェーズ | **RESOLVED**。意図的な不変条件。解消はコード変更ではなく設定（任意の非空値を環境変数に置く） |
+| OQ-020 | `COMPLIANCE_MANIFEST.md` が少なくとも 2 箇所で現状より古い（行 7/8/9・39、行 42 の `complete()` 記述）。再生成が必要 | 作業（人間判断は不要） | REPO-002 §1・§5-bis | T-020 照合 | OPEN |
 | OQ-019 | `LOOPCELL_API_KEY` が実行環境に存在しない（3 経路すべて UNAVAILABLE `[E4]`）。LoopCell は課金を許可しても実行できない | INFRASTRUCTURE_BLOCKED | REPO-003 §10.1 | T-2xx 実行 | OPEN |
-| OQ-018 | `complete()` の状態が 2 文書で不整合。Manifest は `NotImplementedError` スタブ、PROTOCOL_LOCK は `think` パラメータを既存機能として記述 | NOT_IDENTIFIABLE | REPO-001 §4 / REPO-002 §5 | 実行フェーズ | OPEN。コードの直接確認を要する |
+| OQ-018 | `complete()` の状態が 2 文書で不整合 | — | `llm_client.py` 直接確認 | 実行フェーズ | **CLOSED**。`complete()` は Ollama に対し**実装済み**。Manifest 行 42 が stale（REPO-002 §5-bis） |
 | OQ-015 | `vea-g3` の `tests/` は pytest 構成。本キットの `tests/`（unittest）を同一ディレクトリに置くと衝突し得る | 要判断 | vea-g3 リポジトリ構成 | DEC-002 | **RESOLVED**（キットは `nexora-core` に置く。同居しない） |
 
 ## 種別
