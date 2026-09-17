@@ -1,0 +1,44 @@
+{
+  "note": "本ゴールデンは本実装（tools/seed_derive.py）の出力を固定したものである。SRC-03 原文との一致は T-100 で再検証するまで UNVERIFIED_AGAINST_SOURCE とする。",
+  "interpretation": "sha256(UTF-8 'VEA-G3|eval|{env_seed}|{i}')[:4] big-endian / order: '...|order|{env_seed}' mod 2",
+  "status": "UNVERIFIED_AGAINST_SOURCE",
+  "open_question": "OQ-001 master_seed_source は原文に無い",
+  "cases": [
+    {
+      "prefix": "VEA-G3",
+      "env_seed": "EXAMPLE-ENV-SEED",
+      "order": 0,
+      "eval_seeds": {
+        "0": 819311301,
+        "1": 678574214,
+        "2": 2187437761,
+        "10": 1240554740,
+        "183": 2005917127
+      }
+    },
+    {
+      "prefix": "VEA-G3",
+      "env_seed": "0",
+      "order": 1,
+      "eval_seeds": {
+        "0": 73256357,
+        "1": 1636465421,
+        "2": 676067178,
+        "10": 1090174585,
+        "183": 1181095523
+      }
+    },
+    {
+      "prefix": "VEA-G3",
+      "env_seed": "nexora-demo",
+      "order": 1,
+      "eval_seeds": {
+        "0": 2565384792,
+        "1": 2343185336,
+        "2": 1155672802,
+        "10": 2426911473,
+        "183": 3727408497
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+id,scope,condition,check_type,status,blocks
+R-01,W1,nexora-core リポジトリが作成されキットが配置されている,AUTO,,W1
+R-02,W1,外部保持の正本（SRC-02 / SRC-04）が EXTERNAL.csv で blob SHA 一致,AUTO,,W1
+R-02b,W1,ローカル投入の正本（SRC-01 / SRC-03 / SRC-07）が MANIFEST.sha256 で固定済み,AUTO,,W1
+R-03,W1,control/disposition.csv が索引化済みで行数 > 0,AUTO,,W1
+R-04,W2,PROPOSAL-001 の適用可否が人間により判断された,HUMAN,PENDING,W2
+R-05,W2,HD-53 First-Completion 宣言が人間により行われた,HUMAN,PENDING,W2
+R-06,W2,155-pair 確証実験の GO が人間により与えられた（または不要と裁定された）,HUMAN,PENDING,W2
+R-07,W3,LOOPCELL_API_KEY が実行環境で参照可能である,HUMAN,PENDING,W3
+R-08,W3,C-06（experiment_repo.name）が人間により裁定された,HUMAN,PENDING,W3
+R-09,W3,LoopCell の API 呼び出しに対する課金承認が与えられた,HUMAN,PENDING,W3
+R-10,W3,analyze / report（SPEC §15）が実装された,HUMAN,PENDING,W3

@@ -1,0 +1,42 @@
+name: NEXORA integrity
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # 正本の改変検出。guard.py が捕捉できない経路に対する最終防衛線。
+      # 原文未投入の間は exit 2（NOT_IDENTIFIABLE）を許容し、FAIL(=1) のみを落とす。
+      - name: sources manifest
+        run: |
+          set +e
+          python3 tools/manifest.py verify
+          rc=$?
+          set -e
+          echo "manifest exit=$rc"
+          if [ "$rc" = "1" ]; then
+            echo "::error::正本が改変されている。マージしてはならない。"
+            exit 1
+          fi
+
+      - name: kit self-check (T-000)
+        run: python3 tools/kit_check.py
+
+      - name: unit tests
+        run: python3 -m unittest discover -s tests -t tests -v
+
+      # ゲートは原文投入まで BLOCKED が正常。状態の可視化のみを行い、ここでは落とさない。
+      - name: implementation gate (report)
+        run: python3 tools/gate_check.py || true

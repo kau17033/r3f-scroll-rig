@@ -1,0 +1,45 @@
+name: NEXORA kit
+
+# 本ワークフローは nexora-kit/ の変更時のみ動作し、ライブラリ本体のビルドには関与しない。
+on:
+  push:
+    paths: ['nexora-kit/**', '.github/workflows/nexora-kit.yml']
+  pull_request:
+    paths: ['nexora-kit/**', '.github/workflows/nexora-kit.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  kit:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: nexora-kit/payload
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: kit self-check (T-000)
+        run: python3 tools/kit_check.py
+
+      - name: unit tests
+        run: python3 -m unittest discover -s tests -t tests -v
+
+      - name: install dry-run
+        working-directory: nexora-kit
+        run: python3 install.py --target "${RUNNER_TEMP}/nexora-target" --dry-run
+
+      - name: implementation gate must stay BLOCKED (原文未投入のため)
+        run: |
+          set +e
+          python3 tools/gate_check.py
+          rc=$?
+          set -e
+          if [ "$rc" = "0" ]; then
+            echo "::error::原文未投入でゲートが解除された。判定条件が緩められている。"
+            exit 1
+          fi
