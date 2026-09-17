@@ -21,7 +21,7 @@
 | CONF-15 | `vea-g3/COMPLIANCE_MANIFEST.md` の内部矛盾 | vea-g3 COMPLIANCE_MANIFEST.md / PROTOCOL_LOCK.md | 一次確認により決着。Manifest の行 7/8/9 と行 39 が **stale**。`primary_endpoint` / `effect_estimator` / `effect_direction` はいずれも LOCKED（REPO-002 §1） | DEC-004 | **RESOLVED** |
 | CONF-16 | `freeze_gate: PASS` の範囲が Class A に限定されているのに、実行準備完了と読まれ得る | vea-g3 PROTOCOL_LOCK.md | 文書自身が「実行可能性の主張ではない」と明記。`FIRST_FREEZE_SCOPE` の拡張は未決定 | DEC-004 | OPEN |
 | CONF-17 | Bridge Probe で 640 回中 639 回が同一応答 `"ACTION: 2"`。観測に反応しない方策の可能性が未解決のまま | vea-g3 PROTOCOL_LOCK.md | **実行前に決着を要する**。リポジトリ側では `WS-C 退化方策仮説` として命名済み（REPO-004 §3）。未解決のまま得た C1-C0 差を Attribution として読むことは OVERCLAIM | DEC-004 | OPEN |
-| CONF-18 | 外部 kernel の e-value 採用は、LoopCell の凍結値 `min_discordant: 20` の変更にあたる | EXTERNAL-001 / loopcell config.yaml | 凍結済み実験条件の変更であり、人間の裁定を要する（REPO-003 §6） | DEC-010 | OPEN |
+| CONF-18 | 外部 kernel の e-value 採用は凍結値の変更にあたる | EXTERNAL-001 / loopcell config.yaml / vea-g3 ROOT_CAUSE §16 | LoopCell の `min_discordant: 20` に加え、VEA-G3 の「変更してはならないもの」列挙の `analysis plan (McNemar one-sided)` と `source_success_rule` にも**正面から抵触**する（REPO-005 §8）。人間の裁定を要する | DEC-010 | OPEN |
 | CONF-13 | `ORP` に 3 つの意味（SRC-01 の行動選択仮説 / Outlier Protocol / ブランド層の統合・運用基盤） | SRC-01, SRC-05, 命名体系案 | `SOV-ORP` / `OUTLIER-ORP` / `BRAND-ORP` に分離し、裸の `ORP` を禁止（RQ3 と同処置） | DEC-011 (APPROVED) | **RESOLVED**（glossary.md に処置を適用。表記の分離のみで、いずれの定義も変更していない） |
 
 ## 記録フォーマット（新規追加時）

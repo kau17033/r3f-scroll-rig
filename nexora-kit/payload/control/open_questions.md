@@ -16,12 +16,12 @@
 | OQ-009 | 外部 kernel の 27 不変条件の本文が本リポジトリに無い | NOT_IDENTIFIABLE | EXTERNAL-001 | DEC-010 | OPEN |
 | OQ-010 | A1–A13 / N-01–N-12 / D-M0-1–6 / R-04 の定義が外部 kernel 側に在るか未確認 | NOT_IDENTIFIABLE | EXTERNAL-001 | T-2xx | OPEN |
 | OQ-011 | 外部 `release_check.py` が要求する 4 値（著作権者・著者・URL・セキュリティ連絡先）は実装者が供給できない | UNSPECIFIED | EXTERNAL-001 | 公開判断 | OPEN |
-| OQ-012 | `historical_gamma()` の 75/75 と R0=0 の読み | **誤用の疑い** | EXTERNAL-001 / REPO-001 §6 | T-010 | **OPEN（重大度上昇）**。リポジトリは当該 75 件を `NOT ASSESSABLE` としている。評価不能な対象に確定値を与える読みであり、R0=0 を事実として使ってはならない |
+| OQ-012 | `historical_gamma()` の 75/75 と R0=0 の読み | **誤用と確定** — 75 = 25 instance × 3 attempt であり、当該 outcome は**一度も保存されていない**（REPO-005 §5） | EXTERNAL-001 / REPO-001 §6 | T-010 | **OPEN（重大度上昇）**。リポジトリは当該 75 件を `NOT ASSESSABLE` としている。評価不能な対象に確定値を与える読みであり、R0=0 を事実として使ってはならない |
 | OQ-013 | 「75 件の outcome（NOT ASSESSABLE）」「19/19 pairs」「57/57 source attempts」は時点も単位も異なる 3 つの量である。**等値してはならない** | 確認済（判断は不要） | 96a87f4 / REPO-001 §6 | T-010 | **CLOSED_AS_DISTINCT** |
 | OQ-014 | `vea-g3` の既存統治文書と本キットの責務分担 | 要判断 | REPO-001 | DEC-010 | OPEN。ただし構成 A により物理的な衝突は解消済。残るのは権威の重複のみ |
 | OQ-016 | `SPEC.md` v2.0 が unrecovered。コードが引用する §9.1/9.2/9.3/9.5 は現行 v2.1 に存在しない（grep 0 件） | NOT_IDENTIFIABLE | REPO-001 §7 | T-040 | OPEN |
 | OQ-017 | `LLMClient.__init__` が Ollama でも非空 api_key を要求する | **仕様（バグではない）** | INV-9、`llm_client.py` 冒頭 | 実行フェーズ | **RESOLVED**。意図的な不変条件。解消はコード変更ではなく設定（任意の非空値を環境変数に置く） |
-| OQ-021 | R5@640 が `INFRASTRUCTURE_BLOCKED`。ローカルホストは RAM 7.65GB/空き 0.4GB・37.2 s/step で 1 episode 約 6.6 時間。≥8GB 専有ホストが必要 | INFRASTRUCTURE_BLOCKED | REPO-004 §4 | 実行フェーズ | OPEN。**費用を伴うため委任範囲外** |
+| OQ-021 | R5@640 が `INFRASTRUCTURE_BLOCKED`。≥8GB 専有ホストが必要（H-2） | INFRASTRUCTURE_BLOCKED | REPO-004 §4 / REPO-005 §6 | 実行フェーズ | OPEN。費用を伴うため委任範囲外。**ただし目的は成功ではなく、R-b により失敗様式を ESTABLISH しゲートを証拠付きで閉じること**（REPO-005 §7） |
 | OQ-022 | 正典テスト数が 372（DECISION-1, 2026-09-09）。本キットが記録していた 337 は 96a87f4 時点の値 | — | REPO-004 §5 | T-010 | **CLOSED（訂正済）** |
 | OQ-020 | `COMPLIANCE_MANIFEST.md` が少なくとも 2 箇所で現状より古い（行 7/8/9・39、行 42 の `complete()` 記述）。再生成が必要 | 作業（人間判断は不要） | REPO-002 §1・§5-bis | T-020 照合 | OPEN |
 | OQ-019 | `LOOPCELL_API_KEY` が実行環境に存在しない（3 経路すべて UNAVAILABLE `[E4]`）。LoopCell は課金を許可しても実行できない | INFRASTRUCTURE_BLOCKED | REPO-003 §10.1 | T-2xx 実行 | OPEN |

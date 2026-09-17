@@ -38,6 +38,7 @@ REQUIRED = [
     "tests/golden/seed_vectors.json", "tests/test_pipeline_e2e.py",
     "tools/verify_evalue.py", "control/EXTERNAL-001-evidence-kernel.md",
     "control/REPO-001-vea-g3.md", "control/REPO-002-protocol-lock.md", "control/REPO-003-loopcell.md", "control/REPO-004-gate-status.md",
+    "control/REPO-005-source-selection-root-cause.md",
 ]
 
 log = []
