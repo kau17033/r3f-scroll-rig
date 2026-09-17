@@ -14,6 +14,7 @@ Status: PENDING / APPROVED / REJECTED / DEFERRED。
 | DEC-007 | Outlier v1.0 の現行性確認と法務ゲート | — | T-3xx | PENDING |
 | DEC-008 | 優先順位は SOV§114 と SOV§181 のどちらか | 05 | T-070 | PENDING |
 | DEC-009 | コスト方針のスコープ分割 | 08 | T-2xx, T-3xx | PENDING |
+| DEC-010 | 統治系の一本化（外部 27 不変条件 / 本キット control/ / 責務分割） | 12 | 全タスク | PENDING |
 
 ## DEC-004 の内訳（すべて未決。1 つでも欠ければ Phase A を開始しない）
 | 項目 | 値 | 根拠 |
@@ -31,6 +32,8 @@ Status: PENDING / APPROVED / REJECTED / DEFERRED。
 | 人件費の時給 | PENDING | — |
 | 1 use の定義 | PENDING | — |
 | 経済 MDE | PENDING | — |
+| 停止規則（固定n / anytime-valid） | PENDING | CONF-11。e-value 採用時は GATE 1 の `b+c >= 20` が不要になる |
+| 検出力の代償の許容範囲 | PENDING | EXTERNAL-001: p=0.6, n=200 で検出力 0.787 → 0.580 |
 
 注: SRC-03 の候補値は **候補** であり、採用の可否自体が DEC-004 の一部である（SRC-03 に実行権限はない）。
 
@@ -39,3 +42,16 @@ Status: PENDING / APPROVED / REJECTED / DEFERRED。
 | DEC-0NN | <決定すべき一文> | <CONF-ID または —> | <影響タスク> | PENDING |
 ```
 起案時は本文末尾に、選択肢 A/B と各々の帰結、決定しない場合に停止する作業を併記する。
+
+## 外部提出物により具体化した点（EXTERNAL-001）
+
+- **DEC-002**: evidence-kernel 系リポジトリが対象候補に加わった。現在接続中の
+  `kau17033/r3f-scroll-rig` は研究リポジトリではない。
+- **DEC-004**: 停止規則の選択肢が 2 つに確定した。
+  - 案 A: 固定n（McNemar 正確検定）。のぞき見を禁止する。適応的 argmax IG/cost と両立しない。
+  - 案 B: anytime-valid（e-value）。任意停止を許す。同一 n_max で検出力が下がる
+    （実測: p=0.6, n_max=200 で 0.787 → 0.580）。
+  どちらも根拠は揃っている。**選択は人間が行う。** 自律で案 B を採らない。
+- **DEC-006**: 外部 README は LoopCell Phase 0 v1.1 を「人間承認済み」「ULTRACODE §4 precedence に
+  より再設計対象外」と記載する。ただし本キットは当該 README を正本として扱わない。
+  SRC-04 本文の投入をもって確定する。

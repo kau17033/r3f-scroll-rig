@@ -13,6 +13,10 @@
 | OQ-006 | SRC-06（過去セッション）は認証が必要で内容取得不可 | INFRASTRUCTURE_BLOCKED | SRC-06 | — | CLOSED_AS_NON_AUTHORITATIVE |
 | OQ-007 | リポジトリ本体（96a87f4 を含む履歴）の所在 | NOT_IDENTIFIABLE | 履歴記述のみ | T-010, DEC-002 | OPEN |
 | OQ-008 | SRC-05 末尾に仕様外の会話断片が混入している | 要判断 | SRC-05 末尾 | T-3xx, DEC-007 | OPEN |
+| OQ-009 | 外部 kernel の 27 不変条件の本文が本リポジトリに無い | NOT_IDENTIFIABLE | EXTERNAL-001 | DEC-010 | OPEN |
+| OQ-010 | A1–A13 / N-01–N-12 / D-M0-1–6 / R-04 の定義が外部 kernel 側に在るか未確認 | NOT_IDENTIFIABLE | EXTERNAL-001 | T-2xx | OPEN |
+| OQ-011 | 外部 `release_check.py` が要求する 4 値（著作権者・著者・URL・セキュリティ連絡先）は実装者が供給できない | UNSPECIFIED | EXTERNAL-001 | 公開判断 | OPEN |
+| OQ-012 | `historical_gamma()` の 75/75 は CLASS_H（未検証・ハッシュ無し）。R0=0 の読みが履歴事実に依存する | 要判断 | EXTERNAL-001 | T-010 | OPEN |
 
 ## 種別
 - `UNSPECIFIED`: 実行に必要だが原文に値が無い。

@@ -13,6 +13,7 @@
 | SRC-05 | `SRC-05-outlier.md` | Outlier v1.0 製品仕様 | 未投入 |
 | SRC-06 | `SRC-06-session.md` | セッション共有 URL（**非権威**） | 未投入 |
 | SRC-07 | `SRC-07-dev-protocol.md` | 開発プロトコル | 未投入 |
+| SRC-08 | `SRC-08-evidence-kernel/` | 外部 kernel（27 不変条件・SPEC・各 register）。**非権威**: 監査対象であり正本ではない | 未投入（EXTERNAL-001 参照） |
 
 ## 投入手順（人間が実行する）
 ```bash

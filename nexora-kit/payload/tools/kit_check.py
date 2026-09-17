@@ -36,6 +36,7 @@ REQUIRED = [
     "tools/manifest.py", "tools/index_sections.py", "tools/seed_derive.py",
     "tools/gate_check.py", "tools/kit_check.py", "tools/guard_fixtures.py",
     "tests/golden/seed_vectors.json", "tests/test_pipeline_e2e.py",
+    "tools/verify_evalue.py", "control/EXTERNAL-001-evidence-kernel.md",
 ]
 
 log = []
