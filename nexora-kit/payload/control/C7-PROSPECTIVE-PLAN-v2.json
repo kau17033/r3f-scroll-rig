@@ -1,0 +1,150 @@
+{
+  "schema": "nexora-c7-prospective-plan/2.0",
+  "preregistered_at": "2026-09-23",
+  "status": "FROZEN_BEFORE_V2_LIVE_OUTCOMES",
+  "predecessor": {
+    "plan": "control/C7-PROSPECTIVE-PLAN-v1.json",
+    "evidence": "evidence/controller/C7-v1-summary.json",
+    "status": "INVALID_OR_INCOMPLETE",
+    "rule": "No v1 live outcome is reused as a v2 prospective outcome."
+  },
+  "purpose": "Prospectively evaluate the Dream-Replay-selected ORP/Controller batching policy against the locked fixed_exploration_v0 baseline on eight newly generated held-out public-code discovery tasks.",
+  "policy_source": {
+    "historical_world": "control/replay_worlds/bootstrap_convergence_20260922.json",
+    "selector": "tools/dream_replay.py::improve_policy",
+    "baseline": "tools/dream_replay.py::INCUMBENT",
+    "expected_selected_policy_id": "dream_00002",
+    "live_translation": "Only batch_fraction controls live batch size. Both policies receive the same generated query and the same outcome-independent candidate order."
+  },
+  "task_generation": {
+    "evaluator_setup": "Before either policy starts, the evaluator fetches all four pinned candidate files. This setup is not a policy observation and is excluded from policy probe cost.",
+    "candidate_order": "SHA256(task_id + '|' + path), ascending.",
+    "target_line_candidates": [
+      "UTF-8 line stripped of surrounding whitespace",
+      "length 20..160 characters",
+      "not blank",
+      "not starting with '#'",
+      "not starting with 'import ' or 'from '",
+      "occurs in exactly one of the four candidate files"
+    ],
+    "target_selection": "Among all unique eligible lines, choose the line with the smallest SHA256(task_id + '|' + line).",
+    "invalid_task": "No unique eligible line or any setup fetch failure.",
+    "policy_visibility": "Policies receive task_id, query line, repo/ref and candidate paths, but not the target path or setup observations."
+  },
+  "live_interface": {
+    "max_parallelism": 4,
+    "action": "HTTP GET one pinned raw GitHub file",
+    "observation": "exact generated query line occurs in fetched UTF-8 text",
+    "start_state": "zero policy observations",
+    "stop": "after the first completed batch containing >=1 match, or after all candidate files",
+    "policy_cost": "number of HTTP GET probes issued",
+    "decision_rounds": "number of completed policy batches",
+    "latency": "wall-clock live rollout seconds",
+    "setup_overhead": "recorded separately and excluded from policy cost/utility",
+    "run_order": "If SHA256(task_id)[0] is even, baseline runs first; if odd, dream runs first."
+  },
+  "objective": {
+    "information_gain": "For a valid task with one unique target among four candidates, successful identification yields log2(4)=2 bits.",
+    "utility": "IG_bits - 0.25*probes - 0.05*decision_rounds - 0.02*latency_seconds",
+    "primary": "mean utility difference dream - baseline across all eight valid tasks",
+    "noninferiority": "dream resolution rate >= baseline resolution rate"
+  },
+  "decision_rule": {
+    "minimum_valid_tasks": 8,
+    "evaluation_closure": "All 8 preregistered templates generate valid unique queries; both policies execute from zero observations; evaluator and utility remain unchanged; predicted and actual IG/probes/rounds/latency/utility are logged.",
+    "controller_improved": "evaluation_closure AND mean utility difference > 0 AND dream total probes <= baseline total probes AND dream resolution rate >= baseline",
+    "controller_not_improved": "evaluation_closure but improvement predicate false",
+    "invalid_or_incomplete": "fewer than 8 valid tasks or any required live rollout fails"
+  },
+  "tasks": [
+    {
+      "task_id": "C7V2-01",
+      "repo": "opentimestamps/python-opentimestamps",
+      "ref": "3af46432efc4a4c4e7bba439c1f49bce808eb3e5",
+      "candidates": [
+        "opentimestamps/bitcoin.py",
+        "opentimestamps/calendar.py",
+        "opentimestamps/timestamp.py",
+        "opentimestamps/core/git.py"
+      ]
+    },
+    {
+      "task_id": "C7V2-02",
+      "repo": "opentimestamps/python-opentimestamps",
+      "ref": "3af46432efc4a4c4e7bba439c1f49bce808eb3e5",
+      "candidates": [
+        "opentimestamps/core/packetstream.py",
+        "opentimestamps/core/dubious/notary.py",
+        "opentimestamps/tests/test_bitcoin.py",
+        "opentimestamps/tests/test_calendar.py"
+      ]
+    },
+    {
+      "task_id": "C7V2-03",
+      "repo": "opentimestamps/opentimestamps-client",
+      "ref": "cd71c7609421bed2a07b9642a3c02a58c9fd2cdf",
+      "candidates": [
+        "otsclient/git.py",
+        "otsclient/git_gpg_wrapper.py",
+        "otsclient/tests/test_git.py",
+        "otsclient/tests/test_prune.py"
+      ]
+    },
+    {
+      "task_id": "C7V2-04",
+      "repo": "opentimestamps/opentimestamps-client",
+      "ref": "cd71c7609421bed2a07b9642a3c02a58c9fd2cdf",
+      "candidates": [
+        "setup.py",
+        "otsclient/git.py",
+        "otsclient/git_gpg_wrapper.py",
+        "otsclient/tests/test_prune.py"
+      ]
+    },
+    {
+      "task_id": "C7V2-05",
+      "repo": "psf/requests",
+      "ref": "611c6162cbc4ac2020a2f91c7cfa4f3abf9bbb60",
+      "candidates": [
+        "src/requests/adapters.py",
+        "src/requests/auth.py",
+        "src/requests/models.py",
+        "src/requests/sessions.py"
+      ]
+    },
+    {
+      "task_id": "C7V2-06",
+      "repo": "psf/requests",
+      "ref": "611c6162cbc4ac2020a2f91c7cfa4f3abf9bbb60",
+      "candidates": [
+        "src/requests/api.py",
+        "src/requests/cookies.py",
+        "src/requests/structures.py",
+        "src/requests/utils.py"
+      ]
+    },
+    {
+      "task_id": "C7V2-07",
+      "repo": "pallets/flask",
+      "ref": "d73fa1cdcbd8b1465c151db8924ba58b1dd14e35",
+      "candidates": [
+        "src/flask/app.py",
+        "src/flask/blueprints.py",
+        "src/flask/cli.py",
+        "src/flask/config.py"
+      ]
+    },
+    {
+      "task_id": "C7V2-08",
+      "repo": "pallets/flask",
+      "ref": "d73fa1cdcbd8b1465c151db8924ba58b1dd14e35",
+      "candidates": [
+        "src/flask/ctx.py",
+        "src/flask/helpers.py",
+        "src/flask/sessions.py",
+        "src/flask/testing.py"
+      ]
+    }
+  ],
+  "claim_ceiling": "Engineering evidence for this controller translation and benchmark family only. It does not establish general ORP superiority, VEA transfer, LoopCell capability accumulation, or C5 capability."
+}
