@@ -1,0 +1,25 @@
+event_id,observed_at,scope,subject,state,evidence_class,evidence_ref,notes
+EV-0001,2026-09-17,NEXORA,T-000,VERIFIED,CI,github:kau17033/r3f-scroll-rig/actions/runs/35190376080,Kit self-check and unit-test workflow succeeded at prior head
+EV-0002,2026-09-17,NEXORA,EXTERNAL_SOURCES,VERIFIED,IMMUTABLE_REF,nexora-kit/payload/sources/EXTERNAL.csv,34/34 VEA-G3 and LoopCell blob refs matched at observation time
+EV-0003,2026-09-09,VEA-G3,G4,CLOSED_NOT_DETERMINABLE,EMPIRICAL,control/REPO-004-gate-status.md,D empty; tau uncomputable; valid terminal research state
+EV-0004,2026-09-22,VEA-G3,HD-53,PENDING_HUMAN,HUMAN_GATE,control/readiness.csv,First-Completion declaration remains human-only
+EV-0005,2026-09-22,LoopCell,PHASE0,NOT_EXECUTED,EXECUTION_STATUS,control/REPO-007-loopcell-gaps.md,Recovered state has zero canonical Phase 0 execution
+EV-0006,2026-09-22,Capability,ECD_T1_T8,FORMAL_ESTABLISHED,FORMAL,file:file_00000000945881fbb65cd6039fa35f2b,Formal integration model exists
+EV-0007,2026-09-22,Capability,EMPIRICAL_ACCUMULATION,NOT_EXECUTED,EXECUTION_STATUS,control/completion_gates.csv,Retention/generalization/interference/cost not empirically closed
+EV-0008,2026-09-21,ORP/Receipt,SLICE1,PARTIAL_PASS,IMPLEMENTATION_TEST,file:file_0000000074c481fb9a33592c44322cde,Python/TypeScript conformance and differential fuzzing recovered
+EV-0009,2026-09-22,ORP/Receipt,OTS_TASK006,NOT_EXECUTED,EXECUTION_STATUS,file:file_000000006fc882098df5f2bebaa61dc3,Real OTS proof reconnaissance still requires network execution
+EV-0010,2026-09-22,ORP/Controller,ACTION_SELECTION,FORMAL_ONLY,FORMAL,file:file_00000000945881fbb65cd6039fa35f2b,T7 formal selection mode exists; prospective empirical evaluation not run
+EV-0011,2026-09-22,NEXORA,CANONICAL_CONVERGENCE,AUTHORIZED,HUMAN_DIRECTIVE,conversation:2026-09-22,Human explicitly directed convergence into one canonical source
+EV-0100,2026-09-22,GATE,C0,PARTIAL,CONVERGENCE_AUDIT,control/source_registry.csv,Work/Library sources received but not content-hash frozen; full disposition incomplete
+EV-0101,2026-09-22,GATE,C1,PARTIAL,CONVERGENCE_AUDIT,control/state_events.csv,Reducer baseline being installed; external repositories still require fresh validation for closure
+EV-0102,2026-09-22,GATE,C2,PARTIAL,CONVERGENCE_AUDIT,control/REPO-004-gate-status.md,VEA research terminal state exists; HD-53 remains human-only
+EV-0103,2026-09-22,GATE,C3,BLOCKED_EVIDENCE,NO_TELEPORTATION,control/transitions.csv,No end-to-end VEA artifact has closed identity-to-measured-benefit chain into LoopCell
+EV-0104,2026-09-22,GATE,C4,NOT_EXECUTED,EXECUTION_STATUS,control/REPO-007-loopcell-gaps.md,Canonical LoopCell Phase 0 not executed
+EV-0105,2026-09-22,GATE,C5,FORMAL_ONLY,FORMAL,file:file_00000000945881fbb65cd6039fa35f2b,Capability formal model exists; empirical K_t accumulation absent
+EV-0106,2026-09-22,GATE,C6,PARTIAL_PASS,IMPLEMENTATION_AUDIT,control/orp_namespaces.md,Receipt Slice 1 strong; OTS/checkpoint/recovery path not closed
+EV-0107,2026-09-22,GATE,C7,FORMAL_ONLY,FORMAL,control/transitions.csv,Controller logic formal only; predicted-vs-actual information/cost experiment not run
+EV-0108,2026-09-22,GATE,C8,BLOCKED,CONVERGENCE_AUDIT,control/completion_gates.csv,C0-C7 are not all closed
+EV-0200,2026-09-22,TRANSITION,TR-01,BLOCKED_EVIDENCE,NO_TELEPORTATION,control/CONVERGED-SSOT.md,No measured end-to-end VEA-to-LoopCell reuse chain
+EV-0201,2026-09-22,TRANSITION,TR-02,NOT_EXECUTED,NO_TELEPORTATION,control/CONVERGED-SSOT.md,LoopCell Phase 0 not executed
+EV-0202,2026-09-22,TRANSITION,TR-03,FORMAL_ONLY,NO_TELEPORTATION,control/CONVERGED-SSOT.md,Capability empirical state absent and controller not prospectively evaluated
+EV-0203,2026-09-22,TRANSITION,TR-04,SUPPORTING_ONLY,NO_TELEPORTATION,control/orp_namespaces.md,Receipt infrastructure is orthogonal and cannot promote scientific layers
