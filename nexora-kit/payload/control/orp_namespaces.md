@@ -45,7 +45,9 @@ Allowed decision modes:
 It MUST record predicted information gain, actual information gain, uncertainty before/after,
 cost, risk, reversibility and decision quality. It MUST NOT invent a prior to make an objective computable.
 
-Current convergence state: **FORMAL_ONLY**.
+C7 v2 prospective evidence: the preregistered controller evaluation ran 8/8 held-out live public-code tasks against the locked fixed-exploration baseline. Both policies resolved all tasks; Dream-Replay used 26 probes vs 32 and improved mean frozen utility by 0.1740222739. This closes the C7 gate predicate for that engineering benchmark family only; it does not establish C5 capability, VEA transfer, LoopCell accumulation, or general ORP superiority.
+
+Current convergence state: **PASS (prospective engineering benchmark; scope-limited)**.
 
 ## Interaction invariant
 
