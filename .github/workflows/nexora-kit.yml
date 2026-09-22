@@ -44,6 +44,12 @@ jobs:
       - name: requirement normalization
         run: python3 tools/requirements_check.py
 
+      - name: conflict convergence
+        run: python3 tools/conflict_check.py
+
+      - name: traceability convergence
+        run: python3 tools/traceability_check.py
+
       - name: converged state snapshot
         run: python3 tools/state_reduce.py --check
 
