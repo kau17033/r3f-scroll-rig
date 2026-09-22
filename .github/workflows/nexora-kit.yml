@@ -56,6 +56,29 @@ jobs:
       - name: converged state snapshot
         run: python3 tools/state_reduce.py --check
 
+      - name: T-070 convergence gate (final host is the only allowed block)
+        run: |
+          set +e
+          out="$(python3 tools/convergence_gate.py)"
+          rc=$?
+          set -e
+          printf '%s\n' "$out"
+          if [ "$rc" != "1" ]; then
+            echo "::error::T-070 must currently be blocked only by final_host (rc=$rc)"
+            exit 1
+          fi
+          echo "$out" | grep -F "[BLOCK] final_host"
+          if echo "$out" | grep -F "[BLOCK]" | grep -Fv "[BLOCK] final_host"; then
+            echo "::error::T-070 has a blocker other than final_host"
+            exit 1
+          fi
+          for label in source_registry disposition requirements conflicts traceability human_gate_registry state_projection; do
+            echo "$out" | grep -F "[PASS] $label" >/dev/null || {
+              echo "::error::T-070 missing PASS for $label"
+              exit 1
+            }
+          done
+
       - name: install dry-run
         working-directory: nexora-kit
         run: python3 install.py --target "${RUNNER_TEMP}/nexora-target" --dry-run
