@@ -228,9 +228,9 @@
     },
     "NEXORA:FINAL_HOST": {
       "state": "BLOCKED",
-      "observed_at": "2026-09-22",
-      "evidence_class": "REPOSITORY_LOOKUP",
-      "evidence_ref": "github:kau17033/nexora-core"
+      "observed_at": "2026-09-23",
+      "evidence_class": "REPOSITORY_VERIFIED",
+      "evidence_ref": "github:kau17033/kau17033-nexora-core"
     },
     "NEXORA:T-000": {
       "state": "VERIFIED",
