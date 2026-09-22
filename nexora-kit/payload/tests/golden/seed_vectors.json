@@ -2,34 +2,14 @@
   "note": "Verified against live frozen VEA-G3 src/veag3_dk/derive.py; not generated from this mirror.",
   "status": "VERIFIED_AGAINST_SOURCE",
   "frozen_derive_blob": "4b529381a26b9e70a6d7e32fbe9e75d029fc00af",
-  "master_seed_eval": 2082073855474151000,
-  "master_seed_src": 7681503877328398000,
+  "master_seed_eval": "2082073855474150835",
+  "master_seed_src": "7681503877328397875",
   "eval_reference_vectors": [
-    {
-      "i": 0,
-      "env_seed": 706399887,
-      "order": 0
-    },
-    {
-      "i": 1,
-      "env_seed": 2928312826,
-      "order": 1
-    },
-    {
-      "i": 2,
-      "env_seed": 3380672820,
-      "order": 1
-    },
-    {
-      "i": 10,
-      "env_seed": 656563751,
-      "order": 1
-    },
-    {
-      "i": 183,
-      "env_seed": 3440912191,
-      "order": 1
-    }
+    {"i": 0, "env_seed": 706399887, "order": 0},
+    {"i": 1, "env_seed": 2928312826, "order": 1},
+    {"i": 2, "env_seed": 3380672820, "order": 1},
+    {"i": 10, "env_seed": 656563751, "order": 1},
+    {"i": 183, "env_seed": 3440912191, "order": 1}
   ],
   "source_reference_vectors": {
     "0": 1073091360,
