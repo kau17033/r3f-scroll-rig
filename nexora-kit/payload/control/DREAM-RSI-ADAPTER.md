@@ -44,6 +44,8 @@ only the revealed prefix and selects a legal batch of:
 
 Batch size is bounded by `max_parallelism`.
 
+Actions marked `mandatory=true` are governance obligations known before execution. Replay may reorder them but may not optimize them away. Missing a mandatory action receives a fixed evaluator penalty and invalidates bootstrap selection.
+
 ## 4. Fixed evaluator / replay objective
 
 Every replay world stores a fixed objective before policy comparison:
@@ -56,7 +58,8 @@ where:
 - `Q_best` = best recorded evaluator score revealed by the policy;
 - `N` = revealed non-root attempts;
 - `R` = cumulative recorded risk;
-- `K` = completed replay decision rounds.
+- `K` = completed replay decision rounds;
+- missing mandatory governance actions incur a fixed penalty.
 
 The objective is an **engineering controller objective**, not a scientific treatment effect.
 Changing these weights creates a new controller-evaluation version.
