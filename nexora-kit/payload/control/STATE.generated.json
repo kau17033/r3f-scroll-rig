@@ -154,6 +154,12 @@
       "evidence_class": "IMMUTABLE_REF",
       "evidence_ref": "nexora-kit/payload/sources/EXTERNAL.csv"
     },
+    "NEXORA:FINAL_HOST": {
+      "state": "BLOCKED",
+      "observed_at": "2026-09-22",
+      "evidence_class": "REPOSITORY_LOOKUP",
+      "evidence_ref": "github:kau17033/nexora-core"
+    },
     "NEXORA:T-000": {
       "state": "VERIFIED",
       "observed_at": "2026-09-17",
@@ -202,8 +208,8 @@
       "name": "Corpus Convergence",
       "status": "PARTIAL",
       "predicate": "All authoritative sources are identified and immutable where required; no silent source substitution",
-      "evidence_ref": "control/source_registry.csv",
-      "notes": "Work/Library sources received but not content-hash frozen; full disposition incomplete"
+      "evidence_ref": "github:kau17033/nexora-core",
+      "notes": "Logical SSOT converged in bootstrap carrier; final host is absent and attached authoritative files remain unhashed in GitHub"
     },
     "C1": {
       "name": "Repository Truth",
