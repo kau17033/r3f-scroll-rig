@@ -290,3 +290,18 @@ DEC-011（案 C）により対外名は未定であるから、ブランド層�
 - DEC-004: 科学値を再決定せず DEFERRED。残る科学判断は HG-VEA-*。
 - DEC-007: 法務判断を自動化せず DEFERRED。公開/T-300のみ HG-OUTLIER-LEGAL で停止。
 - DEFERRED は「承認」を意味しない。対象scopeの human gate が SATISFIED になるまで当該実行は禁止。
+
+
+## DEC-012 final host locator — **APPROVED by explicit human repository selection (2026-09-23)**
+
+The human supplied the concrete private repository URL `https://github.com/kau17033/kau17033-nexora-core` after T-070 had been reduced to the final-host creation blocker.
+
+Decision:
+
+- final physical canonical host: **`kau17033/kau17033-nexora-core`**;
+- DEC-002 architecture remains unchanged: one cross-repository NEXORA control plane, with VEA-G3 and LoopCell retaining their frozen experimental authority;
+- this supersedes only DEC-002's originally proposed physical locator `kau17033/nexora-core`;
+- no scientific hypothesis, estimand, gate threshold, frozen protocol value, ORP claim boundary, or paid-execution authorization is changed;
+- the historical references to the old absent repository remain valid as historical evidence and MUST NOT be rewritten in append-only event history.
+
+Repository verification at selection time: private, admin/push available, default branch `main`, initial tree contains only `README.md`. Migration must replace the working tree with the payload root and verify byte/tree equivalence before authority cutover.
