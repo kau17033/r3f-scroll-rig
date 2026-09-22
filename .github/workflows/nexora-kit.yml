@@ -64,6 +64,9 @@ jobs:
           python3 tools/critical_artifact_audit.py
           python3 tools/security_audit.py
 
+      - name: TASK-007 Bitcoin reconnaissance
+        run: python3 tools/bitcoin_header_recon.py
+
       - name: T-070 convergence gate (final host is the only allowed block)
         run: |
           set +e
