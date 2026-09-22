@@ -12,7 +12,7 @@ EXTERNAL_REPORT = os.path.join(ROOT, "control", "EXTERNAL-VALIDATION-20260922.js
 
 REQUIRED_LOCAL_FIXED = {"SRC-01", "SRC-03", "SRC-05", "SRC-06", "SRC-07", "SRC-14"}
 REQUIRED_WORK_FIXED = {"SRC-08", "SRC-09", "SRC-10", "SRC-11", "SRC-12", "SRC-13", "SRC-16", "SRC-17", "SRC-18"}
-REQUIRED_GIT_IMMUTABLE = {"SRC-02A", "SRC-02B", "SRC-04A", "SRC-04B"}
+REQUIRED_GIT_IMMUTABLE = {"SRC-02A", "SRC-02B", "SRC-02C", "SRC-04A", "SRC-04B"}
 
 
 def load_registry(path=REGISTRY):
@@ -74,17 +74,17 @@ def validate_registry(rows):
 
 def validate_external_report(report):
     errors = []
-    if report.get("total") != 34:
-        errors.append("external total != 34")
-    if report.get("match") != 34:
-        errors.append("external match != 34")
+    if report.get("total") != 35:
+        errors.append("external total != 35")
+    if report.get("match") != 35:
+        errors.append("external match != 35")
     if report.get("mismatch") != 0:
         errors.append("external mismatch != 0")
     if report.get("missing") != 0:
         errors.append("external missing != 0")
     entries = report.get("entries") or []
-    if len(entries) != 34:
-        errors.append("external entries != 34")
+    if len(entries) != 35:
+        errors.append("external entries != 35")
     if any(e.get("status") != "MATCH" for e in entries):
         errors.append("non-MATCH external entry exists")
     return errors
@@ -100,7 +100,7 @@ def main():
         for e in errors:
             print("  - %s" % e)
         return 1
-    print("SOURCE_REGISTRY: PASS (registry=%d hash_fixed=%d external=34/34)"
+    print("SOURCE_REGISTRY: PASS (registry=%d hash_fixed=%d external=35/35)"
           % (len(rows), len(REQUIRED_LOCAL_FIXED | REQUIRED_WORK_FIXED)))
     return 0
 
