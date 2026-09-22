@@ -16,7 +16,8 @@ EVENT_STATES = {
     "PASS", "CLOSED", "FAIL", "HOLD", "UNKNOWN", "NOT_IDENTIFIABLE",
 }
 SOURCE_STATES = {
-    "VERIFIED_IMMUTABLE", "RECEIVED_UNHASHED", "FORMAL_ESTABLISHED",
+    "VERIFIED_IMMUTABLE", "RECEIVED_UNHASHED", "CONTENT_HASH_FIXED",
+    "VERIFIED_EXTERNAL_REFERENCE", "FORMAL_ESTABLISHED",
     "RECOVERED", "PARTIAL_PASS",
 }
 
@@ -68,6 +69,10 @@ def build():
         immutable = (row.get("immutable_ref") or "").strip()
         if state == "VERIFIED_IMMUTABLE" and not re.fullmatch(r"[0-9a-f]{40}", immutable):
             raise ValueError("%s: VERIFIED_IMMUTABLE requires 40-hex immutable_ref" % row["source_id"])
+        if state == "CONTENT_HASH_FIXED" and not re.fullmatch(r"sha256:[0-9a-f]{64}", immutable):
+            raise ValueError("%s: CONTENT_HASH_FIXED requires sha256:<64-hex>" % row["source_id"])
+        if state == "VERIFIED_EXTERNAL_REFERENCE" and not immutable:
+            raise ValueError("%s: VERIFIED_EXTERNAL_REFERENCE requires immutable_ref" % row["source_id"])
 
     latest = latest_events(events)
 
