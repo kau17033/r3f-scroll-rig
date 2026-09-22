@@ -12,9 +12,8 @@
 ## Verified corrections to the previous hand-maintained state
 
 - T-000 is not TODO. GitHub Actions run `35190376080` already verified it.
-- VEA-G3 / LoopCell external canonical files were 34/34 blob matches at the 2026-09-17 observation.
-- VEA-G3 is not "not executed": its recovered terminal state is G4 `FAIL / NOT_IDENTIFIABLE`,
-  with efficacy NOT DETERMINABLE and tau uncomputable.
+- VEA-G3 / LoopCell external canonical files were revalidated on 2026-09-22: **34/34 blob SHA MATCH**.
+- VEA-G3 live `GATE_STATUS.json` now governs current-state wording: G4 is **BLOCKED**, `closure=null`, with `FAIL / NOT_IDENTIFIABLE` only as the closure candidate pending HD-53; truth state remains NOT_DETERMINABLE and tau is uncomputable.
 - LoopCell Phase 0 is **NOT_EXECUTED** in the recovered state.
 - Capability has a formal ECD layer, but empirical accumulation is **NOT_EXECUTED**.
 - ORP is split into `ORP/Receipt` and `ORP/Controller`.
@@ -30,6 +29,6 @@ If this prose disagrees with generated state, generated state is authoritative f
 ## Next executable work
 
 1. T-005 is **VERIFIED** by CI run `35728612031`.
-2. T-010 is now the next convergence task: content-hash freeze local-only authoritative sources (SRC-01 / SRC-03 / SRC-07 family).
-3. Converge real-source disposition / requirements / traceability.
-4. Resume scientific experiments only under each frozen protocol and human/budget gates.
+2. T-010 is **IN_PROGRESS**: local attachments are SHA-256 fixed and external 34/34 validation is recorded; CI verification remains.
+3. T-012 Dream-Replay controller substrate is **IN_PROGRESS** and diagnostic-only until prospective validation.
+4. After T-010/T-012 CI closure, continue disposition / requirements / traceability without changing frozen experiments.
