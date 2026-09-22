@@ -2,8 +2,8 @@
   "schema": "nexora-external-validation/1.0",
   "observed_at": "2026-09-22",
   "method": "GitHub recursive git tree on main compared against sources/EXTERNAL.csv",
-  "total": 34,
-  "match": 34,
+  "total": 35,
+  "match": 35,
   "mismatch": 0,
   "missing": 0,
   "repositories": [
@@ -281,6 +281,14 @@
       "path": "README.md",
       "expected_blob_sha": "92de74dfc7b5ea3198b87a720e09c5b20361c2e4",
       "actual_blob_sha": "92de74dfc7b5ea3198b87a720e09c5b20361c2e4",
+      "status": "MATCH"
+    },
+    {
+      "src_id": "SRC-02",
+      "repo": "kau17033/VEA-G3",
+      "path": "src/veag3_dk/derive.py",
+      "expected_blob_sha": "4b529381a26b9e70a6d7e32fbe9e75d029fc00af",
+      "actual_blob_sha": "4b529381a26b9e70a6d7e32fbe9e75d029fc00af",
       "status": "MATCH"
     }
   ]
