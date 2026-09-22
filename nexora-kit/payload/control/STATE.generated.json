@@ -196,6 +196,12 @@
       "evidence_class": "HUMAN_DIRECTIVE",
       "evidence_ref": "conversation:2026-09-22"
     },
+    "NEXORA:CORPUS_CONVERGENCE": {
+      "state": "VERIFIED",
+      "observed_at": "2026-09-23",
+      "evidence_class": "CI",
+      "evidence_ref": "github:kau17033/r3f-scroll-rig/actions/runs/35766766857"
+    },
     "NEXORA:DREAM_RSI_ADOPTION": {
       "state": "AUTHORIZED",
       "observed_at": "2026-09-22",
@@ -328,8 +334,8 @@
       "name": "Corpus Convergence",
       "status": "PARTIAL",
       "predicate": "All authoritative sources are identified and immutable where required; no silent source substitution",
-      "evidence_ref": "control/EXTERNAL-VALIDATION-20260922-35.json",
-      "notes": "Corpus sections are fully disposed and 35/35 external refs match; final nexora-core physical host migration remains open"
+      "evidence_ref": "control/CONVERGED-SSOT.md",
+      "notes": "Corrective event: EV-0119 corpus predicate evidence is valid but cannot close C0 because CONVERGED-SSOT section 2.1 explicitly requires final-host convergence; final nexora-core remains absent"
     },
     "C1": {
       "name": "Repository Truth",
