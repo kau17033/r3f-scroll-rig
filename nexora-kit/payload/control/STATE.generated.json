@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-09-22",
+  "as_of": "2026-09-23",
   "completion_gates": {
     "C0": {
       "evidence_ref": "control/EXTERNAL-VALIDATION-20260922-35.json",
@@ -44,9 +44,9 @@
       "status": "FORMAL_ONLY"
     },
     "C6": {
-      "evidence_ref": "evidence/orp/ORP-RECEIPT-CP-001.json",
+      "evidence_ref": "evidence/orp/ORP-RECEIPT-CP-001-OTS.json",
       "name": "ORP/Receipt",
-      "notes": "Slice1 conformance OTS real-proof interoperability Bitcoin reconnaissance and CP-001 recovery pass; CP-001 is not yet externally timestamp-anchored and full production Bitcoin best-chain verification remains outside closure",
+      "notes": "Receipt identity signatures real OTS parse Bitcoin historical vector checkpoint recovery and external calendar submission are evidenced; Bitcoin confirmation of CP-001 and production best-chain scope remain open",
       "predicate": "Receipt identity signature interoperability checkpoint recovery and verification boundaries are closed",
       "status": "PARTIAL_PASS"
     },
@@ -356,6 +356,12 @@
       "evidence_ref": "github:kau17033/r3f-scroll-rig/actions/runs/35747481846",
       "observed_at": "2026-09-22",
       "state": "VERIFIED"
+    },
+    "ORP/Receipt:EXTERNAL_CHECKPOINT": {
+      "evidence_class": "NETWORK_ANCHOR",
+      "evidence_ref": "evidence/orp/ORP-RECEIPT-CP-001-OTS.json",
+      "observed_at": "2026-09-23",
+      "state": "PENDING_CONFIRMATION"
     },
     "ORP/Receipt:OTS_TASK006": {
       "evidence_class": "NETWORK_RECON",
