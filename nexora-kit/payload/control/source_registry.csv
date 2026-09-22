@@ -1,0 +1,16 @@
+source_id,scope,artifact,locator,authority_class,status,immutable_ref,observed_at,notes
+SRC-01,NEXORA,ULTRACODE / 指示,file:file_00000000536481f794fe36687678cee7,CROSS_PROGRAM_DIRECTIVE,RECEIVED_UNHASHED,,2026-09-22,Latest attached instruction corpus; must be content-hash frozen before C0 can close
+SRC-02A,VEA-G3,SSOT.md,github:kau17033/vea-g3:SSOT.md,FROZEN_EXPERIMENTAL_SSOT,VERIFIED_IMMUTABLE,b338cee8f6490ef2140d8fe39af19d92288ce2e0,2026-09-17,Exact blob registered in sources/EXTERNAL.csv
+SRC-02B,VEA-G3,PROTOCOL_LOCK.md,github:kau17033/vea-g3:PROTOCOL_LOCK.md,FROZEN_PROTOCOL_LOCK,VERIFIED_IMMUTABLE,e535476b4f981f3ca1f8dff9efb92253797c0a39,2026-09-17,Exact blob registered in sources/EXTERNAL.csv
+SRC-03,NEXORA,論文4,file:file_00000000b0a482099041705491424ff3,RESEARCH_DOCUMENT,RECEIVED_UNHASHED,,2026-09-22,Latest attached copy
+SRC-04A,LoopCell,SPEC_v1.1.md,github:kau17033/loopcell:experiments/loopcell_phase0/spec/SPEC_v1.1.md,FROZEN_EXPERIMENTAL_SSOT,VERIFIED_IMMUTABLE,6c1342f0f99f9d3ab874b25e466f9fc8e34457f1,2026-09-17,Exact blob registered in sources/EXTERNAL.csv
+SRC-04B,LoopCell,FREEZE_MANIFEST.json,github:kau17033/loopcell:experiments/loopcell_phase0/spec/FREEZE_MANIFEST.json,FROZEN_PROTOCOL_LOCK,VERIFIED_IMMUTABLE,a11ca914c471197b10a6d9b1064736b7b53dd7af,2026-09-17,Exact blob registered in sources/EXTERNAL.csv
+SRC-05,FOCAL,FOCAL,file:file_00000000e29c82079b7fdf0bdb99adc1,PRODUCT_RESEARCH_DOCUMENT,RECEIVED_UNHASHED,,2026-09-22,Not promoted to experimental authority
+SRC-06,VEA-G3,VEA 実装仕様のSSOT,file:file_0000000021708207b4956f1af0c663d4,ATTACHED_REFERENCE,RECEIVED_UNHASHED,,2026-09-22,Must be reconciled against frozen GitHub SSOT before canonical use
+SRC-07,LoopCell,LoopCellについて,file:file_0000000045888206b6e6933200dc8567,ATTACHED_REFERENCE,RECEIVED_UNHASHED,,2026-09-22,Must not rewrite frozen Phase 0 SSOT
+SRC-08,NEXORA,NEXORA_ECD_Model_v1.md,file:file_00000000945881fbb65cd6039fa35f2b,FORMAL_ADDENDUM,FORMAL_ESTABLISHED,,2026-09-22,T1-T8 formal integration model; empirical quantities remain unmeasured
+SRC-09,VEA-G3,VEA_G3_Execution_Recovery_20260921.md,file:file_000000006c2c82069433f442e9d30788,RECOVERY_INDEX,RECOVERED,,2026-09-21,Historical execution index; raw provenance is not fully reconciled
+SRC-10,ORP/Receipt,outlier-orp-spec-v2.0-consolidated,file:file_0000000074c481fb9a33592c44322cde,WORK_IMPLEMENTATION_SPEC,PARTIAL_PASS,,2026-09-21,Slice 1 conformance recovered; later proof/checkpoint work remains open
+SRC-11,NEXORA,evidence-kernel COMPLETION_REGISTER,file:file_00000000631482079850db1b8dbda9c9,WORK_AUDIT,RECOVERED,,2026-09-21,Audit ledger; does not override frozen experimental SSOTs
+SRC-12,NEXORA,MATH_SPEC,file:file_00000000325c822fa6c98a7cc9f6d77b,FORMAL_ADDENDUM,FORMAL_ESTABLISHED,,2026-09-21,Known/combination/open classification; not an empirical effect claim
+SRC-13,ORP/Receipt,TASK-005 execution report,file:file_000000006fc882098df5f2bebaa61dc3,WORK_IMPLEMENTATION_REPORT,PARTIAL_PASS,,2026-09-21,Cross-language conformance/fuzzing recovered; next OTS task still open
