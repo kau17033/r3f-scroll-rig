@@ -34,7 +34,7 @@ class EvidenceCheckpoint(unittest.TestCase):
 
     def test_corruption_detected_and_recovered(self):
         m=build_manifest(self.primary,self.paths,"CP-1")
-        with open(os.path.join(self.primary,"a/one.txt"),"wb") as f:f.write(b"corrupt")
+        with open(os.path.join(self.primary,"a/one.txt"),"wb") as f:f.write(b"bad\n")
         before=verify_manifest(self.primary,m)
         self.assertIn("HASH_MISMATCH",{r["status"] for r in before})
         after=recover_from_backup(self.primary,self.backup,m)
