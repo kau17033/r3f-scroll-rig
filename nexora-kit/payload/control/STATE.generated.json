@@ -209,8 +209,8 @@
       "name": "Repository Truth",
       "status": "PARTIAL",
       "predicate": "Current state is a deterministic projection of append-only evidence and agrees across repositories",
-      "evidence_ref": "control/state_events.csv",
-      "notes": "Reducer baseline being installed; external repositories still require fresh validation for closure"
+      "evidence_ref": "github:kau17033/r3f-scroll-rig/actions/runs/35728612031",
+      "notes": "Deterministic reducer is verified; final host migration and fresh external repository validation remain open"
     },
     "C2": {
       "name": "VEA Research Closure",
