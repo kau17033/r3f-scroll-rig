@@ -25,8 +25,7 @@ Required structural checks:
 7. deterministic state projection passes;
 8. the final canonical physical host is verified.
 
-As of 2026-09-22, checks 1-7 pass. Check 8 is blocked because DEC-002's
-`kau17033/nexora-core` repository has not been created/verified.
+Checks 1-7 pass. DEC-012 selected `kau17033/kau17033-nexora-core` as the final host. Check 8 remains open until payload byte/tree equivalence, final-host event, and destination CI are verified.
 
 ## Separation from global completion
 
