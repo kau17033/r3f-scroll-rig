@@ -67,6 +67,9 @@ jobs:
       - name: TASK-007 Bitcoin reconnaissance
         run: python3 tools/bitcoin_header_recon.py
 
+      - name: ORP Receipt checkpoint recovery
+        run: python3 tools/orp_receipt_checkpoint.py
+
       - name: T-070 convergence gate (final host is the only allowed block)
         run: |
           set +e
