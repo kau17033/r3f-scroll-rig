@@ -30,3 +30,9 @@ EV-0110,2026-09-22,GATE,C0,PARTIAL,REPOSITORY_LOOKUP,github:kau17033/nexora-core
 EV-0014,2026-09-22,VEA-G3,G4,BLOCKED,LIVE_REPO,github:kau17033/VEA-G3:GATE_STATUS.json,Fresh validation: state BLOCKED; closure null; closure candidate FAIL / NOT_IDENTIFIABLE pending HD-53
 EV-0015,2026-09-22,NEXORA,EXTERNAL_SOURCES,VERIFIED,LIVE_REPO,control/EXTERNAL-VALIDATION-20260922.json,Fresh recursive-tree validation: 34/34 MATCH; mismatch=0; missing=0
 EV-0016,2026-09-22,NEXORA,DREAM_RSI_ADOPTION,AUTHORIZED,HUMAN_DIRECTIVE,conversation:2026-09-22,Use Dream-RSI replay technique for controller exploration while preserving frozen scientific evaluators
+EV-0017,2026-09-22,NEXORA,T-010,VERIFIED,CI,github:kau17033/r3f-scroll-rig/actions/runs/35731846330,Source registry convergence PASS; 15 required SHA-256 fixed sources and external 34/34 live blob validation
+EV-0018,2026-09-22,NEXORA,T-012,VERIFIED,CI,github:kau17033/r3f-scroll-rig/actions/runs/35731846330,Dream-Replay bootstrap PASS with prefix-only tests and mandatory-governance preservation
+EV-0019,2026-09-22,ORP/Controller,ACTION_SELECTION,PARTIAL,CI,github:kau17033/r3f-scroll-rig/actions/runs/35731846330,Replay controller substrate implemented and tested; prospective live utility validation remains open
+EV-0111,2026-09-22,GATE,C0,PARTIAL,CI,github:kau17033/r3f-scroll-rig/actions/runs/35731846330,Source identities are hash-fixed and external 34/34 matches; final nexora-core host and full disposition convergence remain open
+EV-0112,2026-09-22,GATE,C1,PASS,CI,github:kau17033/r3f-scroll-rig/actions/runs/35731846330,Deterministic reducer plus fresh VEA-G3/LoopCell validation reconcile cross-repository current state
+EV-0113,2026-09-22,GATE,C7,PARTIAL,CI,github:kau17033/r3f-scroll-rig/actions/runs/35731846330,Dream-Replay controller is implemented and replay-tested; prospective new-world predicted-vs-actual utility experiment remains required
