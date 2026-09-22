@@ -11,7 +11,7 @@ FM-09,Requirement lost during normalization,requirements_check.py 1652/1652,CONT
 FM-10,Requirement traced but falsely marked satisfied,traceability_check.py,CONTROLLED,control/traceability.csv
 FM-11,Cross-source contradiction silently resolved,conflict_check.py + HG binding,CONTROLLED,control/conflicts.md
 FM-12,Seed derivation changes silently,source-verified derive blob + golden regression,CONTROLLED,tests/golden/seed_vectors.json
-FM-13,External canonical source drifts from recorded blob,35/35 external validation + registry checker,CONTROLLED,control/EXTERNAL-VALIDATION-20260922.json
+FM-13,External canonical source drifts from recorded blob,35/35 external validation + registry checker,CONTROLLED,control/EXTERNAL-VALIDATION-20260922-35.json
 FM-14,Autonomous loop becomes unbounded,bounded replay world + terminating selection loop + test,CONTROLLED,tools/dream_replay.py
 FM-15,Secret credential value committed to control-plane source,environment-only secret policy + security audit,CONTROLLED,tools/security_audit.py
 FM-16,Recovery/checkpoint evidence unavailable when needed,ORP/Receipt C6 gate,BLOCKED_EVIDENCE,control/orp_namespaces.md
