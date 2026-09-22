@@ -1,1 +1,7 @@
 section_id,source_id,disposition,rationale,req_ids,task_ids,decided_by,decided_at
+SUMMARY:SRC-01,SRC-01,KEEP_GOVERNANCE,1395 section-level rows in control/corpus_sections; unresolved conflicts remain gated,,,deterministic-classifier,2026-09-22
+SUMMARY:SRC-02A,SRC-02A,SCOPE_AUTHORITY,55 VEA-G3 SSOT sections bound to immutable source blob,,,deterministic-classifier,2026-09-22
+SUMMARY:SRC-02B,SRC-02B,SCOPE_AUTHORITY,67 VEA-G3 protocol-lock sections bound to immutable source blob,,,deterministic-classifier,2026-09-22
+SUMMARY:SRC-03,SRC-03,REFERENCE_ONLY,63 paper/protocol sections retained without execution authority,,,deterministic-classifier,2026-09-22
+SUMMARY:SRC-04A,SRC-04A,SCOPE_AUTHORITY,71 LoopCell Phase 0 SSOT sections bound to immutable source blob,,,deterministic-classifier,2026-09-22
+SUMMARY:SRC-04B,SRC-04B,SCOPE_AUTHORITY,1 LoopCell freeze-manifest source bound to immutable blob,,,deterministic-classifier,2026-09-22
