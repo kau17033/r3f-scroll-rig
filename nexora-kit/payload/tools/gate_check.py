@@ -7,7 +7,7 @@
   G3 control/decisions.md の PENDING = 0
   G4 control/traceability.csv の全要求に task_ids / test_ids / evidence_paths が埋まっている
   G5 control/audit70.csv の 11 項目がすべて 0
-  G6 外部保持の正本（sources/EXTERNAL.csv）が blob SHA で一致
+  G6 外部保持の正本について、最新の durable live-validation record が EXTERNAL.csv と完全一致
 
 exit 0 = 解禁、exit 1 = BLOCKED。判定は本スクリプトのみが行う。会話で上書きしない。
 """
@@ -88,17 +88,11 @@ def g5():
 
 
 def g6():
-    """外部リポジトリが保持する正本の不変性。複製せず blob SHA で照合する。"""
-    p = os.path.join(ROOT, "sources", "EXTERNAL.csv")
-    if not os.path.exists(p):
-        # 外部保持の正本が無い構成もあり得る。不在は不合格ではない。
-        # レジストリ自体の消失は kit_check の required files が捕捉する（多層防御）。
-        return True, "外部正本の登録なし"
-    r = subprocess.run([sys.executable, os.path.join(ROOT, "tools", "external_sources.py"), "verify"],
-                       capture_output=True, text=True)
+    """Verify durable cross-repo validation evidence without depending on CI token reachability."""
+    check = os.path.join(ROOT, "tools", "source_registry_check.py")
+    r = subprocess.run([sys.executable, check], capture_output=True, text=True)
     head = (r.stdout or r.stderr).strip().splitlines()
     return r.returncode == 0, head[0] if head else "出力なし"
-
 
 CHECKS = [("G1 sources integrity", g1), ("G2 disposition PENDING=0", g2),
           ("G3 decisions PENDING=0", g3), ("G4 traceability 完備", g4),
