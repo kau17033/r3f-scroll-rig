@@ -49,6 +49,7 @@ REQUIRED = [
     "control/CONVERGED-SSOT.md", "control/source_registry.csv",
     "control/state_events.csv", "control/completion_gates.csv", "control/transitions.csv",
     "control/STATE.generated.json", "control/capability_contract.schema.json",
+    "control/FINAL-HOST-MIGRATION.md",
     "control/DREAM-RSI-ADAPTER.md", "control/replay_worlds/bootstrap_convergence_20260922.json",
     "control/EXTERNAL-VALIDATION-20260922.json", "control/EXTERNAL-VALIDATION-20260922-35.json",
     "tools/state_reduce.py", "tools/source_registry_check.py", "tools/dream_replay.py",
