@@ -56,6 +56,14 @@ jobs:
       - name: converged state snapshot
         run: python3 tools/state_reduce.py --check
 
+      - name: Section 70 structural audits
+        run: |
+          python3 tools/dependency_audit.py
+          python3 tools/claim_audit.py
+          python3 tools/failure_mode_audit.py
+          python3 tools/critical_artifact_audit.py
+          python3 tools/security_audit.py
+
       - name: T-070 convergence gate (final host is the only allowed block)
         run: |
           set +e
