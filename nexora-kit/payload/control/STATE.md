@@ -21,7 +21,7 @@
 ## Current completion gates
 
 C0 PARTIAL / C1 PASS / C2 PARTIAL / C3 BLOCKED_EVIDENCE /
-C4 NOT_EXECUTED / C5 FORMAL_ONLY / C6 PARTIAL_PASS / C7 PARTIAL / C8 BLOCKED.
+C4 NOT_EXECUTED / C5 FORMAL_ONLY / C6 PASS / C7 PASS / C8 BLOCKED.
 
 The exact current state and evidence references are in `control/STATE.generated.json`.
 If this prose disagrees with generated state, generated state is authoritative for cross-repository current-state reporting.
@@ -38,3 +38,9 @@ If this prose disagrees with generated state, generated state is authoritative f
 5. The 7 HG-* scientific/cost/legal gates remain pending and are **not** part of T-070 structural convergence.
    Global C2-C8 completion remains fail-closed.
 
+
+## Scope-bound closures (2026-09-23)
+
+- C6 is PASS only within the implemented ORP/Receipt verification boundary: cross-language receipt/signature conformance, observed OTS interoperability, CP-001 recovery, external OTS anchoring, and independently reverified Bitcoin block binding. Universal OTS coverage, full genesis-to-tip best-chain verification, completeness, semantic truth and causal benefit are not implied.
+- C7 is PASS only for the preregistered prospective engineering benchmark family in `control/C7-PROSPECTIVE-PLAN-v2.json`; it does not imply empirical Capability (C5), VEA→LoopCell transfer, or general ORP superiority.
+- TR-03 remains FORMAL_ONLY because Capability empirical state is absent even though C7's controller-specific engineering gate passes independently.
