@@ -3,7 +3,7 @@
 本プログラムの実態は「統治の不足」ではない。**高品質な統治が 3 系統あり、互いを知らない**ことである。
 本書はその橋渡しをする。各主張には出典を付す。出典の無い断定は置かない。
 
-最終更新: 2026-09-17（調査 REPO-001..005 / EXTERNAL-001 に基づく）
+最終更新: 2026-09-22（CONVERGED-SSOT v1.0 に収束）\n\n> **Current-state authority:** この文書は履歴・索引である。横断現在地の正本は `control/CONVERGED-SSOT.md` と `control/STATE.generated.json`。\n> 現在の物理ホストは PR #1 branch の BOOTSTRAP_CANONICAL_CARRIER。DEC-002 の最終ホスト `kau17033/nexora-core` への移行完了までは C0 を閉じない。
 
 ---
 
