@@ -12,7 +12,7 @@ import subprocess
 import sys
 
 ROOT = os.path.realpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
-TARGET = "kau17033/nexora-core"
+TARGET = "kau17033/kau17033-nexora-core"
 CARRIER_SUBTREE = "nexora-kit/payload"
 
 
