@@ -32,6 +32,9 @@ jobs:
       - name: source registry convergence
         run: python3 tools/source_registry_check.py
 
+      - name: human gate registry
+        run: python3 tools/human_gate_check.py --validate
+
       - name: Dream-Replay bootstrap
         run: python3 tools/dream_replay.py --bootstrap-check > /tmp/dream-replay.json
 
