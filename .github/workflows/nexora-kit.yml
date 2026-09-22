@@ -70,6 +70,25 @@ jobs:
       - name: ORP Receipt checkpoint recovery
         run: python3 tools/orp_receipt_checkpoint.py
 
+      - name: ORP Receipt OpenTimestamps anchor
+        run: |
+          python3 -m pip install --disable-pip-version-check -q             "git+https://github.com/opentimestamps/python-opentimestamps@3af46432efc4a4c4e7bba439c1f49bce808eb3e5"             "git+https://github.com/opentimestamps/opentimestamps-client@cd71c7609421bed2a07b9642a3c02a58c9fd2cdf"
+          cp evidence/orp/ORP-RECEIPT-CP-001.anchor.txt /tmp/ORP-RECEIPT-CP-001.anchor.txt
+          ots stamp /tmp/ORP-RECEIPT-CP-001.anchor.txt
+          ots info /tmp/ORP-RECEIPT-CP-001.anchor.txt.ots
+          PYTHONPATH=tools python3 - <<'PY'
+          import base64, json
+          from ots_observed import parse_detached
+          p="/tmp/ORP-RECEIPT-CP-001.anchor.txt.ots"
+          raw=open(p,"rb").read()
+          parsed=parse_detached(raw)
+          print("OTS_ANCHOR_BYTES=%d" % len(raw))
+          print("OTS_ANCHOR_ATTESTATIONS=%d" % len(parsed["attestations"]))
+          print("OTS_ANCHOR_B64_BEGIN")
+          print(base64.b64encode(raw).decode())
+          print("OTS_ANCHOR_B64_END")
+          PY
+
       - name: T-070 convergence gate (final host is the only allowed block)
         run: |
           set +e
