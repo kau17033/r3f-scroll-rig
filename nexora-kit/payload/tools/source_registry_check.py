@@ -8,7 +8,8 @@ import sys
 
 ROOT = os.path.realpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 REGISTRY = os.path.join(ROOT, "control", "source_registry.csv")
-EXTERNAL_REPORT = os.path.join(ROOT, "control", "EXTERNAL-VALIDATION-20260922.json")
+EXTERNAL_REPORT = os.path.join(ROOT, "control", "EXTERNAL-VALIDATION-20260922-35.json")
+EXTERNAL_REGISTRY = os.path.join(ROOT, "sources", "EXTERNAL.csv")
 
 REQUIRED_LOCAL_FIXED = {"SRC-01", "SRC-03", "SRC-05", "SRC-06", "SRC-07", "SRC-14"}
 REQUIRED_WORK_FIXED = {"SRC-08", "SRC-09", "SRC-10", "SRC-11", "SRC-12", "SRC-13", "SRC-16", "SRC-17", "SRC-18"}
@@ -72,7 +73,7 @@ def validate_registry(rows):
     return errors
 
 
-def validate_external_report(report):
+def validate_external_report(report, expected_rows=None):
     errors = []
     if report.get("total") != 35:
         errors.append("external total != 35")
@@ -87,6 +88,17 @@ def validate_external_report(report):
         errors.append("external entries != 35")
     if any(e.get("status") != "MATCH" for e in entries):
         errors.append("non-MATCH external entry exists")
+    if expected_rows is not None:
+        expected = {(r["repo"], r["path"]): r["blob_sha"] for r in expected_rows}
+        observed = {(e.get("repo"), e.get("path")): e for e in entries}
+        if set(expected) != set(observed):
+            errors.append("external registry/report identity mismatch")
+        for key, sha in expected.items():
+            e = observed.get(key)
+            if not e:
+                continue
+            if e.get("expected_blob_sha") != sha or e.get("actual_blob_sha") != sha:
+                errors.append("external blob mismatch in report: %s:%s" % key)
     return errors
 
 
@@ -94,7 +106,9 @@ def main():
     rows = load_registry()
     with open(EXTERNAL_REPORT, encoding="utf-8") as f:
         report = json.load(f)
-    errors = validate_registry(rows) + validate_external_report(report)
+    with open(EXTERNAL_REGISTRY, encoding="utf-8", newline="") as f:
+        external_rows = list(csv.DictReader(f))
+    errors = validate_registry(rows) + validate_external_report(report, external_rows)
     if errors:
         print("SOURCE_REGISTRY: FAIL")
         for e in errors:
