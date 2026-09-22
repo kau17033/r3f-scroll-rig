@@ -12,7 +12,7 @@
 ## Verified corrections to the previous hand-maintained state
 
 - T-000 is not TODO. GitHub Actions run `35190376080` already verified it.
-- VEA-G3 / LoopCell external canonical files were revalidated on 2026-09-22: **34/34 blob SHA MATCH**.
+- VEA-G3 / LoopCell external canonical files were revalidated on 2026-09-22: **35/35 blob SHA MATCH**.
 - VEA-G3 live `GATE_STATUS.json` now governs current-state wording: G4 is **BLOCKED**, `closure=null`, with `FAIL / NOT_IDENTIFIABLE` only as the closure candidate pending HD-53; truth state remains NOT_DETERMINABLE and tau is uncomputable.
 - LoopCell Phase 0 is **NOT_EXECUTED** in the recovered state.
 - Capability has a formal ECD layer, but empirical accumulation is **NOT_EXECUTED**.
@@ -28,7 +28,8 @@ If this prose disagrees with generated state, generated state is authoritative f
 
 ## Next executable work
 
-1. T-005 is **VERIFIED** by CI run `35728612031`.
-2. T-010 is **VERIFIED** by CI run `35731846330`: required local/Work artifacts are content-hash fixed and VEA-G3/LoopCell external sources are 34/34 live blob matches.
-3. T-012 is **VERIFIED** by the same CI: Dream-Replay is prefix-only, preserves mandatory governance actions, and may modify only ORP/Controller exploration policy.
-4. Next convergence work is T-030 → T-040 → T-050/T-060. C7 remains PARTIAL until a prospective new-world controller evaluation exists.
+1. T-020 / T-040 / T-050 / T-060 / T-100 are **VERIFIED** by CI run `35739331939`.
+2. Requirement coverage is **1652/1652**; conflict classification is **19/19** with 3 scientific conflicts isolated behind HG-*; traceability is **1652/1652** and does not imply satisfaction.
+3. External canonical validation is **35/35 MATCH**.
+4. T-070 is now the next convergence task. Its gate must distinguish control-plane convergence from C2-C8 scientific/operational completion; human gates remain fail-closed.
+
