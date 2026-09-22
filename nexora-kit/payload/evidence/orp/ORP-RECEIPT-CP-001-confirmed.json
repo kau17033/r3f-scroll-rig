@@ -1,0 +1,23 @@
+{
+  "schema": "orp-receipt-ots-confirmed/1.0",
+  "generated_by_ci": "github:kau17033/r3f-scroll-rig/actions/runs/35764759608",
+  "observed_at": "2026-09-23",
+  "checkpoint_id": "ORP-RECEIPT-CP-001",
+  "checkpoint_hash": "3065b7b0729035ee74a037d3b5c276b53fd881d39056db0cb072fd6c779f465f",
+  "input_pending_proof_bytes": 805,
+  "upgraded_proof_bytes": 2774,
+  "bitcoin_attestation_count": 2,
+  "bitcoin_heights": [
+    968161,
+    968161
+  ],
+  "pending_attestation_count": 4,
+  "status": "BITCOIN_CONFIRMED_UNVERIFIED_BLOCK_BINDING",
+  "source_calendars": [
+    "https://finney.calendar.eternitywall.com",
+    "https://bob.btc.calendar.opentimestamps.org",
+    "https://alice.btc.calendar.opentimestamps.org",
+    "https://btc.calendar.catallaxy.com"
+  ],
+  "claim_ceiling": "The official pinned OpenTimestamps implementation obtained two BitcoinBlockHeaderAttestations at height 968161. This metadata does not by itself assert Merkle-root/PoW/best-chain validity; those require independent verification."
+}
