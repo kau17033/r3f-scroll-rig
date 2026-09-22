@@ -44,6 +44,7 @@ REQUIRED = [
     "control/STANDING-ORDER-001.md", "control/readiness.csv", "tools/readiness_check.py",
     "control/human_gates.csv", "tools/human_gate_check.py",
     "sources/EXTERNAL.csv", "tools/external_sources.py",
+    "tools/requirements_check.py",
     "control/CONVERGED-SSOT.md", "control/source_registry.csv",
     "control/state_events.csv", "control/completion_gates.csv", "control/transitions.csv",
     "control/STATE.generated.json", "control/capability_contract.schema.json",
