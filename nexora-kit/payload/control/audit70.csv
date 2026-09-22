@@ -9,4 +9,4 @@ A70-07,Unprotected critical artifacts,0,tools/critical_artifact_audit.py
 A70-08,Untracked protocol changes,0,control/EXTERNAL-VALIDATION-20260922.json
 A70-09,Unbounded autonomous loops,0,tools/dream_replay.py
 A70-10,Critical security gaps,0,tools/security_audit.py
-A70-11,Critical recovery gaps,1,control/orp_namespaces.md#ORP/Receipt
+A70-11,Critical recovery gaps,0,evidence/orp/ORP-RECEIPT-CP-001.json
