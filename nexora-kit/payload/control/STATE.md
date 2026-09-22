@@ -29,7 +29,7 @@ If this prose disagrees with generated state, generated state is authoritative f
 
 ## Next executable work
 
-1. Close T-005 only after CI proves reducer snapshot and full tests.
-2. T-010: content-hash freeze local-only authoritative sources (SRC-01 / SRC-03 / SRC-07 family).
+1. T-005 is **VERIFIED** by CI run `35728612031`.
+2. T-010 is now the next convergence task: content-hash freeze local-only authoritative sources (SRC-01 / SRC-03 / SRC-07 family).
 3. Converge real-source disposition / requirements / traceability.
 4. Resume scientific experiments only under each frozen protocol and human/budget gates.
