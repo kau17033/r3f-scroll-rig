@@ -45,7 +45,7 @@ def validate():
     errors = []
     conflicts = parse()
     hg = human_gates()
-    expected = {"CONF-%02d" % i for i in range(1, 19)}
+    expected = {"CONF-%02d" % i for i in range(1, 20)}
     if set(conflicts) != expected:
         errors.append("conflict IDs mismatch missing=%s extra=%s" %
                       (sorted(expected-set(conflicts)), sorted(set(conflicts)-expected)))
@@ -74,7 +74,7 @@ def main():
         for e in errors:
             print("  - %s" % e)
         return 1
-    print("CONFLICTS: PASS (18/18 classified; open_scientific=3 human_gated=3)")
+    print("CONFLICTS: PASS (19/19 classified; open_scientific=3 human_gated=3)")
     return 0
 
 
