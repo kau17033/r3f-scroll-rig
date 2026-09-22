@@ -1,0 +1,64 @@
+section_id,source_id,heading,start,end,section_sha256,disposition,rationale
+SRC-03:P000001,SRC-03,Artifact Intervention under Competing Information Pathways,1,3,dadfb15c21622a534b2a2c2aaf958d487bac1608ead0b1c025970394df0da597,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000004,SRC-03,Abstract,4,10,586170f55682df6d6be5522033049f1b86f0d308753732e554d838a68b71b506,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000011,SRC-03,1. Introduction,11,11,6e62ee82e3df2a7dfcaba91e18eab2a77c9c7f7b4a5dceb49528346078b636d2,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000012,SRC-03,1.1 Underdetermination of performance gains,12,15,557ded256854bfb26203621ed04de83494fe87923a8323463ef8fb00059eb7e2,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000016,SRC-03,1.2 Research questions,16,19,50dae6b088f66553ae6621f85c71f691d7edc611ab3f3298ca785bf718b518aa,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000020,SRC-03,1.3 Claim hierarchy (frozen),20,22,d5ef68ca44b01a6e9e9e2f9343f72c3b543d03980aa8108830624835806b8b87,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000023,SRC-03,1.4 What this paper is not,23,24,e124122e1537d3f594ee6a0f2c834d6394c9da7472ff315cbdc57ed07d483660,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000025,SRC-03,2. Related foundations (established literatures),25,25,bc2278ecce55456be6fb5561a36e6f26e5d5e43d6685f00be4991bb0e340c627,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000026,SRC-03,2.1 Causal inference,26,27,eb53864b77e5f9af7e8b769464b86e7ff3b4ba1c37862e669d1b54fb73206f98,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000028,SRC-03,2.2 Construct validity,28,29,db8d1f99b44621978d2ca36d8e14057b0174b2fb7ba8c5f6ab30ae05e148fa06,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000030,SRC-03,"2.3 Transfer, demonstration, cases, retrieval, skills",30,32,9c4ef937abaa390d9abc018d54dbb776a72aec97f17ce1c72afdaff1ecb85612,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000033,SRC-03,2.4 Researcher degrees of freedom,33,34,33fdf5c7e3442c6a6be7ece31e96e7884129ee22d801bd004bbb0d97fc28a4ce,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000035,SRC-03,3. Conceptual architecture,35,35,7085444b30253fab1b9c6adc8599bfb2e14e9f30ab2961ca0a540f19ad55d246,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000036,SRC-03,3.1 Source material (not “experience” as a measured primitive),36,39,622f10ae536e2facf1af301052651430761ef9fbfb8a9b29b36a2dfbc193c8a4,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000040,SRC-03,3.2 Process diagram,40,42,6f5eff9613264ff51696cafdde73e8f8e6644bf8b06266b813e254e6100a6522,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000043,SRC-03,3.3 Why (f) is identification-critical,43,44,b0469ae22e2ddcfbffd91b9fa3f16ef3a40a71ec35b2258d34e2c8939a9c3627,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000045,SRC-03,3.4 Treatment identity,45,48,45e66f02dc377be690e45b4dd582e84c26715e7685529fb72f9d72a85002a84b,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000049,SRC-03,Relative safety of artifact content,49,53,5c70403e450be9105c0dccb78ec0414e95d05d6e8ee66a263d9b2f55a794e32c,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000054,SRC-03,3.5 Minimal experimental object and decision decomposition,54,55,90ea75d2e69d66cd567f2afdc96037e7ef74b0f4d94b2e126b0ef035e192d227,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000056,SRC-03,MUST versus DESIGN,56,58,d3e426f49a4acc8703a01628a650960d2b39fdbd8d6d4264c426cf7957db409a,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000059,SRC-03,3.6 Outcome algebra,59,60,d833ae23ce6cdf145858d6bde24ed40e34f482e6e86b9f070dac9bf8020d3002,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000061,SRC-03,3.7 Novelty as a relation,61,65,6c294bfe80e9e806c1b14672cb7eed31a06115a43fad53ae21a0d1c97099c1ba,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000066,SRC-03,3.8 Interference and consistency,66,67,012071b6409d403663c3c657788d343894be1a11cbc157b9d24700fa90faa055,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000068,SRC-03,4. Causal estimands (templates),68,70,7c2b407215f1de4b5db298f8b87a9ace90cbe169acebf65333dd2341cd22af1d,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000071,SRC-03,5. Competitive explanation map (frozen),71,73,590f8497fa06bf42894d370100336484e2de5fe8fc67b5f0e38e461be63b396b,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000074,SRC-03,6. Task-family screening (identification-first),74,75,1db24a3d8a1626af09b1fc5a6f68beed3e9466b9bf0a2d53df55572b034e6643,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000076,SRC-03,7. Threat taxonomy (summary),76,77,317d47e04df64c43c14ff26066356c2a9de52d4b0da6bc7ec8ea59895ddb2409,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000078,SRC-03,8. Falsification and stops,78,79,e2f1ce02a0e6a459fdd0edbf71c41b780c6b8714f92abd23b80facee3e2a6db8,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000080,SRC-03,9. Design-archive material (pre-execution; not empirical),80,81,96b971779df2ff1aea1ee792ef1d000e5a80d58a2b947534c19bd9432766812d,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000082,SRC-03,9.1 Candidate world class (F1-oriented),82,92,5b5ad5a777de5101474e69b2c9b7e4515f7b0d7b96d38153c478f423c583f8ac,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000093,SRC-03,9.2 Candidate agent loop (specification only),93,95,8774aa2d10cd3979e712d40ce8e58169675ffadda4ce89bf11b1893c6bc32951,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000096,SRC-03,9.3 Candidate (f_0) (deterministic),96,99,e55d773727fd3cf39b5e97948d0172b850737dfba948be2a66fafa3529937617,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000100,SRC-03,9.4 Candidate numerical plan (paired binary template),100,109,38dbb78f0a887104a7b493d67b4bf7d24363d49163eb7da98fb839fde9eab07a,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000110,SRC-03,Pairing and McNemar-family procedures are DESIGN choices,110,112,f3db894d2a26626fe66fa7e0d051c7676d8926297e7214d7beec7e9429e38834,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000113,SRC-03,9.5 Seeds (candidate records),113,119,66b7c9159ab01a2c7d9e38a5d69e1bdaa3ae0e15fc8081c1f860e0584dff13bd,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000120,SRC-03,9.6 Incomplete freeze,120,125,b11f707f02f40e7a420e319bc3776a8bb4cf5e98a3babc8c8e1b174923760a02,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000126,SRC-03,10. Claim ledger (evidence levels),126,126,d54ab6fa28e4e16d1578e280211737d049b49ea03ded0a70605addb96c983476,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000127,SRC-03,11. Adversarial reviewer stance,127,131,a2aa8f0ddc7f631faaf5b9c985ee7cb54182d166712e678f019c63580648888b,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000132,SRC-03,12. Conclusion,132,139,c7b6018928d75f92c199b5f4164b7327a07be782eb8dd0a39f0adf9ddc7f083a,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000140,SRC-03,References,140,141,b380dcee0c8d999cce1cbbd03bfae211d3d306d5b1143f5c9709ee357360eb53,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000142,SRC-03,Appendix A — Frozen logical invariants,142,143,f1c809b562527e3b35ea28926c49dfac29d2910dd9a242455379025150ff5ac4,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000144,SRC-03,Appendix B — Residual registry,144,146,43766806ee47331049531ef1dc11f5ebe36031775e1d75cf0addf3c687f83db9,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000147,SRC-03,Appendix C — Program position,147,151,356d9a1db5cd79e3bf6e3e324929e45a114a65f3d2361a26fb682979b76e6fe4,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000152,SRC-03,Appendix D — Current maximum claim ceiling,152,161,bc0aab21a898374874697717e6e7bbe3ccaab54836c23f59d876507ca2f03e86,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000162,SRC-03,Final status (post-update),162,166,9ab71292f240c511b25c618f6f1bf67a4b2325de00aec63867d7bedcf3cce3a6,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000167,SRC-03,0. メタ結論,167,167,f9d0738d598d6d8c4ba7457a7d2c4f084382aaff8a32cae121086bc8765501dd,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000168,SRC-03,1. 一次資料で RESOLVED できる環境事実,168,170,98cdbd20e6afd8a7825de0efcdb37fd721a928b3a604b63b7998358d75875fda,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000171,SRC-03,Success の操作定義（推奨 RESOLVED 文）,171,175,c1eaf98c1c700221f63b022d006f9cc5ada5d38824f4e50e328e381fd898c84a,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000176,SRC-03,2. セクション別・全IDの着地,176,176,1fa0d2209429f3ad69624fc196e9bb7794205957ca80db7d69e02775fb12c5e0,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000177,SRC-03,0. 最上位,177,178,133d0c0bd16ecb0947f4889008a0c551966fa96b174528ad2d3b15215e9e7463,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000179,SRC-03,1. Model / API / Runner,179,180,a32392860d4032502085d7651577713dd259d703ea5ee83d90f2ae11954216cb,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000181,SRC-03,2. World / Observation,181,181,b7ffe1801a7e9b906b4cdaccc3858c93a487f4f589915b15abb4cb195723c22c,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000182,SRC-03,3. Outcome / Population,182,182,93098b0c2a210ca2cabe0b42aaf256b9b2a0fefa34abc86dcd732ac70d16058c,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000183,SRC-03,4. Source,183,183,8aaf37c261633b6ec157503a58b911b0af302183f7f60c4152eec8315b47d3bb,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000184,SRC-03,5. Artifact / CE,184,184,98edf18c5f337417047c7b7aae30c1c3bfb2eb817935fdc767355d11bdc91272,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000185,SRC-03,6. Novelty,185,185,8eb60d7647ffdcef818d18874f9a35da84ab49f0eaf503661820bb918d6ec63c,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000186,SRC-03,7–8. (V_{\mathrm{id}}) / Seeds,186,186,e6be12e74c313814f4bf0db3540045c25bab80b110fe252c045335d1a5fa253b,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000187,SRC-03,9. Statistics,187,187,8aaed4fefc4fc92c7d76710307ad34ee43514e279970e56b93fcec442070dd79,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000188,SRC-03,10. Stops / Claims,188,188,70fb29097a5e8ca82a6a528fcbfa90a70c4e87a86c48fc29c3a743f4c329962d,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000189,SRC-03,11–13. RQ3 / Governance / 概念,189,189,81b19953de37f987d80ec116fdd159e764df6aa609f158a74c53743e8ddbdf91,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000190,SRC-03,3. 「不明点0」の達成度,190,192,c295c1c9dfb9cd08291bcc057f4f20df3c08b8b813b3ef6fc653e13578538321,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000193,SRC-03,4. 残る真のブロッカー（短縮）,193,204,5f33ca509e428db13e95e13976582e7fdcb2d17a808dcbeb79176c163f46f905,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
+SRC-03:P000205,SRC-03,5. 一文,205,206,4d8ebe9115e21106bbb80881a6b18c92fb51a18df3a2a7b9d1ac5c586722acd2,REFERENCE_ONLY,Paper/protocol candidate; no execution authority
