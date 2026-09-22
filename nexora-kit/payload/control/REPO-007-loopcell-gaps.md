@@ -42,7 +42,7 @@
 | ID | 内容 | 解消の要否 |
 |---|---|---|
 | C-01 | corpus の `error_class` は v1.1.1 規則（最後の E 行）、実行時は v1.1.2 規則（最初の E 行） | **不要**（意図的。corpus は不変、当該値は層別キーにのみ使用され Cell に渡らない） |
-| C-02 | SPEC §15 の `analyze` / `report` が未実装。`derived/` も不在 | **t1 完了までに必要**。M3-B は阻害しない |
+| C-02 | SPEC §§13–16 の `analyze` / `report` と `derived/patterns.jsonl` | **解消済**。LoopCell main `62a97efe05bbc5e696aee727c31edf74597841fa`。PR #3 CI `35767600219` で compile/unit/300-loop synthetic chain/schema/idempotency/CLI を検証。Phase 0 実測は未実行 |
 | C-03 | ルート文書に LoopCell の記述がなかった | 解消済（ポインタ追加） |
 | C-04 | `tests_m3/test_m3.py` が pytest 形式でない。`pytest` 実行で `no tests collected` になる | **不要**。ただし誤読すると 49 チェックが未検証のまま「0 件」と読まれる |
 | C-05 | 反証スイートが `/tmp` と target 側に worktree 残骸を残しうる | 実験結果に影響なし。修正可否は人間判断 |
@@ -81,4 +81,15 @@
 | OQ-005（R-04） | **CLOSED_NOT_IDENTIFIABLE**。該当 ID は存在しない（実体は R-01〜R-03） |
 | OQ-003（N-01〜N-12） | OPEN 継続。実在するが本監査文書に列挙なし。所在は SPEC 本文 |
 | DEC-006 | 残るのは **C-06（`experiment_repo.name` の裁定）**。D-M0-2 は解決不能として確定 |
-| OQ-023 新規 | C-02（`analyze` / `report` 未実装）は t1 完了までに必要 |
+| OQ-023 | **CLOSED_ENGINEERING**。C-02 は LoopCell main `62a97efe05bbc5e696aee727c31edf74597841fa` で実装済み。これは実験結果や C4 を昇格させない |
+
+
+## 8. 2026-09-23 C-02 実装追補
+
+LoopCell PR #3 を squash merge し、main commit `62a97efe05bbc5e696aee727c31edf74597841fa` に以下を追加した。
+
+- `loopcell/analysis.py`: divergence / McNemar / learning gain / locality / loop cost / b review / Tier2 patterns / REPORT を凍結 SPEC に従って決定論的導出。
+- CLI: `analyze` / `report`、および SPEC 記載どおりの post-command `--config` を受理。
+- CI run `35767600219`: compile、unit tests、300 completed loop 相当の synthetic hash-chain から analyze→全 JSON Schema→REPORT→再実行 byte-identical、CLI surface を PASS。
+
+この解消は **engineering readiness のみ**。実 API call、t0/learn/t1、McNemar 本検定、GO/KILL/HOLD、C4、TR-02、C5 には証拠を追加しない。
