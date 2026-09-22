@@ -5,38 +5,50 @@ Status: PENDING / APPROVED / REJECTED / DEFERRED。
 
 | ID | 内容 | 依存 CONF | 影響タスク | Status |
 |---|---|---|---|---|
-| DEC-001 | 権威階層の承認（CONF-01）と SRC-02 のロック状態確定（CONF-02） | 01, 02, 09, 10 | T-020 以降すべて | PENDING |
+| DEC-001 | 権威階層の承認（CONF-01）と SRC-02 のロック状態確定（CONF-02） | 01, 02, 09, 10 | T-020 以降すべて | **APPROVED**（2026-09-22。DEC-010 + 現行 live repo によりスコープ分割。添付 SSOT Candidate は参照資料、VEA-G3/LoopCell の frozen GitHub SSOT が実験スコープ正本） |
 | DEC-002 | 対象リポジトリ（既存 / 新規） | — | T-010 | **APPROVED**（案 A、2026-09-17。構成の決定は委任された） |
-| DEC-003 | VEA-G3 モデル束縛（provider / model_id / snapshot / endpoint / decoding） | 06 | T-020, T-1xx | PENDING |
-| DEC-004 | Phase A 固定値一式（下表） | 04, 07 | T-1xx | PENDING |
-| DEC-005 | RQ 番号の名前空間化 | 03 | T-040 | PENDING |
+| DEC-003 | VEA-G3 モデル束縛（provider / model_id / snapshot / endpoint / decoding） | 06 | T-020, T-1xx | **APPROVED**（既存 frozen `PROTOCOL_LOCK.md` の Class A をそのまま採用。新規選定なし） |
+| DEC-004 | Phase A 固定値一式（下表） | 04, 07 | T-1xx | **DEFERRED**（現行 `PROTOCOL_LOCK.md` Class B は既に fully LOCKED。未解決の科学判断だけを `human_gates.csv` HG-VEA-* に分離し、横断収束を塞がない） |
+| DEC-005 | RQ 番号の名前空間化 | 03 | T-040 | **APPROVED**（2026-09-22。`VEA-RQ3` / `P4-RQ3` に分離。意味は変更しない） |
 | DEC-006 | LoopCell Phase 0（SSOT 本文・D-M0-2・モデル/価格） | — | T-2xx | **大半が解決済**（REPO-003）。SSOT v1.1.2 は凍結済で存在、モデル/価格も決定済。残るのは **C-06**（`runner.py` の `experiment_repo.name` が `langgraph-reflection` をハードコード。正本は `loopcell` へ移設済。**t0 開始前に人間の裁定が必要**）。D-M0-2 は原文不在のため **NOT_IDENTIFIABLE** として確定（REPO-007 §1） |
-| DEC-007 | Outlier v1.0 の現行性確認と法務ゲート | — | T-3xx | PENDING |
-| DEC-008 | 優先順位は SOV§114 と SOV§181 のどちらか | 05 | T-070 | PENDING |
-| DEC-009 | コスト方針のスコープ分割 | 08 | T-2xx, T-3xx | PENDING |
+| DEC-007 | Outlier v1.0 の現行性確認と法務ゲート | — | T-3xx | **DEFERRED**（公開・T-300直前の human/legal gate `HG-OUTLIER-LEGAL` に限定。横断収束は継続） |
+| DEC-008 | 優先順位は SOV§114 と SOV§181 のどちらか | 05 | T-070 | **APPROVED**（2026-09-22。§181 `CURRENT MASTER EXECUTION ORDER` が「固定する」と明記するため、§181 を現行master orderとする） |
+| DEC-009 | コスト方針のスコープ分割 | 08 | T-2xx, T-3xx | **APPROVED**（2026-09-22。VEA-G3=local/free frozen path、LoopCell=paid frozen path、NEXORA横断基盤=free/local-first。paid実行は別human gate） |
 | DEC-010 | 統治系の一本化（外部 27 不変条件 / 本キット control/ / 責務分割） | 12 | 全タスク | **APPROVED**（2026-09-22。横断 control plane を唯一の統合現在地正本とし、凍結 SSOT は各実験スコープの上位正本として保持） |
 | DEC-011 | 統合プロダクト名の確定と `ORP` の名前空間化 | 13 | 全識別子 | **APPROVED**（案 C、2026-09-17） |
 
-## DEC-004 の内訳（すべて未決。1 つでも欠ければ Phase A を開始しない）
-| 項目 | 値 | 根拠 |
-|---|---|---|
-| 主要指標 | PENDING | — |
-| 推定対象（ITT / pair-complete ∩ received-valid） | PENDING | CONF-04 |
-| α | PENDING | SRC-03 候補: 片側 0.05 |
-| 検出力 | PENDING | SRC-03 候補: 0.80 |
-| MDE（τ） | PENDING | SRC-03 候補: 0.10 |
-| N（n_pair） | PENDING | SRC-03 候補: 153（生成 184） |
-| 多重比較 | PENDING | — |
-| CF の種別 | PENDING | — |
-| AFR 閾値 | PENDING | — |
-| 意味的汚染の方法と閾値 | PENDING | — |
-| 人件費の時給 | PENDING | — |
-| 1 use の定義 | PENDING | — |
-| 経済 MDE | PENDING | — |
-| 停止規則（固定n / anytime-valid） | PENDING | CONF-11。e-value 採用時は GATE 1 の `b+c >= 20` が不要になる |
-| 検出力の代償の許容範囲 | PENDING | EXTERNAL-001: p=0.6, n=200 で検出力 0.787 → 0.580 |
+## DEC-004 の内訳（2026-09-22 live `PROTOCOL_LOCK.md` に再照合）
 
-注: SRC-03 の候補値は **候補** であり、採用の可否自体が DEC-004 の一部である（SRC-03 に実行権限はない）。
+現行 VEA-G3 の frozen `PROTOCOL_LOCK.md` は **Class B is now fully LOCKED** と明記する。
+したがって、過去の本表に残っていた PENDING 値を再決定してはならない。
+
+| 項目 | 現行値 | 状態 |
+|---|---|---|
+| provider / model | Ollama / `qwen3:8b` | LOCKED（Class A） |
+| snapshot | Ollama 0.32.13 / digest `500a1f067a9f...` / Q4_K_M / context 40960 | LOCKED |
+| endpoint | `http://127.0.0.1:11434` | LOCKED |
+| decoding | temperature 0 / top_p 1 / max_output_tokens 128 / thinking OFF | LOCKED |
+| α | 0.05 | LOCKED |
+| power | 0.80 | LOCKED |
+| MDE | 0.10 | LOCKED |
+| ψ | 0.25 | LOCKED design assumption |
+| N | 155 | LOCKED fixed-N |
+| primary test | McNemar exact one-sided | LOCKED |
+| multiplicity | Holm | LOCKED |
+| primary endpoint | `terminated == True` | LOCKED |
+| effect estimator | `risk(C1-VEA) - risk(C0)` | LOCKED |
+| effect direction | `C1-VEA - C0 > 0` | LOCKED |
+| max_local_steps | 640, C0/C1 symmetric | LOCKED |
+| Class C RQ3 fields | cf_operator / AFR / human_hourly_rate | `DEFERRED_FIRST_RUN`、MVP外 |
+
+**横断収束が新しく決めてよい値は0件。**
+残る問題は値の穴ではなく、次の科学的解釈・実行権限である。
+
+- `HG-VEA-ESTIMAND`: ITT と pair-complete ∩ received-valid の対象集団問題（CONF-04）。
+- `HG-VEA-FREEZE-SCOPE`: `FIRST_FREEZE_SCOPE=CLASS_A_ONLY` を広げるか。現在値は変更しない。
+- `HG-VEA-WS-C`: 639/640 同一応答という WS-C 仮説を、現行凍結条件の限界として受け入れるか、新しい preregistered phase を作るか。
+- `HG-VEA-HD53`: G4 closure candidate を human declaration で閉じるか。
+- e-value / anytime-valid は**現行 frozen protocolには採用しない**。必要なら別 protocol/version として事前登録する。
 
 ## 起案フォーマット
 ```
@@ -267,3 +279,14 @@ DEC-011（案 C）により対外名は未定であるから、ブランド層�
 - Work/Library の回収物・形式モデル・実装報告は、content hash / primary evidence が不足する限り lower-authority evidence/addendum とする。
 - 27 executable invariants は横断 kernel の実装候補として保持するが、凍結実験の成功条件を遡及変更しない。
 - 現在地は手書き STATE ではなく `state_events.csv -> state_reduce.py -> STATE.generated.json` で還元する。
+
+
+## 2026-09-22 PENDING 解体結果
+
+横断キットの `PENDING` は「今すぐ全作業を止める未決定」に限定する。
+特定の将来工程だけを止める判断は `control/human_gates.csv` に移す。
+
+- DEC-001 / 003 / 005 / 008 / 009: 既存 frozen authority または委任済み構造判断から確定。
+- DEC-004: 科学値を再決定せず DEFERRED。残る科学判断は HG-VEA-*。
+- DEC-007: 法務判断を自動化せず DEFERRED。公開/T-300のみ HG-OUTLIER-LEGAL で停止。
+- DEFERRED は「承認」を意味しない。対象scopeの human gate が SATISFIED になるまで当該実行は禁止。
