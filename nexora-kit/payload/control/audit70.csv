@@ -1,12 +1,12 @@
 item_id,item,count,evidence
 A70-01,Critical contradictions,3,control/conflicts.md#CONF-04|CONF-16|CONF-17
 A70-02,Untracked requirements,0,tools/requirements_check.py
-A70-03,Unmapped dependencies,UNKNOWN,control/traceability.csv
-A70-04,Unclassified claims,UNKNOWN,control/STATE.generated.json
-A70-05,Unhandled critical failure modes,UNKNOWN,control/CONVERGED-SSOT.md
+A70-03,Unmapped dependencies,0,tools/dependency_audit.py
+A70-04,Unclassified claims,0,tools/claim_audit.py
+A70-05,Unhandled critical failure modes,0,tools/failure_mode_audit.py
 A70-06,Unverified critical transitions,3,control/transitions.csv#TR-01|TR-02|TR-03
-A70-07,Unprotected critical artifacts,UNKNOWN,control/source_registry.csv
+A70-07,Unprotected critical artifacts,0,tools/critical_artifact_audit.py
 A70-08,Untracked protocol changes,0,control/EXTERNAL-VALIDATION-20260922.json
 A70-09,Unbounded autonomous loops,0,tools/dream_replay.py
-A70-10,Critical security gaps,UNKNOWN,control/human_gates.csv
+A70-10,Critical security gaps,0,tools/security_audit.py
 A70-11,Critical recovery gaps,1,control/orp_namespaces.md#ORP/Receipt
