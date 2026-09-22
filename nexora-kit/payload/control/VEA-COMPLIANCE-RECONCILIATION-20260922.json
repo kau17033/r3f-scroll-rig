@@ -1,0 +1,93 @@
+{
+  "schema": "nexora-vea-compliance-reconciliation/1.0",
+  "observed_at": "2026-09-22",
+  "authority_boundary": {
+    "frozen_experiment_sources": [
+      {
+        "path": "VEA-G3/PROTOCOL_LOCK.md",
+        "blob_sha": "e535476b4f981f3ca1f8dff9efb92253797c0a39"
+      },
+      {
+        "path": "VEA-G3/SSOT.md",
+        "blob_sha": "b338cee8f6490ef2140d8fe39af19d92288ce2e0"
+      }
+    ],
+    "current_state_sources": [
+      {
+        "path": "VEA-G3/GATE_STATUS.json",
+        "blob_sha": "0c57fe58eaac06939f725f6a6a9bd1386e188518"
+      }
+    ],
+    "historical_manifest": {
+      "path": "VEA-G3/COMPLIANCE_MANIFEST.md",
+      "blob_sha": "92d3cbc635b314a1622e3aa12c6aabcbf68c4fbb"
+    }
+  },
+  "manifest_structure": {
+    "numbered_rows": 42,
+    "addendum_rows": 3,
+    "status": "STRUCTURALLY_COMPLETE_BUT_STALE_IN_PART"
+  },
+  "proven_stale_rows": [
+    {
+      "row": 7,
+      "item": "Primary endpoint",
+      "manifest_claim": "UNSPECIFIED",
+      "current_fact": "PROTOCOL_LOCK field explicitly LOCKED: terminated == True"
+    },
+    {
+      "row": 8,
+      "item": "Effect estimator",
+      "manifest_claim": "UNSPECIFIED",
+      "current_fact": "PROTOCOL_LOCK field explicitly LOCKED: tau_hat = risk(C1-VEA) - risk(C0)"
+    },
+    {
+      "row": 9,
+      "item": "Effect direction",
+      "manifest_claim": "UNSPECIFIED",
+      "current_fact": "PROTOCOL_LOCK field explicitly LOCKED: C1-VEA - C0 > 0"
+    },
+    {
+      "row": 18,
+      "item": "Agent identity",
+      "manifest_claim": "source system_prompt UNCONFIRMED",
+      "current_fact": "PROTOCOL_LOCK Source Agent Identity section explicitly LOCKS system_prompt and execution identity"
+    },
+    {
+      "row": 31,
+      "item": "Stopping rule",
+      "manifest_claim": "UNSPECIFIED fixed-N vs sequential",
+      "current_fact": "PROTOCOL_LOCK n_rule = fixed-N is explicitly LOCKED"
+    },
+    {
+      "row": 39,
+      "item": "All unspecified items",
+      "manifest_claim": "lists multiple fields later locked",
+      "current_fact": "stale aggregate list; use field-level current lock records instead"
+    },
+    {
+      "row": 42,
+      "item": "Execution readiness",
+      "manifest_claim": "llm_client.complete remains NotImplementedError stub",
+      "current_fact": "llm_client blob 5b9bdde382d1766ae242e4de6e66c26c08c1e9cf implements real provider=Ollama /api/generate path"
+    }
+  ],
+  "protocol_lock_internal_stale_prose": [
+    {
+      "issue": "Top-level declaration says Class B is fully LOCKED and explicit fields are LOCKED, while older explanatory prose later says Class B is partially locked.",
+      "treatment": "Do not mutate frozen file. Record as stale narrative residue; field-level locked values plus current GATE_STATUS/RESEARCH_STATE determine operational current state."
+    },
+    {
+      "issue": "A comment heading says STILL UNDECIDED immediately before psi=0.25 and n_seeds=155 lines that themselves say LOCKED.",
+      "treatment": "Do not reinterpret psi or n_seeds as unlocked; preserve contradiction in audit history."
+    }
+  ],
+  "current_truth_state": {
+    "truth_state": "NOT_DETERMINABLE",
+    "scientific_promotion": "NONE",
+    "g4_state": "BLOCKED",
+    "g4_closure": null,
+    "g4_closure_candidate": "FAIL / NOT_IDENTIFIABLE pending HD-53 human declaration"
+  },
+  "claim_ceiling": "This reconciliation verifies document/current-state consistency only. It does not establish VEA efficacy, valid treatment receipt, transfer, causal effect, reuse, or capability accumulation."
+}
