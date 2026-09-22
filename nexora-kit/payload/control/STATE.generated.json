@@ -184,6 +184,18 @@
       "evidence_class": "EXECUTION_STATUS",
       "evidence_ref": "control/completion_gates.csv"
     },
+    "LoopCell:C02_ANALYSIS_REPORT": {
+      "state": "VERIFIED_DRAFT",
+      "observed_at": "2026-09-23",
+      "evidence_class": "CI",
+      "evidence_ref": "github:kau17033/LoopCell/actions/runs/35767586942"
+    },
+    "LoopCell:C06_PROVENANCE_FIX": {
+      "state": "IMPLEMENTED_PENDING_RATIFICATION",
+      "observed_at": "2026-09-23",
+      "evidence_class": "GIT_COMMIT",
+      "evidence_ref": "github:kau17033/LoopCell/commit/48bf6de037dfcf524d3fd3fc85012bbbc41fe656"
+    },
     "LoopCell:PHASE0": {
       "state": "NOT_EXECUTED",
       "observed_at": "2026-09-22",
