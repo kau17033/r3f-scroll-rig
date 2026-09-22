@@ -6,7 +6,7 @@
 - Gate definitions: **completion_gates.csv + transitions.csv**
 - Derived snapshot: **control/STATE.generated.json**
 - Reducer: **tools/state_reduce.py**
-- Implementation unlock: **NO**. The existing implementation gate remains fail-closed.
+- 実装解禁: **NO**. The existing implementation gate remains fail-closed.
 - Updated: **2026-09-22**
 
 ## Verified corrections to the previous hand-maintained state
