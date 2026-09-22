@@ -20,8 +20,8 @@ class SeedDerive(unittest.TestCase):
             g = json.load(f)
         self.assertEqual("VERIFIED_AGAINST_SOURCE", g["status"])
         self.assertEqual(sd.FROZEN_DERIVE_BLOB, g["frozen_derive_blob"])
-        self.assertEqual(sd.MASTER_SEED_EVAL, g["master_seed_eval"])
-        self.assertEqual(sd.MASTER_SEED_SRC, g["master_seed_src"])
+        self.assertEqual(sd.MASTER_SEED_EVAL, int(g["master_seed_eval"]))
+        self.assertEqual(sd.MASTER_SEED_SRC, int(g["master_seed_src"]))
         for case in g["eval_reference_vectors"]:
             self.assertEqual(case["env_seed"], sd.env_seed(case["i"]))
             self.assertEqual(case["order"], sd.order(case["i"]))
