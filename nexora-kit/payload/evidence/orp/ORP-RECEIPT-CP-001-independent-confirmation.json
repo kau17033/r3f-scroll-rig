@@ -1,0 +1,57 @@
+{
+  "schema": "orp-receipt-cp001-independent-confirmation/1.0",
+  "observed_by_ci": "github:kau17033/r3f-scroll-rig/actions/runs/35765127791",
+  "observed_at": "2026-09-23",
+  "checkpoint_id": "ORP-RECEIPT-CP-001",
+  "checkpoint_hash": "3065b7b0729035ee74a037d3b5c276b53fd881d39056db0cb072fd6c779f465f",
+  "anchor_payload_sha256": "0812bb926f9a449d2b92e1a6c2e1251b81a483907d2caeedda34ca2acf24b38e",
+  "proof_bytes": 2774,
+  "bitcoin_attestations": 2,
+  "bitcoin_heights": [
+    968161,
+    968161
+  ],
+  "verified_blocks": [
+    {
+      "height": 968161,
+      "block_hash": "00000000000000000001c5aa27792733092c27e684f399083305e32b15572dac",
+      "header_hex": "006011207ce1a75e9ba77bf235debf0232f4a0113faa5badf26500000000000000000000162e7322cb0a00b642523c163b96cb3739184d516a89d4d604d693bcef3077cdf0a2b26ac51e0217027897bd",
+      "merkle_root_display": "cd7730efbc93d604d6d4896a514d183937cb963b163c5242b6000acb22732e16",
+      "merkle_root_internal": "162e7322cb0a00b642523c163b96cb3739184d516a89d4d604d693bcef3077cd",
+      "timestamp": 1790092016,
+      "bits": 386014917,
+      "nonce": 3180820482,
+      "target_hex": "000000000000000000021ec50000000000000000000000000000000000000000",
+      "pow_valid": true,
+      "prev_height": 968160,
+      "prev_hash": "0000000000000000000065f2ad5baa3f11a0f43202bfde35f27ba79b5ea7e17c",
+      "next_height": 968162,
+      "next_hash": "00000000000000000001d7347cfce6ce590e464d241be8e35b1b5e8f24006c82",
+      "local_linkage_valid": true,
+      "attestation_paths": 2
+    }
+  ],
+  "status": "PASS",
+  "verification_boundary": {
+    "established": [
+      "checkpoint manifest identity",
+      "hash-verified corruption detection and atomic recovery",
+      "external OpenTimestamps calendar submission and Bitcoin upgrade",
+      "detached anchor digest binding",
+      "OTS operation path execution to Bitcoin attestation",
+      "attestation Merkle root equality to independently fetched block header",
+      "double-SHA256 block header identity",
+      "compact-target proof-of-work validation",
+      "immediate previous/next main-chain linkage at observed height"
+    ],
+    "not_established": [
+      "universal OpenTimestamps format coverage",
+      "full genesis-to-tip best-chain validation",
+      "history completeness",
+      "truth of every recorded action",
+      "semantic correctness",
+      "causal benefit"
+    ]
+  },
+  "claim_ceiling": "Confirms CP-001 anchor payload binding through the frozen OTS proof to independently rehashed PoW-valid Bitcoin header 968161 with local prev/next linkage. It does not prove full genesis-to-tip best-chain validation, receipt completeness, semantic truth, or causal benefit."
+}
