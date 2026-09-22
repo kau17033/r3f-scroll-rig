@@ -32,6 +32,9 @@ jobs:
       - name: source registry convergence
         run: python3 tools/source_registry_check.py
 
+      - name: VEA compliance reconciliation
+        run: python3 tools/vea_compliance_check.py
+
       - name: human gate registry
         run: python3 tools/human_gate_check.py --validate
 
