@@ -193,8 +193,8 @@
     "LoopCell:C06_PROVENANCE_FIX": {
       "state": "PARTIAL",
       "observed_at": "2026-09-23",
-      "evidence_class": "GIT_COMMIT",
-      "evidence_ref": "github:kau17033/LoopCell/commit/48bf6de037dfcf524d3fd3fc85012bbbc41fe656"
+      "evidence_class": "GOVERNANCE_RECONCILIATION",
+      "evidence_ref": "control/human_gates.csv"
     },
     "LoopCell:PHASE0": {
       "state": "NOT_EXECUTED",
