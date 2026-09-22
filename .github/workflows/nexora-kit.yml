@@ -29,6 +29,9 @@ jobs:
       - name: unit tests
         run: python3 -m unittest discover -s tests -t tests -v
 
+      - name: converged state snapshot
+        run: python3 tools/state_reduce.py --check
+
       - name: install dry-run
         working-directory: nexora-kit
         run: python3 install.py --target "${RUNNER_TEMP}/nexora-target" --dry-run
