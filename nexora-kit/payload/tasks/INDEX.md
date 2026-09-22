@@ -7,8 +7,8 @@
 |---|---|---|---|---|
 | T-000 | キット自己検証 | — | `tools/kit_check.py` exit 0 | **DONE**（CI run 35190376080） |
 | T-005 | 横断現在地の決定論的収束 | T-000 | `tools/state_reduce.py --check` exit 0 + full tests | **DONE**（CI run 35728612031） |
-| T-010 | 状態固定（hash固定・履歴照合） | T-005, DEC-002 | `tools/source_registry_check.py` exit 0 + external 34/34 | **IN_PROGRESS** |
-| T-012 | Dream-Replay探索方策基盤 | T-005 | `tools/dream_replay.py --bootstrap-check` exit 0 + prefix-only tests | **IN_PROGRESS** |
+| T-010 | 状態固定（hash固定・履歴照合） | T-005, DEC-002 | `tools/source_registry_check.py` exit 0 + external 34/34 | **DONE**（CI run 35731846330） |
+| T-012 | Dream-Replay探索方策基盤 | T-005 | `tools/dream_replay.py --bootstrap-check` exit 0 + prefix-only tests | **DONE**（CI run 35731846330） |
 | T-020 | VEA-G3 Compliance Manifest **照合**（作成ではない） | T-010 | 既存 Manifest の 42 項目 + Addendum を一次資料と突合 | **REDEFINED**（REPO-001 §1: 既存 Manifest は完成済） |
 | T-030 | 全節 disposition | T-010 | `disposition.csv` PENDING=0 | BLOCKED |
 | T-040 | 要求正規化 | T-030 | `requirements.csv` 全行 verifiable 判定済 | BLOCKED |
