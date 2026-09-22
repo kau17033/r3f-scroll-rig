@@ -45,6 +45,7 @@ REQUIRED = [
     "control/human_gates.csv", "tools/human_gate_check.py",
     "sources/EXTERNAL.csv", "tools/external_sources.py",
     "tools/requirements_check.py", "tools/conflict_check.py", "tools/traceability_check.py",
+    "tools/vea_compliance_check.py",
     "control/CONVERGED-SSOT.md", "control/source_registry.csv",
     "control/state_events.csv", "control/completion_gates.csv", "control/transitions.csv",
     "control/STATE.generated.json", "control/capability_contract.schema.json",
