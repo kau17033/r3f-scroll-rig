@@ -30,7 +30,9 @@ class ConvergenceState(unittest.TestCase):
         self.assertEqual("BLOCKED_EVIDENCE", state["completion_gates"]["C3"]["status"])
         self.assertEqual("NOT_EXECUTED", state["completion_gates"]["C4"]["status"])
         self.assertEqual("FORMAL_ONLY", state["completion_gates"]["C5"]["status"])
-        self.assertEqual("PARTIAL_PASS", state["completion_gates"]["C6"]["status"])
+        self.assertEqual("PASS", state["completion_gates"]["C6"]["status"])
+        self.assertEqual("PASS", state["completion_gates"]["C7"]["status"])
+        self.assertEqual("VERIFIED", state["subjects"]["ORP/Receipt:EXTERNAL_CHECKPOINT"]["state"])
 
     def test_no_teleportation_states_are_preserved(self):
         state = self.load_state()
