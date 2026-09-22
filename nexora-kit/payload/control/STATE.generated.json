@@ -2,9 +2,9 @@
   "as_of": "2026-09-22",
   "completion_gates": {
     "C0": {
-      "evidence_ref": "github:kau17033/r3f-scroll-rig/actions/runs/35731846330",
+      "evidence_ref": "control/EXTERNAL-VALIDATION-20260922-35.json",
       "name": "Corpus Convergence",
-      "notes": "Source identities are hash-fixed and external 34/34 matches; final nexora-core host and full disposition convergence remain open",
+      "notes": "Corpus sections are fully disposed and 35/35 external refs match; final nexora-core physical host migration remains open",
       "predicate": "All authoritative sources are identified and immutable where required; no silent source substitution",
       "status": "PARTIAL"
     },
@@ -300,6 +300,12 @@
     "NEXORA:T-012": {
       "evidence_class": "CI",
       "evidence_ref": "github:kau17033/r3f-scroll-rig/actions/runs/35731846330",
+      "observed_at": "2026-09-22",
+      "state": "VERIFIED"
+    },
+    "NEXORA:T-020": {
+      "evidence_class": "CI",
+      "evidence_ref": "github:kau17033/r3f-scroll-rig/actions/runs/35739331939",
       "observed_at": "2026-09-22",
       "state": "VERIFIED"
     },
