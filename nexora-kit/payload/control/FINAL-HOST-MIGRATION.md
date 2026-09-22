@@ -1,7 +1,7 @@
 # NEXORA Final Host Migration Plan
 
 Status: **READY_TO_EXECUTE / TARGET_REPOSITORY_ABSENT**  
-Target: **`kau17033/nexora-core` (private)**  
+Target: **`kau17033/kau17033-nexora-core` (private)**  
 Source carrier: `kau17033/r3f-scroll-rig` PR #1, subtree `nexora-kit/payload/`
 
 ## 1. Purpose
@@ -14,12 +14,11 @@ scientific authority, does not satisfy HG-* gates, and does not promote C2-C8.
 
 ## 2. Human prerequisite
 
-Create **one empty private GitHub repository** named:
+Use the explicitly selected private GitHub repository:
 
-`kau17033/nexora-core`
+`kau17033/kau17033-nexora-core`
 
-Prefer creating it with **no README, .gitignore, or license**, so the destination starts empty.
-The GitHub connection used by this chat must have Contents read/write access to that repository.
+The selected repository currently has a single initial `README.md` commit. Migration MUST construct a new root tree from the payload only, so the final working tree contains no bootstrap README. The GitHub connection has admin/push access.
 
 Repository creation itself is currently outside the available GitHub connector capabilities.
 
@@ -38,7 +37,7 @@ Do not use a remembered SHA. Re-read the current PR head immediately before migr
 
 ## 4. Copy rule
 
-Copy **the contents of `nexora-kit/payload/` to the root of `nexora-core`**,
+Copy **the contents of `nexora-kit/payload/` to the root of `kau17033-nexora-core`**,
 preserving relative paths and bytes.
 
 Do not copy the carrier repository's unrelated r3f-scroll-rig application files.
@@ -71,7 +70,7 @@ Only after destination verification:
 - append a new state event setting `NEXORA:FINAL_HOST = VERIFIED`;
 - append a C0 event only if its predicate is then fully satisfied;
 - regenerate `STATE.generated.json`;
-- rerun full CI in `nexora-core`;
+- rerun full CI in `kau17033-nexora-core`;
 - record the destination run/commit as migration evidence;
 - mark this bootstrap carrier **NON_CANONICAL / READ_ONLY_REFERENCE** in its control-plane prose.
 
