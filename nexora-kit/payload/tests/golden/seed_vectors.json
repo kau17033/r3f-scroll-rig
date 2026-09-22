@@ -1,44 +1,39 @@
 {
-  "note": "本ゴールデンは本実装（tools/seed_derive.py）の出力を固定したものである。SRC-03 原文との一致は T-100 で再検証するまで UNVERIFIED_AGAINST_SOURCE とする。",
-  "interpretation": "sha256(UTF-8 'VEA-G3|eval|{env_seed}|{i}')[:4] big-endian / order: '...|order|{env_seed}' mod 2",
-  "status": "UNVERIFIED_AGAINST_SOURCE",
-  "open_question": "OQ-001 master_seed_source は原文に無い",
-  "cases": [
+  "note": "Verified against live frozen VEA-G3 src/veag3_dk/derive.py; not generated from this mirror.",
+  "status": "VERIFIED_AGAINST_SOURCE",
+  "frozen_derive_blob": "4b529381a26b9e70a6d7e32fbe9e75d029fc00af",
+  "master_seed_eval": 2082073855474151000,
+  "master_seed_src": 7681503877328398000,
+  "eval_reference_vectors": [
     {
-      "prefix": "VEA-G3",
-      "env_seed": "EXAMPLE-ENV-SEED",
-      "order": 0,
-      "eval_seeds": {
-        "0": 819311301,
-        "1": 678574214,
-        "2": 2187437761,
-        "10": 1240554740,
-        "183": 2005917127
-      }
+      "i": 0,
+      "env_seed": 706399887,
+      "order": 0
     },
     {
-      "prefix": "VEA-G3",
-      "env_seed": "0",
-      "order": 1,
-      "eval_seeds": {
-        "0": 73256357,
-        "1": 1636465421,
-        "2": 676067178,
-        "10": 1090174585,
-        "183": 1181095523
-      }
+      "i": 1,
+      "env_seed": 2928312826,
+      "order": 1
     },
     {
-      "prefix": "VEA-G3",
-      "env_seed": "nexora-demo",
-      "order": 1,
-      "eval_seeds": {
-        "0": 2565384792,
-        "1": 2343185336,
-        "2": 1155672802,
-        "10": 2426911473,
-        "183": 3727408497
-      }
+      "i": 2,
+      "env_seed": 3380672820,
+      "order": 1
+    },
+    {
+      "i": 10,
+      "env_seed": 656563751,
+      "order": 1
+    },
+    {
+      "i": 183,
+      "env_seed": 3440912191,
+      "order": 1
     }
-  ]
+  ],
+  "source_reference_vectors": {
+    "0": 1073091360,
+    "1": 1368102451,
+    "2": 3106902319
+  }
 }
