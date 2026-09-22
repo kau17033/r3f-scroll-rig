@@ -1,0 +1,133 @@
+{
+  "schema": "nexora-c7-prospective-plan/1.0",
+  "preregistered_at": "2026-09-23",
+  "status": "FROZEN_BEFORE_LIVE_OUTCOMES",
+  "purpose": "Prospectively compare the replay-selected ORP/Controller batching policy against the locked fixed_exploration_v0 baseline on held-out real GitHub file-discovery worlds.",
+  "policy_source": {
+    "historical_world": "control/replay_worlds/bootstrap_convergence_20260922.json",
+    "selector": "tools/dream_replay.py::improve_policy",
+    "baseline": "tools/dream_replay.py::INCUMBENT",
+    "live_translation": "Only batch_fraction is translated into the live file-probe interface. Candidate ranking is identical for both policies and is outcome-independent SHA256(task_id|path) order."
+  },
+  "live_interface": {
+    "max_parallelism": 4,
+    "action": "HTTP GET one pinned raw GitHub file",
+    "observation": "whether exact target string occurs in fetched UTF-8 text",
+    "stop": "after the first completed batch containing at least one target match, or after all candidates",
+    "cost": "number of HTTP GET probes issued",
+    "latency": "wall-clock seconds for live policy rollout",
+    "verification_overhead": "After both policy rollouts, all candidate files are fetched once for task-validity audit. This overhead is recorded separately and excluded from policy cost."
+  },
+  "objective": {
+    "information_gain": "If exactly one target file exists among n candidates, successful identification yields log2(n) bits.",
+    "utility": "IG_bits - 0.25*probes - 0.05*decision_rounds - 0.02*latency_seconds",
+    "primary": "mean utility difference dream - baseline across valid held-out tasks",
+    "noninferiority": "dream resolution rate must be >= baseline resolution rate"
+  },
+  "decision_rule": {
+    "minimum_valid_tasks": 8,
+    "evaluation_closure": "C7 evaluation is closed if all >=8 preregistered tasks are valid, both policies run from zero observations, evaluator is unchanged, and predicted/actual IG, probes, rounds, latency and utility are logged.",
+    "controller_improved": "mean utility difference > 0 AND dream total probes <= baseline total probes AND dream resolution rate >= baseline",
+    "controller_not_improved": "otherwise; this does not invalidate the prospective evaluation itself"
+  },
+  "ordering": "For every task, candidates are sorted by SHA256(task_id + '|' + path), ascending. The target outcome is never used for ordering.",
+  "tasks": [
+    {
+      "task_id": "C7-01",
+      "repo": "bitcoin/bitcoin",
+      "ref": "995da8678a02aeae66b4724d8926dd3d03ed682d",
+      "target": "MAX_FUTURE_BLOCK_TIME = 2 * 60 * 60",
+      "candidates": [
+        "src/chain.h",
+        "src/validation.cpp",
+        "src/headerssync.cpp",
+        "src/net_processing.cpp"
+      ]
+    },
+    {
+      "task_id": "C7-02",
+      "repo": "bitcoin/bitcoin",
+      "ref": "995da8678a02aeae66b4724d8926dd3d03ed682d",
+      "target": "time-too-old",
+      "candidates": [
+        "src/validation.cpp",
+        "src/chain.h",
+        "src/pow.cpp",
+        "src/consensus/params.h"
+      ]
+    },
+    {
+      "task_id": "C7-03",
+      "repo": "bitcoin/bitcoin",
+      "ref": "995da8678a02aeae66b4724d8926dd3d03ed682d",
+      "target": "GetMedianTimePast() const",
+      "candidates": [
+        "src/chain.h",
+        "src/validation.cpp",
+        "src/chain.cpp",
+        "src/headerssync.cpp"
+      ]
+    },
+    {
+      "task_id": "C7-04",
+      "repo": "opentimestamps/python-opentimestamps",
+      "ref": "3af46432efc4a4c4e7bba439c1f49bce808eb3e5",
+      "target": "HEADER_MAGIC = b'\\\\x00OpenTimestamps",
+      "candidates": [
+        "opentimestamps/core/timestamp.py",
+        "opentimestamps/core/op.py",
+        "opentimestamps/core/serialize.py",
+        "opentimestamps/core/notary.py"
+      ]
+    },
+    {
+      "task_id": "C7-05",
+      "repo": "opentimestamps/python-opentimestamps",
+      "ref": "3af46432efc4a4c4e7bba439c1f49bce808eb3e5",
+      "target": "class PendingAttestation",
+      "candidates": [
+        "opentimestamps/core/notary.py",
+        "opentimestamps/core/timestamp.py",
+        "opentimestamps/core/op.py",
+        "opentimestamps/core/serialize.py"
+      ]
+    },
+    {
+      "task_id": "C7-06",
+      "repo": "opentimestamps/python-opentimestamps",
+      "ref": "3af46432efc4a4c4e7bba439c1f49bce808eb3e5",
+      "target": "class OpAppend",
+      "candidates": [
+        "opentimestamps/core/op.py",
+        "opentimestamps/core/timestamp.py",
+        "opentimestamps/core/notary.py",
+        "opentimestamps/core/serialize.py"
+      ]
+    },
+    {
+      "task_id": "C7-07",
+      "repo": "opentimestamps/opentimestamps-client",
+      "ref": "cd71c7609421bed2a07b9642a3c02a58c9fd2cdf",
+      "target": "Submitting to remote calendar",
+      "candidates": [
+        "otsclient/cmds.py",
+        "otsclient/ots.py",
+        "otsclient/args.py",
+        "otsclient/cache.py"
+      ]
+    },
+    {
+      "task_id": "C7-08",
+      "repo": "opentimestamps/opentimestamps-client",
+      "ref": "cd71c7609421bed2a07b9642a3c02a58c9fd2cdf",
+      "target": "Pending confirmation in Bitcoin blockchain",
+      "candidates": [
+        "otsclient/cmds.py",
+        "otsclient/ots.py",
+        "otsclient/args.py",
+        "otsclient/cache.py"
+      ]
+    }
+  ],
+  "claim_ceiling": "This is an engineering controller evaluation on public code-discovery tasks. It does not establish VEA transfer, LoopCell capability accumulation, or general ORP superiority."
+}
