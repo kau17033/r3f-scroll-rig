@@ -20,7 +20,7 @@ Cannot establish by itself:
 - that the action caused an improvement;
 - that a capability is reusable/generalizable.
 
-Current convergence state: **PARTIAL_PASS**.
+Current convergence state: **PASS (implemented verification boundary; scope-limited)**.
 
 Verified engineering evidence now includes:
 - recovered Slice 1 cross-language signature/canonical-byte conformance;
@@ -28,10 +28,12 @@ Verified engineering evidence now includes:
 - Bitcoin block 358391 header/PoW/local-chain/MTP reconnaissance bound to that proof's Merkle root;
 - deterministic CP-001 manifest and CI-tested corruption detection + atomic hash-verified recovery.
 
-Still outside C6 closure:
-- CP-001 itself is not yet anchored by an independent external timestamp/checkpoint;
-- the OTS parser is intentionally an observed subset, not a claim of universal OTS-format coverage;
-- the Bitcoin reconnaissance validates a historical local window, not a complete production best-chain verifier from genesis/checkpoint.
+C6 closure evidence now additionally includes:
+- CP-001 externally submitted to OpenTimestamps calendars and upgraded to two BitcoinBlockHeaderAttestations at block 968161;
+- the frozen upgraded proof independently re-executed from anchor digest through OTS operations to the attested Merkle root;
+- Bitcoin block 968161 independently rehashed, checked against its compact PoW target, and locally linked to heights 968160 and 968162.
+
+The PASS is deliberately bounded. It does not claim universal OpenTimestamps-format coverage, a full genesis-to-tip best-chain verifier, history completeness, semantic truth of recorded actions, or causal benefit. These are explicit verification boundaries rather than silently assumed properties.
 
 ## ORP/Controller
 
