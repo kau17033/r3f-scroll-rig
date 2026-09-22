@@ -85,6 +85,9 @@ jobs:
       - name: C7 v2 prospective controller evaluation
         run: python3 tools/c7_prospective_v2.py
 
+      - name: Final-host migration preflight
+        run: python3 tools/final_host_preflight.py > /tmp/final-host-preflight.json
+
       - name: T-070 convergence gate (final host is the only allowed block)
         run: |
           set +e
