@@ -1,0 +1,16 @@
+artifact_id,critical_artifact,protection,verification,evidence
+CA-01,VEA-G3 frozen SSOT/protocol,Git immutable blob identity,source_registry_check.py,control/source_registry.csv
+CA-02,LoopCell frozen SSOT/protocol,Git immutable blob identity,source_registry_check.py,control/source_registry.csv
+CA-03,Attached ULTRACODE/research sources,SHA-256 content identity,source_registry_check.py,control/source_registry.csv
+CA-04,NEXORA source registry,Git history + CI validation,source_registry_check.py,control/source_registry.csv
+CA-05,Append-only state event ledger,Git history + deterministic reduction,state_reduce.py --check,control/state_events.csv
+CA-06,Generated current-state snapshot,Deterministic reproducible projection,state_reduce.py --check,control/STATE.generated.json
+CA-07,Completion and transition definitions,Git history + reducer coverage,state_reduce.py --check,control/completion_gates.csv
+CA-08,Human-gate registry,Git history + schema validation,human_gate_check.py --validate,control/human_gates.csv
+CA-09,Requirement ledger,Section hashes + complete coverage,requirements_check.py,control/requirements.csv
+CA-10,Traceability ledger,Complete req-id coverage + no false satisfaction,traceability_check.py,control/traceability.csv
+CA-11,Conflict ledger,Exhaustive ID check + scoped human gates,conflict_check.py,control/conflicts.md
+CA-12,Dream-Replay policy substrate,Git history + prefix-only regression tests,dream_replay.py --bootstrap-check,control/DREAM-RSI-ADAPTER.md
+CA-13,VEA seed derivation mirror,Frozen derive blob + source-verified golden vectors,seed_derive.py --selftest,tests/golden/seed_vectors.json
+CA-14,External validation record,Git history + exact expected/actual blob comparison,source_registry_check.py,control/EXTERNAL-VALIDATION-20260922.json
+CA-15,ORP recovered implementation/audit inputs,SHA-256 content identity,source_registry_check.py,control/source_registry.csv
