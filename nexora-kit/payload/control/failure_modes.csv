@@ -1,0 +1,19 @@
+failure_id,critical_failure_mode,control,status,evidence
+FM-01,Authoritative source silently substituted,source_registry_check.py,CONTROLLED,control/source_registry.csv
+FM-02,Current-state prose drifts from evidence,state_reduce.py --check,CONTROLLED,control/STATE.generated.json
+FM-03,Frozen scientific protocol silently mutated,authority order + human gates + immutable blob refs,CONTROLLED,control/CONVERGED-SSOT.md
+FM-04,Human-only scientific decision bypassed,human_gate_check.py --require,BLOCKED_BY_CONTROL,control/human_gates.csv
+FM-05,Paid LoopCell API invoked without explicit authorization,HG-LOOP-PAID,BLOCKED_BY_CONTROL,control/human_gates.csv
+FM-06,Dream replay uses unrevealed outcomes,prefix-only replay regression tests,CONTROLLED,tests/test_dream_replay.py
+FM-07,Replay improvement promoted as live scientific improvement,C7 prospective-validation requirement,CONTROLLED,control/DREAM-RSI-ADAPTER.md
+FM-08,Receipt authenticity promoted to semantic or causal truth,ORP namespace separation,CONTROLLED,control/orp_namespaces.md
+FM-09,Requirement lost during normalization,requirements_check.py 1652/1652,CONTROLLED,control/requirements.csv
+FM-10,Requirement traced but falsely marked satisfied,traceability_check.py,CONTROLLED,control/traceability.csv
+FM-11,Cross-source contradiction silently resolved,conflict_check.py + HG binding,CONTROLLED,control/conflicts.md
+FM-12,Seed derivation changes silently,source-verified derive blob + golden regression,CONTROLLED,tests/golden/seed_vectors.json
+FM-13,External canonical source drifts from recorded blob,35/35 external validation + registry checker,CONTROLLED,control/EXTERNAL-VALIDATION-20260922.json
+FM-14,Autonomous loop becomes unbounded,bounded replay world + terminating selection loop + test,CONTROLLED,tools/dream_replay.py
+FM-15,Secret credential value committed to control-plane source,environment-only secret policy + security audit,CONTROLLED,tools/security_audit.py
+FM-16,Recovery/checkpoint evidence unavailable when needed,ORP/Receipt C6 gate,BLOCKED_EVIDENCE,control/orp_namespaces.md
+FM-17,VEA invalid treatment population treated as causal evidence,TR-01 + C3 no-teleportation gate,BLOCKED_BY_CONTROL,control/transitions.csv
+FM-18,LoopCell non-execution treated as capability evidence,TR-02 + C4/C5 gates,BLOCKED_BY_CONTROL,control/transitions.csv
