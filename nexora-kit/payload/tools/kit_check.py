@@ -43,6 +43,13 @@ REQUIRED = [
     "control/PROPOSAL-001-compliance-manifest.md",
     "control/STANDING-ORDER-001.md", "control/readiness.csv", "tools/readiness_check.py",
     "sources/EXTERNAL.csv", "tools/external_sources.py",
+    "control/CONVERGED-SSOT.md", "control/source_registry.csv",
+    "control/state_events.csv", "control/completion_gates.csv", "control/transitions.csv",
+    "control/STATE.generated.json", "control/capability_contract.schema.json",
+    "control/DREAM-RSI-ADAPTER.md", "control/replay_worlds/bootstrap_convergence_20260922.json",
+    "control/EXTERNAL-VALIDATION-20260922.json",
+    "tools/state_reduce.py", "tools/source_registry_check.py", "tools/dream_replay.py",
+    "tests/test_state_reduce.py", "tests/test_source_registry_check.py", "tests/test_dream_replay.py",
 ]
 
 log = []
