@@ -26,6 +26,7 @@
 
 ## 記録フォーマット（新規追加時）
 ```
+| CONF-19 | `PROTOCOL_LOCK.md` の current field lock と stale 説明文が矛盾（fully LOCKED vs partially locked / STILL UNDECIDED） | vea-g3 PROTOCOL_LOCK.md blob `e535476...` | frozen本文は変更せず、field-level LOCK + current GATE_STATUS/RESEARCH_STATE をcurrent operational stateとし、stale narrative residueをAddendumへ保存 | DEC-004 | **RESOLVED**（`VEA-COMPLIANCE-RECONCILIATION-20260922.json`） |
 | CONF-NN | <一文で衝突> | <SRC-xx §/L範囲> | <処置案> | DEC-xxx | OPEN |
 ```
 `status` は OPEN / RESOLVED / SUPERSEDED のみ。RESOLVED には根拠 commit を併記する。
