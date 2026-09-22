@@ -88,9 +88,21 @@ def g5():
 
 
 def g6():
-    """Verify durable cross-repo validation evidence without depending on CI token reachability."""
-    check = os.path.join(ROOT, "tools", "source_registry_check.py")
-    r = subprocess.run([sys.executable, check], capture_output=True, text=True)
+    """Verify durable cross-repo evidence; preserve legacy isolated-fixture behavior."""
+    registry_check = os.path.join(ROOT, "tools", "source_registry_check.py")
+    if os.path.exists(registry_check):
+        r = subprocess.run([sys.executable, registry_check], capture_output=True, text=True)
+        head = (r.stdout or r.stderr).strip().splitlines()
+        return r.returncode == 0, head[0] if head else "出力なし"
+
+    external_csv = os.path.join(ROOT, "sources", "EXTERNAL.csv")
+    if not os.path.exists(external_csv):
+        return True, "外部正本の登録なし"
+
+    legacy = os.path.join(ROOT, "tools", "external_sources.py")
+    if not os.path.exists(legacy):
+        return False, "外部正本レジストリはあるが検証器が無い"
+    r = subprocess.run([sys.executable, legacy, "verify"], capture_output=True, text=True)
     head = (r.stdout or r.stderr).strip().splitlines()
     return r.returncode == 0, head[0] if head else "出力なし"
 
