@@ -78,48 +78,48 @@
       "scope": "NEXORA",
       "artifact": "NEXORA_ECD_Model_v1.md",
       "authority_class": "FORMAL_ADDENDUM",
-      "status": "FORMAL_ESTABLISHED",
-      "immutable_ref": "",
+      "status": "CONTENT_HASH_FIXED",
+      "immutable_ref": "sha256:e0fa3cd6a7096a97f1aac8fc4f5f93ba6665675f9580c9b017e250758b7d4a3e",
       "locator": "file:file_00000000945881fbb65cd6039fa35f2b"
     },
     "SRC-09": {
       "scope": "VEA-G3",
       "artifact": "VEA_G3_Execution_Recovery_20260921.md",
       "authority_class": "RECOVERY_INDEX",
-      "status": "RECOVERED",
-      "immutable_ref": "",
+      "status": "CONTENT_HASH_FIXED",
+      "immutable_ref": "sha256:08132b214b18fbdf6eb9f00656022e4326d087107d9151499153c31e3ca0d151",
       "locator": "file:file_000000006c2c82069433f442e9d30788"
     },
     "SRC-10": {
       "scope": "ORP/Receipt",
       "artifact": "outlier-orp-spec-v2.0-consolidated",
       "authority_class": "WORK_IMPLEMENTATION_SPEC",
-      "status": "PARTIAL_PASS",
-      "immutable_ref": "",
+      "status": "CONTENT_HASH_FIXED",
+      "immutable_ref": "sha256:0bcde16eb0312a2ce0cb4eaeebb81b20e831030d929d529be6339b4f480efb41",
       "locator": "file:file_0000000074c481fb9a33592c44322cde"
     },
     "SRC-11": {
       "scope": "NEXORA",
       "artifact": "evidence-kernel COMPLETION_REGISTER",
       "authority_class": "WORK_AUDIT",
-      "status": "RECOVERED",
-      "immutable_ref": "",
+      "status": "CONTENT_HASH_FIXED",
+      "immutable_ref": "sha256:ac1fff5a557e74767199d30b3194528b17f1d4fd96978e5cacb8456ef9744603",
       "locator": "file:file_00000000631482079850db1b8dbda9c9"
     },
     "SRC-12": {
       "scope": "NEXORA",
       "artifact": "MATH_SPEC",
       "authority_class": "FORMAL_ADDENDUM",
-      "status": "FORMAL_ESTABLISHED",
-      "immutable_ref": "",
+      "status": "CONTENT_HASH_FIXED",
+      "immutable_ref": "sha256:d2f8a046ff7d39a7a9fe925edaa256e06d31db7d379ae7694e31972752626a3b",
       "locator": "file:file_00000000325c822fa6c98a7cc9f6d77b"
     },
     "SRC-13": {
       "scope": "ORP/Receipt",
       "artifact": "TASK-005 execution report",
       "authority_class": "WORK_IMPLEMENTATION_REPORT",
-      "status": "PARTIAL_PASS",
-      "immutable_ref": "",
+      "status": "CONTENT_HASH_FIXED",
+      "immutable_ref": "sha256:29be6ddb74765fd4e15f7bcc0b0ae6c3fcff39ff914c6fde0b83c78204439b47",
       "locator": "file:file_000000006fc882098df5f2bebaa61dc3"
     },
     "SRC-14": {
@@ -137,6 +137,30 @@
       "status": "VERIFIED_EXTERNAL_REFERENCE",
       "immutable_ref": "arxiv:2609.14858",
       "locator": "https://arxiv.org/abs/2609.14858"
+    },
+    "SRC-16": {
+      "scope": "NEXORA",
+      "artifact": "PRODUCT_AUDIT",
+      "authority_class": "WORK_AUDIT",
+      "status": "CONTENT_HASH_FIXED",
+      "immutable_ref": "sha256:3d03ce8e1e75dcdae7b5a5f6db5114acc7b07794133c50af7987de09ea09aa04",
+      "locator": "file:file_000000005d9082119474727c668c2373"
+    },
+    "SRC-17": {
+      "scope": "ORP/Receipt",
+      "artifact": "Slice1 execution report",
+      "authority_class": "WORK_IMPLEMENTATION_REPORT",
+      "status": "CONTENT_HASH_FIXED",
+      "immutable_ref": "sha256:744d26c8b82afedd98ae16199cd6835de716f915e762a420f8551fdcde2343b2",
+      "locator": "file:file_00000000e4148211b0f54c90e4bb3e4a"
+    },
+    "SRC-18": {
+      "scope": "ORP/Receipt",
+      "artifact": "ORP red-team audit v1",
+      "authority_class": "WORK_AUDIT",
+      "status": "CONTENT_HASH_FIXED",
+      "immutable_ref": "sha256:177410e76a9ad5890a6276af665fff0c721d4a6f4f144a71aaec5a55c2209914",
+      "locator": "file:file_00000000a538820695075b783058b569"
     }
   },
   "subjects": {
