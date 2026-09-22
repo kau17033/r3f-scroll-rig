@@ -52,6 +52,14 @@ Derived state:
 `control/STATE.md` is a human-readable projection only. If prose and generated state disagree,
 the generated state wins for cross-repository current-state reporting.
 
+## 2.1 Physical hosting
+
+The logical canonical control plane is now singular, but its final physical host is not yet converged.
+DEC-002 still designates `kau17033/nexora-core` as the final integration repository.
+Until that repository exists and migration is hash-verified, this PR branch is the **BOOTSTRAP_CANONICAL_CARRIER**.
+Migration MUST be a move-with-verification: do not leave two writable canonical copies.
+C0 cannot close while final-host convergence is incomplete.
+
 ## 3. Layer model
 
 ```
