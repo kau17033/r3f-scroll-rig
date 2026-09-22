@@ -11,6 +11,7 @@ REGISTRY = os.path.join(ROOT, "control", "source_registry.csv")
 EXTERNAL_REPORT = os.path.join(ROOT, "control", "EXTERNAL-VALIDATION-20260922.json")
 
 REQUIRED_LOCAL_FIXED = {"SRC-01", "SRC-03", "SRC-05", "SRC-06", "SRC-07", "SRC-14"}
+REQUIRED_WORK_FIXED = {"SRC-08", "SRC-09", "SRC-10", "SRC-11", "SRC-12", "SRC-13", "SRC-16", "SRC-17", "SRC-18"}
 REQUIRED_GIT_IMMUTABLE = {"SRC-02A", "SRC-02B", "SRC-04A", "SRC-04B"}
 
 
@@ -32,6 +33,16 @@ def validate_registry(rows):
         by_id[sid] = row
 
     for sid in sorted(REQUIRED_LOCAL_FIXED):
+        row = by_id.get(sid)
+        if not row:
+            errors.append("%s missing" % sid)
+            continue
+        if row.get("status") != "CONTENT_HASH_FIXED":
+            errors.append("%s status=%s" % (sid, row.get("status")))
+        if not re.fullmatch(r"sha256:[0-9a-f]{64}", row.get("immutable_ref") or ""):
+            errors.append("%s invalid sha256 ref" % sid)
+
+    for sid in sorted(REQUIRED_WORK_FIXED):
         row = by_id.get(sid)
         if not row:
             errors.append("%s missing" % sid)
@@ -89,8 +100,8 @@ def main():
         for e in errors:
             print("  - %s" % e)
         return 1
-    print("SOURCE_REGISTRY: PASS (registry=%d local_hash_fixed=%d external=34/34)"
-          % (len(rows), len(REQUIRED_LOCAL_FIXED)))
+    print("SOURCE_REGISTRY: PASS (registry=%d hash_fixed=%d external=34/34)"
+          % (len(rows), len(REQUIRED_LOCAL_FIXED | REQUIRED_WORK_FIXED)))
     return 0
 
 
