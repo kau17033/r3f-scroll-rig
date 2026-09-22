@@ -303,6 +303,30 @@
       "observed_at": "2026-09-22",
       "state": "VERIFIED"
     },
+    "NEXORA:T-040": {
+      "evidence_class": "CI",
+      "evidence_ref": "github:kau17033/r3f-scroll-rig/actions/runs/35739331939",
+      "observed_at": "2026-09-22",
+      "state": "VERIFIED"
+    },
+    "NEXORA:T-050": {
+      "evidence_class": "CI",
+      "evidence_ref": "github:kau17033/r3f-scroll-rig/actions/runs/35739331939",
+      "observed_at": "2026-09-22",
+      "state": "VERIFIED"
+    },
+    "NEXORA:T-060": {
+      "evidence_class": "CI",
+      "evidence_ref": "github:kau17033/r3f-scroll-rig/actions/runs/35739331939",
+      "observed_at": "2026-09-22",
+      "state": "VERIFIED"
+    },
+    "NEXORA:T-100": {
+      "evidence_class": "CI",
+      "evidence_ref": "github:kau17033/r3f-scroll-rig/actions/runs/35739331939",
+      "observed_at": "2026-09-22",
+      "state": "VERIFIED"
+    },
     "ORP/Controller:ACTION_SELECTION": {
       "evidence_class": "CI",
       "evidence_ref": "github:kau17033/r3f-scroll-rig/actions/runs/35731846330",
