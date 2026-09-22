@@ -1,4 +1,5 @@
 import unittest
+from _common import ROOT  # noqa: F401
 from bitcoin_header_recon import compact_target, parse_header
 
 HEADER_HEX = (
