@@ -218,11 +218,23 @@
       "evidence_class": "CI",
       "evidence_ref": "github:kau17033/r3f-scroll-rig/actions/runs/35728612031"
     },
-    "ORP/Controller:ACTION_SELECTION": {
-      "state": "FORMAL_ONLY",
+    "NEXORA:T-010": {
+      "state": "VERIFIED",
       "observed_at": "2026-09-22",
-      "evidence_class": "FORMAL",
-      "evidence_ref": "file:file_00000000945881fbb65cd6039fa35f2b"
+      "evidence_class": "CI",
+      "evidence_ref": "github:kau17033/r3f-scroll-rig/actions/runs/35731846330"
+    },
+    "NEXORA:T-012": {
+      "state": "VERIFIED",
+      "observed_at": "2026-09-22",
+      "evidence_class": "CI",
+      "evidence_ref": "github:kau17033/r3f-scroll-rig/actions/runs/35731846330"
+    },
+    "ORP/Controller:ACTION_SELECTION": {
+      "state": "PARTIAL",
+      "observed_at": "2026-09-22",
+      "evidence_class": "CI",
+      "evidence_ref": "github:kau17033/r3f-scroll-rig/actions/runs/35731846330"
     },
     "ORP/Receipt:OTS_TASK006": {
       "state": "NOT_EXECUTED",
@@ -254,15 +266,15 @@
       "name": "Corpus Convergence",
       "status": "PARTIAL",
       "predicate": "All authoritative sources are identified and immutable where required; no silent source substitution",
-      "evidence_ref": "github:kau17033/nexora-core",
-      "notes": "Logical SSOT converged in bootstrap carrier; final host is absent and attached authoritative files remain unhashed in GitHub"
+      "evidence_ref": "github:kau17033/r3f-scroll-rig/actions/runs/35731846330",
+      "notes": "Source identities are hash-fixed and external 34/34 matches; final nexora-core host and full disposition convergence remain open"
     },
     "C1": {
       "name": "Repository Truth",
-      "status": "PARTIAL",
+      "status": "PASS",
       "predicate": "Current state is a deterministic projection of append-only evidence and agrees across repositories",
-      "evidence_ref": "github:kau17033/r3f-scroll-rig/actions/runs/35728612031",
-      "notes": "Deterministic reducer is verified; final host migration and fresh external repository validation remain open"
+      "evidence_ref": "github:kau17033/r3f-scroll-rig/actions/runs/35731846330",
+      "notes": "Deterministic reducer plus fresh VEA-G3/LoopCell validation reconcile cross-repository current state"
     },
     "C2": {
       "name": "VEA Research Closure",
@@ -301,10 +313,10 @@
     },
     "C7": {
       "name": "ORP/Controller",
-      "status": "FORMAL_ONLY",
+      "status": "PARTIAL",
       "predicate": "Action selection is prospectively evaluated against a locked baseline using actual information and cost outcomes",
-      "evidence_ref": "control/transitions.csv",
-      "notes": "Controller logic formal only; predicted-vs-actual information/cost experiment not run"
+      "evidence_ref": "github:kau17033/r3f-scroll-rig/actions/runs/35731846330",
+      "notes": "Dream-Replay controller is implemented and replay-tested; prospective new-world predicted-vs-actual utility experiment remains required"
     },
     "C8": {
       "name": "Operational Release",
