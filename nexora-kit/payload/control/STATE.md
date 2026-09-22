@@ -20,8 +20,8 @@
 
 ## Current completion gates
 
-C0 PARTIAL / C1 PARTIAL / C2 PARTIAL / C3 BLOCKED_EVIDENCE /
-C4 NOT_EXECUTED / C5 FORMAL_ONLY / C6 PARTIAL_PASS / C7 FORMAL_ONLY / C8 BLOCKED.
+C0 PARTIAL / C1 PASS / C2 PARTIAL / C3 BLOCKED_EVIDENCE /
+C4 NOT_EXECUTED / C5 FORMAL_ONLY / C6 PARTIAL_PASS / C7 PARTIAL / C8 BLOCKED.
 
 The exact current state and evidence references are in `control/STATE.generated.json`.
 If this prose disagrees with generated state, generated state is authoritative for cross-repository current-state reporting.
@@ -29,6 +29,6 @@ If this prose disagrees with generated state, generated state is authoritative f
 ## Next executable work
 
 1. T-005 is **VERIFIED** by CI run `35728612031`.
-2. T-010 is **IN_PROGRESS**: local attachments are SHA-256 fixed and external 34/34 validation is recorded; CI verification remains.
-3. T-012 Dream-Replay controller substrate is **IN_PROGRESS** and diagnostic-only until prospective validation.
-4. After T-010/T-012 CI closure, continue disposition / requirements / traceability without changing frozen experiments.
+2. T-010 is **VERIFIED** by CI run `35731846330`: required local/Work artifacts are content-hash fixed and VEA-G3/LoopCell external sources are 34/34 live blob matches.
+3. T-012 is **VERIFIED** by the same CI: Dream-Replay is prefix-only, preserves mandatory governance actions, and may modify only ORP/Controller exploration policy.
+4. Next convergence work is T-030 → T-040 → T-050/T-060. C7 remains PARTIAL until a prospective new-world controller evaluation exists.
