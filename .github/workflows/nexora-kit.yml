@@ -73,6 +73,12 @@ jobs:
       - name: ORP Receipt OpenTimestamps anchor evidence
         run: python3 tools/ots_anchor_check.py
 
+      - name: Install pinned OpenTimestamps core
+        run: python3 -m pip install --disable-pip-version-check "git+https://github.com/opentimestamps/python-opentimestamps@3af46432efc4a4c4e7bba439c1f49bce808eb3e5"
+
+      - name: Attempt CP-001 OpenTimestamps upgrade
+        run: python3 tools/ots_anchor_upgrade.py
+
       - name: C7 v2 prospective controller evaluation
         run: python3 tools/c7_prospective_v2.py
 
