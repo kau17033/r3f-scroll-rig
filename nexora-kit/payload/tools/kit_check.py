@@ -50,8 +50,9 @@ REQUIRED = [
     "control/state_events.csv", "control/completion_gates.csv", "control/transitions.csv",
     "control/STATE.generated.json", "control/capability_contract.schema.json",
     "control/DREAM-RSI-ADAPTER.md", "control/replay_worlds/bootstrap_convergence_20260922.json",
-    "control/EXTERNAL-VALIDATION-20260922.json",
+    "control/EXTERNAL-VALIDATION-20260922.json", "control/EXTERNAL-VALIDATION-20260922-35.json",
     "tools/state_reduce.py", "tools/source_registry_check.py", "tools/dream_replay.py",
+    "tools/convergence_gate.py", "tasks/T-070-convergence.md", "tests/test_convergence_gate.py",
     "tests/test_state_reduce.py", "tests/test_source_registry_check.py", "tests/test_dream_replay.py",
     "tools/disposition_check.py", "tests/test_disposition_check.py", "control/CORPUS-DISPOSITION.md",
 ]
