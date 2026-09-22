@@ -79,6 +79,9 @@ jobs:
       - name: Attempt CP-001 OpenTimestamps upgrade
         run: python3 tools/ots_anchor_upgrade.py
 
+      - name: Verify CP-001 Bitcoin-confirmed proof
+        run: python3 tools/ots_confirmed_verify.py
+
       - name: C7 v2 prospective controller evaluation
         run: python3 tools/c7_prospective_v2.py
 
