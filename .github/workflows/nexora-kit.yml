@@ -41,6 +41,9 @@ jobs:
       - name: section disposition convergence
         run: python3 tools/disposition_check.py
 
+      - name: requirement normalization
+        run: python3 tools/requirements_check.py
+
       - name: converged state snapshot
         run: python3 tools/state_reduce.py --check
 
