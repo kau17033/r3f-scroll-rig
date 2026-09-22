@@ -1,0 +1,10 @@
+gate_id,name,predicate,required_evidence,pass_state
+C0,Corpus Convergence,All authoritative sources are identified and immutable where required; no silent source substitution,source registry + immutable refs + completed disposition,PASS
+C1,Repository Truth,Current state is a deterministic projection of append-only evidence and agrees across repositories,state events + reducer + live repository validation,PASS
+C2,VEA Research Closure,Frozen execution evidence claim ceiling and required human closure are resolved,VEA terminal evidence + First-Completion authority record,PASS
+C3,VEA to LoopCell,Artifact identity provenance retrieval verification application and measured benefit are demonstrated end-to-end,transition receipts + measured reuse effect,PASS
+C4,LoopCell,STORE IDENTIFY RETRIEVE VERIFY APPLY MEASURE REUSE are separately demonstrated,frozen Phase 0 execution + gate evidence,PASS
+C5,Capability,K_t has locked definition baseline repeated measurement retention generalization interference and cost,capability contracts + repeated empirical evaluation,PASS
+C6,ORP/Receipt,Receipt identity signature interoperability checkpoint recovery and verification boundaries are closed,cross-language conformance + external checkpoint/recovery evidence,PASS
+C7,ORP/Controller,Action selection is prospectively evaluated against a locked baseline using actual information and cost outcomes,predicted vs actual IG/cost experiment,PASS
+C8,Operational Release,C0-C7 plus authority security recovery reproducibility cost ceiling rollback and final audit are closed,all prior gates + final release audit,PASS
