@@ -29,12 +29,25 @@ def _rows(rel):
 
 
 def g1():
-    r = subprocess.run([sys.executable, os.path.join(ROOT, "tools", "manifest.py"), "verify"],
-                       capture_output=True, text=True)
-    return (r.returncode == 0, (r.stdout or r.stderr).strip().splitlines()[0])
+    # Converged control plane: source bodies may remain in their canonical stores.
+    # Use registry/content-address validation when installed; retain manifest.py as
+    # a backward-compatible fallback for isolated legacy fixtures.
+    check = os.path.join(ROOT, "tools", "source_registry_check.py")
+    if os.path.exists(check) and os.path.exists(os.path.join(ROOT, "control", "source_registry.csv")):
+        r = subprocess.run([sys.executable, check], capture_output=True, text=True)
+    else:
+        r = subprocess.run([sys.executable, os.path.join(ROOT, "tools", "manifest.py"), "verify"],
+                           capture_output=True, text=True)
+    head = (r.stdout or r.stderr).strip().splitlines()
+    return (r.returncode == 0, head[0] if head else "出力なし")
 
 
 def g2():
+    check = os.path.join(ROOT, "tools", "disposition_check.py")
+    if os.path.exists(check) and os.path.isdir(os.path.join(ROOT, "control", "corpus_sections")):
+        r = subprocess.run([sys.executable, check], capture_output=True, text=True)
+        head = (r.stdout or r.stderr).strip().splitlines()
+        return (r.returncode == 0, head[0] if head else "出力なし")
     rows = _rows("control/disposition.csv")
     if rows is None:
         return False, "disposition.csv が無い"
