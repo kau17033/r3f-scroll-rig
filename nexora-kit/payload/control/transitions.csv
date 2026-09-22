@@ -1,0 +1,5 @@
+transition_id,from_layer,to_layer,promotion_predicate,forbidden_inference
+TR-01,VEA-G3,LoopCell,validity|identity|provenance|retrieval|verification|application|measured benefit,Stored or valid VEA artifact alone does not imply reusable LoopCell experience
+TR-02,LoopCell,Capability,verified reuse|operational K_t|baseline|repeated measurement|retention|generalization|interference,Artifact count or successful storage does not imply capability accumulation
+TR-03,Capability,ORP/Controller,capability identity|validity|applicability|cost|limitations|actionability,Formal capability model does not imply an actionable verified capability
+TR-04,ORP/Receipt,Evidence Plane,canonical identity|signature|provenance or checkpoint|verification boundary,Receipt authenticity does not imply completeness truth causal validity or benefit
