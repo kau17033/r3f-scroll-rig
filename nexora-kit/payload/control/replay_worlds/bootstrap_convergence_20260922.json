@@ -7,7 +7,8 @@
   "objective": {
     "cost_weight": 0.08,
     "risk_weight": 0.08,
-    "parallel_weight": 0.05
+    "parallel_weight": 0.05,
+    "mandatory_miss_penalty": 1
   },
   "nodes": [
     {
@@ -19,7 +20,8 @@
       "cost": 0,
       "risk": 0,
       "status": "root",
-      "evidence_ref": "conversation:2026-09-22"
+      "evidence_ref": "conversation:2026-09-22",
+      "mandatory": false
     },
     {
       "id": "perm-gitdata",
@@ -30,7 +32,8 @@
       "cost": 1,
       "risk": 0.05,
       "status": "failed",
-      "evidence_ref": "conversation:github-gitdata-403"
+      "evidence_ref": "conversation:github-gitdata-403",
+      "mandatory": false
     },
     {
       "id": "perm-contents",
@@ -41,7 +44,8 @@
       "cost": 1,
       "risk": 0.05,
       "status": "failed",
-      "evidence_ref": "conversation:github-contents-403"
+      "evidence_ref": "conversation:github-contents-403",
+      "mandatory": false
     },
     {
       "id": "small-write",
@@ -52,7 +56,8 @@
       "cost": 1,
       "risk": 0.03,
       "status": "success",
-      "evidence_ref": "github:commit/8869b70dc75a0d554f868bc647c7569091e2cf19"
+      "evidence_ref": "github:commit/8869b70dc75a0d554f868bc647c7569091e2cf19",
+      "mandatory": false
     },
     {
       "id": "first-ci",
@@ -63,7 +68,8 @@
       "cost": 1,
       "risk": 0.03,
       "status": "failed_repairable",
-      "evidence_ref": "github:actions/runs/35728476138"
+      "evidence_ref": "github:actions/runs/35728476138",
+      "mandatory": false
     },
     {
       "id": "compat-repair",
@@ -74,7 +80,8 @@
       "cost": 1,
       "risk": 0.02,
       "status": "success",
-      "evidence_ref": "github:actions/runs/35728612031"
+      "evidence_ref": "github:actions/runs/35728612031",
+      "mandatory": false
     },
     {
       "id": "fresh-external-validation",
@@ -85,7 +92,8 @@
       "cost": 1,
       "risk": 0.01,
       "status": "success",
-      "evidence_ref": "control/EXTERNAL-VALIDATION-20260922.json"
+      "evidence_ref": "control/EXTERNAL-VALIDATION-20260922.json",
+      "mandatory": true
     },
     {
       "id": "final-host-check",
@@ -96,7 +104,8 @@
       "cost": 1,
       "risk": 0.01,
       "status": "success",
-      "evidence_ref": "github:kau17033/nexora-core"
+      "evidence_ref": "github:kau17033/nexora-core",
+      "mandatory": true
     }
   ]
 }
