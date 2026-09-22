@@ -25,3 +25,5 @@ EV-0202,2026-09-22,TRANSITION,TR-03,FORMAL_ONLY,NO_TELEPORTATION,control/CONVERG
 EV-0203,2026-09-22,TRANSITION,TR-04,SUPPORTING_ONLY,NO_TELEPORTATION,control/orp_namespaces.md,Receipt infrastructure is orthogonal and cannot promote scientific layers
 EV-0012,2026-09-22,NEXORA,T-005,VERIFIED,CI,github:kau17033/r3f-scroll-rig/actions/runs/35728612031,Reducer snapshot and full CI suite passed
 EV-0109,2026-09-22,GATE,C1,PARTIAL,CI,github:kau17033/r3f-scroll-rig/actions/runs/35728612031,Deterministic reducer is verified; final host migration and fresh external repository validation remain open
+EV-0013,2026-09-22,NEXORA,FINAL_HOST,BLOCKED,REPOSITORY_LOOKUP,github:kau17033/nexora-core,Repository lookup returned 404; bootstrap carrier remains temporary physical host
+EV-0110,2026-09-22,GATE,C0,PARTIAL,REPOSITORY_LOOKUP,github:kau17033/nexora-core,Logical SSOT converged in bootstrap carrier; final host is absent and attached authoritative files remain unhashed in GitHub
