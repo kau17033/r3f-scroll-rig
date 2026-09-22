@@ -138,15 +138,26 @@ class PipelineEndToEnd(unittest.TestCase):
             for i in range(1, 12):
                 f.write("A%02d,item%02d,0,evidence/T-070/a%02d.md\n" % (i, i, i))
 
-        # DEC が 1 件でも PENDING なら解除されない
-        self.assertEqual(1, self.tool("gate_check.py").returncode,
-                         "DEC が未決のまま解除された")
-
+        # 実リポジトリの DEC 状態に依存せず、fixture に PENDING を注入して
+        # G3 が fail-closed であることを検証する。
         p = os.path.join(self.d, "control", "decisions.md")
         with open(p, encoding="utf-8") as f:
             body = f.read()
+        injected = (
+            body
+            + "\n| DEC-999 | e2e pending decision | — | T-040 | PENDING |\n"
+        )
         with open(p, "w", encoding="utf-8") as f:
-            f.write(body.replace("| PENDING |", "| APPROVED |"))
+            f.write(injected)
+
+        self.assertEqual(1, self.tool("gate_check.py").returncode,
+                         "fixture の DEC が未決のまま解除された")
+
+        with open(p, "w", encoding="utf-8") as f:
+            f.write(injected.replace(
+                "| DEC-999 | e2e pending decision | — | T-040 | PENDING |",
+                "| DEC-999 | e2e pending decision | — | T-040 | APPROVED |",
+            ))
 
         r = self.tool("gate_check.py")
         self.assertEqual(0, r.returncode, r.stdout)
