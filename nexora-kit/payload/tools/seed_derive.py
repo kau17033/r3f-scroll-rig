@@ -67,9 +67,9 @@ def main(argv=None):
         bad = []
         if g.get("frozen_derive_blob") != FROZEN_DERIVE_BLOB:
             bad.append("derive blob identity")
-        if g.get("master_seed_eval") != MASTER_SEED_EVAL:
+        if int(g.get("master_seed_eval")) != MASTER_SEED_EVAL:
             bad.append("MASTER_SEED_EVAL")
-        if g.get("master_seed_src") != MASTER_SEED_SRC:
+        if int(g.get("master_seed_src")) != MASTER_SEED_SRC:
             bad.append("MASTER_SEED_SRC")
         for case in g["eval_reference_vectors"]:
             i = case["i"]
