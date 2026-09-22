@@ -50,6 +50,7 @@ REQUIRED = [
     "control/EXTERNAL-VALIDATION-20260922.json",
     "tools/state_reduce.py", "tools/source_registry_check.py", "tools/dream_replay.py",
     "tests/test_state_reduce.py", "tests/test_source_registry_check.py", "tests/test_dream_replay.py",
+    "tools/disposition_check.py", "tests/test_disposition_check.py", "control/CORPUS-DISPOSITION.md",
 ]
 
 log = []
