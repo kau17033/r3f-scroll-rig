@@ -22,6 +22,17 @@ Cannot establish by itself:
 
 Current convergence state: **PARTIAL_PASS**.
 
+Verified engineering evidence now includes:
+- recovered Slice 1 cross-language signature/canonical-byte conformance;
+- one real upstream OpenTimestamps proof accounted byte-for-byte and executed by the observed-subset parser;
+- Bitcoin block 358391 header/PoW/local-chain/MTP reconnaissance bound to that proof's Merkle root;
+- deterministic CP-001 manifest and CI-tested corruption detection + atomic hash-verified recovery.
+
+Still outside C6 closure:
+- CP-001 itself is not yet anchored by an independent external timestamp/checkpoint;
+- the OTS parser is intentionally an observed subset, not a claim of universal OTS-format coverage;
+- the Bitcoin reconnaissance validates a historical local window, not a complete production best-chain verifier from genesis/checkpoint.
+
 ## ORP/Controller
 
 Purpose: choose the next research/engineering action that reduces valid uncertainty under
