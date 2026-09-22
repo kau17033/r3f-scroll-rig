@@ -73,6 +73,9 @@ jobs:
       - name: ORP Receipt OpenTimestamps anchor evidence
         run: python3 tools/ots_anchor_check.py
 
+      - name: C7 prospective controller evaluation
+        run: python3 tools/c7_prospective.py
+
       - name: T-070 convergence gate (final host is the only allowed block)
         run: |
           set +e
