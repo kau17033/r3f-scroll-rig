@@ -89,10 +89,10 @@ It does not itself prove capability or scientific validity.
 
 ### VEA-G3
 
-- Existing cross-repo audit records the 2026-09-09 serial-spine execution as a valid terminal research state.
-- G4 is CLOSED with `FAIL / NOT_IDENTIFIABLE`; treatment population D is empty and tau is uncomputable.
-- This is research closure, not evidence that VEA efficacy is positive.
-- HD-53 First-Completion remains human-only.
+- Fresh 2026-09-22 validation of `VEA-G3/GATE_STATUS.json` reports `truth_state = NOT_DETERMINABLE` and `scientific_promotion = NONE`.
+- G4 has `state = BLOCKED`, `closure = null`, and `closure_candidate = FAIL / NOT_IDENTIFIABLE (pending HD-53 human declaration)`.
+- The underlying evidence still reports treatment population D empty and tau uncomputable; this does not constitute a positive efficacy result.
+- HD-53 First-Completion remains human-only. The earlier cross-repo summary that described G4 as already CLOSED is superseded by this live-repo observation.
 
 ### LoopCell
 
@@ -156,6 +156,15 @@ Current state: **FORMAL_ONLY**.
 
 Receipt infrastructure may bind evidence at any layer, but never promotes a scientific layer.  
 Current state: **SUPPORTING_ONLY**.
+
+## 6.1 Dream-Replay controller improvement
+
+`control/DREAM-RSI-ADAPTER.md` defines an offline replay layer for ORP/Controller.
+It may optimize branching, batching and stopping over **realized recorded history only**.
+Unobserved outcomes are never invented. Frozen evaluators and scientific gates are never changed.
+
+Replay improvement is an engineering result only. C7 requires prospective online validation on new
+worlds under a locked evaluator and baseline before any controller-utility claim may be promoted.
 
 ## 7. Scientific change control
 
