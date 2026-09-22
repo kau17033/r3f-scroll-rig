@@ -33,3 +33,4 @@ SRC-04,kau17033/loopcell,experiments/loopcell_phase0/DECISIONS/decision-log.md,e
 SRC-04,kau17033/loopcell,experiments/loopcell_phase0/DECISIONS/contradictions.md,005124bfaa080a9cd3a937e286b2f2bf91c3794a,0,DECISIONS,2026-09-17
 SRC-04,kau17033/loopcell,experiments/loopcell_phase0/AUDIT/completeness.md,53b4ad69f6e8c72b0ce1576248e559877f66db1d,0,AUDIT,2026-09-17
 SRC-04,kau17033/loopcell,README.md,92de74dfc7b5ea3198b87a720e09c5b20361c2e4,0,INDEX,2026-09-17
+SRC-02,kau17033/vea-g3,src/veag3_dk/derive.py,4b529381a26b9e70a6d7e32fbe9e75d029fc00af,1919,FROZEN_IMPL,2026-09-22
