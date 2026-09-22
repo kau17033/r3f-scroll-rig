@@ -14,7 +14,7 @@ Status: PENDING / APPROVED / REJECTED / DEFERRED。
 | DEC-007 | Outlier v1.0 の現行性確認と法務ゲート | — | T-3xx | PENDING |
 | DEC-008 | 優先順位は SOV§114 と SOV§181 のどちらか | 05 | T-070 | PENDING |
 | DEC-009 | コスト方針のスコープ分割 | 08 | T-2xx, T-3xx | PENDING |
-| DEC-010 | 統治系の一本化（外部 27 不変条件 / 本キット control/ / 責務分割） | 12 | 全タスク | PENDING |
+| DEC-010 | 統治系の一本化（外部 27 不変条件 / 本キット control/ / 責務分割） | 12 | 全タスク | **APPROVED**（2026-09-22。横断 control plane を唯一の統合現在地正本とし、凍結 SSOT は各実験スコープの上位正本として保持） |
 | DEC-011 | 統合プロダクト名の確定と `ORP` の名前空間化 | 13 | 全識別子 | **APPROVED**（案 C、2026-09-17） |
 
 ## DEC-004 の内訳（すべて未決。1 つでも欠ければ Phase A を開始しない）
@@ -255,3 +255,15 @@ DEC-011（案 C）により対外名は未定であるから、ブランド層�
 | `sources/` `CLAUDE.md` `.claude/` `AUTHORITY.md` の改変 | 同上 |
 
 「設計に理にかなっており」という条件が、設計自身の禁止を上書きしないという読みに拠る。
+
+
+## DEC-010 統治系の一本化 — 決定済み（2026-09-22）
+
+人間の明示指示「この分岐を一本の正本へ収束」に基づき、構造的統治だけを確定した。
+これは科学的 frozen values の変更承認ではない。
+
+- 横断現在地・Source Registry・Completion Gate・Transition Gate は `control/CONVERGED-SSOT.md` 系を唯一の統合現在地正本とする。
+- VEA-G3 / LoopCell の frozen experimental SSOT / protocol lock は、それぞれの実験スコープ内で上位権威を維持する。
+- Work/Library の回収物・形式モデル・実装報告は、content hash / primary evidence が不足する限り lower-authority evidence/addendum とする。
+- 27 executable invariants は横断 kernel の実装候補として保持するが、凍結実験の成功条件を遡及変更しない。
+- 現在地は手書き STATE ではなく `state_events.csv -> state_reduce.py -> STATE.generated.json` で還元する。
