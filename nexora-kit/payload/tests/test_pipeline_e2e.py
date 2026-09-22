@@ -21,7 +21,8 @@ from _common import ROOT  # noqa: E402
 BLOCKS = (("CONV", 35), ("AUDIT", 74), ("SOV", 1314))
 NUMBERED = sum(n for _, n in BLOCKS)          # 1423
 RESIDUE_EVERY = 97                            # i % 97 == 0 の節の直後に残骸を 2 行入れる
-KIT_FILES = ["tools/manifest.py", "tools/index_sections.py", "tools/gate_check.py"]
+KIT_FILES = ["tools/manifest.py", "tools/index_sections.py", "tools/gate_check.py",
+             "tools/source_registry_check.py"]
 HOOKS = [".claude/hooks/session_start.py"]
 
 
@@ -57,6 +58,12 @@ class PipelineEndToEnd(unittest.TestCase):
             os.makedirs(os.path.join(cls.d, sub), exist_ok=True)
         shutil.copy(os.path.join(ROOT, "control", "decisions.md"),
                     os.path.join(cls.d, "control", "decisions.md"))
+        # G6 validates the committed immutable observation of external sources.
+        # The synthetic E2E corpus tests G1 independently; copy the real registry/report
+        # so this fixture is not coupled to live GitHub/network access.
+        for name in ("source_registry.csv", "EXTERNAL-VALIDATION-20260922.json"):
+            shutil.copy(os.path.join(ROOT, "control", name),
+                        os.path.join(cls.d, "control", name))
         cls.src = os.path.join(cls.d, "sources", "SRC-01-ultracode.md")
         body, cls.residue = synthesize()
         with open(cls.src, "w", encoding="utf-8") as f:
