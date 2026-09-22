@@ -10,15 +10,15 @@
 | T-010 | 状態固定（hash固定・履歴照合） | T-005, DEC-002 | `tools/source_registry_check.py` exit 0 + external 34/34 | **DONE**（CI run 35731846330） |
 | T-012 | Dream-Replay探索方策基盤 | T-005 | `tools/dream_replay.py --bootstrap-check` exit 0 + prefix-only tests | **DONE**（CI run 35731846330） |
 | T-020 | VEA-G3 Compliance Manifest **照合**（作成ではない） | T-010 | 既存 Manifest の 42 項目 + Addendum を一次資料と突合 | **REDEFINED**（REPO-001 §1: 既存 Manifest は完成済） |
-| T-030 | 全節 disposition | T-010 | `tools/disposition_check.py` exit 0; normative sections=1652; PENDING=0 | **IN_PROGRESS** |
-| T-040 | 要求正規化 | T-030 | `requirements.csv` 全行 verifiable 判定済 | BLOCKED |
+| T-030 | 全節 disposition | T-010 | `tools/disposition_check.py` exit 0; normative sections=1652; PENDING=0 | **DONE**（CI run 35733289288） |
+| T-040 | 要求正規化 | T-030 | `requirements.csv` 全行 verifiable 判定済 | **IN_PROGRESS** |
 | T-050 | 矛盾監査 | T-040 | `conflicts.md` 全件 DEC 紐付け | BLOCKED |
 | T-060 | 実態照合（リポジトリ vs 要求） | T-040, DEC-002 | `traceability.csv` 全行埋め | BLOCKED |
 | T-070 | 収束成果物 | T-050, T-060, DEC-008 | `tools/gate_check.py` exit 0 | BLOCKED |
 | T-100 | seed 導出の原文照合 | T-010 | ゴールデン再検証 PASS | BLOCKED |
-| T-110 | VEA-G3 Phase A 設計固定 | T-020, DEC-004 | 固定値表に PENDING なし | BLOCKED |
-| T-200 | LoopCell Phase 0 SSOT v1.1 投入 | DEC-006 | 参照 A1–A13 等が解決 | BLOCKED |
-| T-300 | Outlier v1.0 法務ゲート | DEC-007 | 法務判断の記録 | BLOCKED |
+| T-110 | VEA-G3 Phase A / confirmatory gate | T-020, HG-VEA-ESTIMAND, HG-VEA-FREEZE-SCOPE, HG-VEA-WS-C, HG-VEA-HD53 | frozen values preserved + human gates satisfied | BLOCKED_HUMAN |
+| T-200 | LoopCell Phase 0 execution readiness | HG-LOOP-C06, HG-LOOP-PAID | frozen SSOT intact + environment/paid human gates satisfied | BLOCKED_HUMAN |
+| T-300 | Outlier v1.0 法務ゲート | HG-OUTLIER-LEGAL | 法務判断の記録 | BLOCKED_HUMAN |
 
 ## 状態語
 `TODO` / `IN_PROGRESS` / `BLOCKED` / `DONE` / `ABANDONED`。
