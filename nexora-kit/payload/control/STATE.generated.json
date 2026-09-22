@@ -6,8 +6,8 @@
       "scope": "NEXORA",
       "artifact": "ULTRACODE / 指示",
       "authority_class": "CROSS_PROGRAM_DIRECTIVE",
-      "status": "RECEIVED_UNHASHED",
-      "immutable_ref": "",
+      "status": "CONTENT_HASH_FIXED",
+      "immutable_ref": "sha256:0a76facfbacf09ce4011e0f6b7d19846bbe5c967e51b986e9f1075439c4b8f02",
       "locator": "file:file_00000000536481f794fe36687678cee7"
     },
     "SRC-02A": {
@@ -30,8 +30,8 @@
       "scope": "NEXORA",
       "artifact": "論文4",
       "authority_class": "RESEARCH_DOCUMENT",
-      "status": "RECEIVED_UNHASHED",
-      "immutable_ref": "",
+      "status": "CONTENT_HASH_FIXED",
+      "immutable_ref": "sha256:b5f9b97beaf6762048717663778cfbaa2725999f2e37394a9fee6ebfcb48d9a3",
       "locator": "file:file_00000000b0a482099041705491424ff3"
     },
     "SRC-04A": {
@@ -54,24 +54,24 @@
       "scope": "FOCAL",
       "artifact": "FOCAL",
       "authority_class": "PRODUCT_RESEARCH_DOCUMENT",
-      "status": "RECEIVED_UNHASHED",
-      "immutable_ref": "",
+      "status": "CONTENT_HASH_FIXED",
+      "immutable_ref": "sha256:f5dcd4f0934648044307b25c90a78749e1803d2cbe5b6d3b56cccd540ac3416d",
       "locator": "file:file_00000000e29c82079b7fdf0bdb99adc1"
     },
     "SRC-06": {
       "scope": "VEA-G3",
       "artifact": "VEA 実装仕様のSSOT",
       "authority_class": "ATTACHED_REFERENCE",
-      "status": "RECEIVED_UNHASHED",
-      "immutable_ref": "",
+      "status": "CONTENT_HASH_FIXED",
+      "immutable_ref": "sha256:a76919a6fbac329289095769108cec9bdddc54a0fa867f259abf64e128e6a65b",
       "locator": "file:file_0000000021708207b4956f1af0c663d4"
     },
     "SRC-07": {
       "scope": "LoopCell",
       "artifact": "LoopCellについて",
       "authority_class": "ATTACHED_REFERENCE",
-      "status": "RECEIVED_UNHASHED",
-      "immutable_ref": "",
+      "status": "CONTENT_HASH_FIXED",
+      "immutable_ref": "sha256:68890c4b72466a908b968aba803a535e702f5749b64d22e26b46e747d36339cc",
       "locator": "file:file_0000000045888206b6e6933200dc8567"
     },
     "SRC-08": {
@@ -121,6 +121,22 @@
       "status": "PARTIAL_PASS",
       "immutable_ref": "",
       "locator": "file:file_000000006fc882098df5f2bebaa61dc3"
+    },
+    "SRC-14": {
+      "scope": "NEXORA",
+      "artifact": "Dream-RSI local research copy",
+      "authority_class": "EXTERNAL_RESEARCH_METHOD",
+      "status": "CONTENT_HASH_FIXED",
+      "immutable_ref": "sha256:63e29665ceb846b707421e61271c2af9a7231aa61108bae60aed82fec7f38b02",
+      "locator": "file:file_0000000096108207acae23afdbe175bc"
+    },
+    "SRC-15": {
+      "scope": "NEXORA",
+      "artifact": "Dream-RSI arXiv",
+      "authority_class": "EXTERNAL_RESEARCH_REFERENCE",
+      "status": "VERIFIED_EXTERNAL_REFERENCE",
+      "immutable_ref": "arxiv:2609.14858",
+      "locator": "https://arxiv.org/abs/2609.14858"
     }
   },
   "subjects": {
@@ -148,11 +164,17 @@
       "evidence_class": "HUMAN_DIRECTIVE",
       "evidence_ref": "conversation:2026-09-22"
     },
+    "NEXORA:DREAM_RSI_ADOPTION": {
+      "state": "AUTHORIZED",
+      "observed_at": "2026-09-22",
+      "evidence_class": "HUMAN_DIRECTIVE",
+      "evidence_ref": "conversation:2026-09-22"
+    },
     "NEXORA:EXTERNAL_SOURCES": {
       "state": "VERIFIED",
-      "observed_at": "2026-09-17",
-      "evidence_class": "IMMUTABLE_REF",
-      "evidence_ref": "nexora-kit/payload/sources/EXTERNAL.csv"
+      "observed_at": "2026-09-22",
+      "evidence_class": "LIVE_REPO",
+      "evidence_ref": "control/EXTERNAL-VALIDATION-20260922.json"
     },
     "NEXORA:FINAL_HOST": {
       "state": "BLOCKED",
@@ -191,10 +213,10 @@
       "evidence_ref": "file:file_0000000074c481fb9a33592c44322cde"
     },
     "VEA-G3:G4": {
-      "state": "CLOSED_NOT_DETERMINABLE",
-      "observed_at": "2026-09-09",
-      "evidence_class": "EMPIRICAL",
-      "evidence_ref": "control/REPO-004-gate-status.md"
+      "state": "BLOCKED",
+      "observed_at": "2026-09-22",
+      "evidence_class": "LIVE_REPO",
+      "evidence_ref": "github:kau17033/VEA-G3:GATE_STATUS.json"
     },
     "VEA-G3:HD-53": {
       "state": "PENDING_HUMAN",
