@@ -1,0 +1,843 @@
+{
+  "claim_ceiling": "Engineering evidence for this controller translation and benchmark family only. It does not establish general ORP superiority, VEA transfer, LoopCell capability accumulation, or C5 capability.",
+  "plan": "control/C7-PROSPECTIVE-PLAN-v2.json",
+  "plan_status": "FROZEN_BEFORE_V2_LIVE_OUTCOMES",
+  "prediction": {
+    "baseline_batch_size": 4,
+    "baseline_policy": {
+      "batch_fraction": 1,
+      "depth_bias": 0.6,
+      "depth_penalty": 0.05,
+      "evidence_weight": 0.3,
+      "explore_bias": 1.2,
+      "explore_decay": 0,
+      "policy_id": "fixed_exploration_v0",
+      "quality_weight": 0.8,
+      "recovery_weight": 0.6,
+      "risk_penalty": 0.5,
+      "stop_threshold": -1,
+      "success_satiation": 0
+    },
+    "dream_batch_size": 3,
+    "historical_world": "bootstrap-convergence-20260922",
+    "pre_live_cost_hypothesis": "Dream batch size is smaller; expected probe cost is lower when the unique target is reached before the final candidate.",
+    "predicted_information_gain_bits_per_valid_task": 2,
+    "replay_incumbent_reward": 0.4023333333,
+    "replay_predicted_reward_gain": 0,
+    "replay_selected_reward": 0.4023333333,
+    "selected_policy": {
+      "batch_fraction": 0.6666666666666666,
+      "depth_bias": 0.2,
+      "depth_penalty": 0.05,
+      "evidence_weight": 0.1,
+      "explore_bias": 0.6,
+      "explore_decay": 0.05,
+      "policy_id": "dream_00002",
+      "quality_weight": 0.8,
+      "recovery_weight": 0,
+      "risk_penalty": 0.2,
+      "stop_threshold": 0.3,
+      "success_satiation": 0
+    }
+  },
+  "schema": "nexora-c7-prospective-result/2.0",
+  "summary": {
+    "baseline_mean_utility": 0.94746287267,
+    "baseline_resolution_rate": 1,
+    "baseline_total_probes": 32,
+    "controller_improved": true,
+    "controller_result": "IMPROVED",
+    "dream_mean_utility": 1.12148514657,
+    "dream_resolution_rate": 1,
+    "dream_total_probes": 26,
+    "evaluation_closure": true,
+    "invalid_tasks": [],
+    "mean_utility_difference": 0.17402227390000002,
+    "probe_difference": -6,
+    "valid_tasks": 8
+  },
+  "tasks": [
+    {
+      "baseline": {
+        "batch_fraction": 1,
+        "batch_size": 4,
+        "candidate_order": [
+          "opentimestamps/calendar.py",
+          "opentimestamps/timestamp.py",
+          "opentimestamps/core/git.py",
+          "opentimestamps/bitcoin.py"
+        ],
+        "decision_rounds": 1,
+        "found_paths": [
+          "opentimestamps/core/git.py"
+        ],
+        "information_gain_bits": 2,
+        "latency_seconds": 0.09687073499999599,
+        "observations": [
+          {
+            "hit": false,
+            "path": "opentimestamps/calendar.py",
+            "request_seconds": 0.09642580400000611
+          },
+          {
+            "hit": false,
+            "path": "opentimestamps/timestamp.py",
+            "request_seconds": 0.074676568000001
+          },
+          {
+            "hit": true,
+            "path": "opentimestamps/core/git.py",
+            "request_seconds": 0.08712438499999564
+          },
+          {
+            "hit": false,
+            "path": "opentimestamps/bitcoin.py",
+            "request_seconds": 0.09298157199999935
+          }
+        ],
+        "policy_id": "fixed_exploration_v0",
+        "probes": 4,
+        "resolved": true,
+        "utility": 0.9480625853
+      },
+      "dream": {
+        "batch_fraction": 0.6666666666666666,
+        "batch_size": 3,
+        "candidate_order": [
+          "opentimestamps/calendar.py",
+          "opentimestamps/timestamp.py",
+          "opentimestamps/core/git.py",
+          "opentimestamps/bitcoin.py"
+        ],
+        "decision_rounds": 1,
+        "found_paths": [
+          "opentimestamps/core/git.py"
+        ],
+        "information_gain_bits": 2,
+        "latency_seconds": 0.13473877600000606,
+        "observations": [
+          {
+            "hit": false,
+            "path": "opentimestamps/calendar.py",
+            "request_seconds": 0.12933382600000698
+          },
+          {
+            "hit": false,
+            "path": "opentimestamps/timestamp.py",
+            "request_seconds": 0.07538175999999908
+          },
+          {
+            "hit": true,
+            "path": "opentimestamps/core/git.py",
+            "request_seconds": 0.07887766400000373
+          }
+        ],
+        "policy_id": "dream_00002",
+        "probes": 3,
+        "resolved": true,
+        "utility": 1.1973052244799998
+      },
+      "ref": "3af46432efc4a4c4e7bba439c1f49bce808eb3e5",
+      "repo": "opentimestamps/python-opentimestamps",
+      "run_order": [
+        "dream",
+        "baseline"
+      ],
+      "setup": {
+        "eligible_unique_lines": 181,
+        "query": "This class solves these problems by recursively re-hashing a git tree and all blobs",
+        "setup_probes": 4,
+        "setup_request_seconds": 0.6519745080000234,
+        "target_path": "opentimestamps/core/git.py"
+      },
+      "task_id": "C7V2-01",
+      "valid": true
+    },
+    {
+      "baseline": {
+        "batch_fraction": 1,
+        "batch_size": 4,
+        "candidate_order": [
+          "opentimestamps/core/packetstream.py",
+          "opentimestamps/tests/test_calendar.py",
+          "opentimestamps/tests/test_bitcoin.py",
+          "opentimestamps/core/dubious/notary.py"
+        ],
+        "decision_rounds": 1,
+        "found_paths": [
+          "opentimestamps/core/packetstream.py"
+        ],
+        "information_gain_bits": 2,
+        "latency_seconds": 0.20509425199999498,
+        "observations": [
+          {
+            "hit": true,
+            "path": "opentimestamps/core/packetstream.py",
+            "request_seconds": 0.15743570600000112
+          },
+          {
+            "hit": false,
+            "path": "opentimestamps/tests/test_calendar.py",
+            "request_seconds": 0.2042591310000006
+          },
+          {
+            "hit": false,
+            "path": "opentimestamps/tests/test_bitcoin.py",
+            "request_seconds": 0.0788007379999982
+          },
+          {
+            "hit": false,
+            "path": "opentimestamps/core/dubious/notary.py",
+            "request_seconds": 0.08530350200000214
+          }
+        ],
+        "policy_id": "fixed_exploration_v0",
+        "probes": 4,
+        "resolved": true,
+        "utility": 0.9458981149600001
+      },
+      "dream": {
+        "batch_fraction": 0.6666666666666666,
+        "batch_size": 3,
+        "candidate_order": [
+          "opentimestamps/core/packetstream.py",
+          "opentimestamps/tests/test_calendar.py",
+          "opentimestamps/tests/test_bitcoin.py",
+          "opentimestamps/core/dubious/notary.py"
+        ],
+        "decision_rounds": 1,
+        "found_paths": [
+          "opentimestamps/core/packetstream.py"
+        ],
+        "information_gain_bits": 2,
+        "latency_seconds": 0.1548264070000016,
+        "observations": [
+          {
+            "hit": true,
+            "path": "opentimestamps/core/packetstream.py",
+            "request_seconds": 0.08661077099999659
+          },
+          {
+            "hit": false,
+            "path": "opentimestamps/tests/test_calendar.py",
+            "request_seconds": 0.07332490099999234
+          },
+          {
+            "hit": false,
+            "path": "opentimestamps/tests/test_bitcoin.py",
+            "request_seconds": 0.15399911200000815
+          }
+        ],
+        "policy_id": "dream_00002",
+        "probes": 3,
+        "resolved": true,
+        "utility": 1.19690347186
+      },
+      "ref": "3af46432efc4a4c4e7bba439c1f49bce808eb3e5",
+      "repo": "opentimestamps/python-opentimestamps",
+      "run_order": [
+        "baseline",
+        "dream"
+      ],
+      "setup": {
+        "eligible_unique_lines": 147,
+        "query": "been set by chattr(1), are a useful way to avoid losing data. But using them",
+        "setup_probes": 4,
+        "setup_request_seconds": 0.6586384289999643,
+        "target_path": "opentimestamps/core/packetstream.py"
+      },
+      "task_id": "C7V2-02",
+      "valid": true
+    },
+    {
+      "baseline": {
+        "batch_fraction": 1,
+        "batch_size": 4,
+        "candidate_order": [
+          "otsclient/git_gpg_wrapper.py",
+          "otsclient/tests/test_git.py",
+          "otsclient/git.py",
+          "otsclient/tests/test_prune.py"
+        ],
+        "decision_rounds": 1,
+        "found_paths": [
+          "otsclient/tests/test_prune.py"
+        ],
+        "information_gain_bits": 2,
+        "latency_seconds": 0.09552247199999897,
+        "observations": [
+          {
+            "hit": false,
+            "path": "otsclient/git_gpg_wrapper.py",
+            "request_seconds": 0.08515331399999582
+          },
+          {
+            "hit": false,
+            "path": "otsclient/tests/test_git.py",
+            "request_seconds": 0.08880093199999806
+          },
+          {
+            "hit": false,
+            "path": "otsclient/git.py",
+            "request_seconds": 0.09434215600001039
+          },
+          {
+            "hit": true,
+            "path": "otsclient/tests/test_prune.py",
+            "request_seconds": 0.09339225099999737
+          }
+        ],
+        "policy_id": "fixed_exploration_v0",
+        "probes": 4,
+        "resolved": true,
+        "utility": 0.94808955056
+      },
+      "dream": {
+        "batch_fraction": 0.6666666666666666,
+        "batch_size": 3,
+        "candidate_order": [
+          "otsclient/git_gpg_wrapper.py",
+          "otsclient/tests/test_git.py",
+          "otsclient/git.py",
+          "otsclient/tests/test_prune.py"
+        ],
+        "decision_rounds": 2,
+        "found_paths": [
+          "otsclient/tests/test_prune.py"
+        ],
+        "information_gain_bits": 2,
+        "latency_seconds": 0.2980702560000026,
+        "observations": [
+          {
+            "hit": false,
+            "path": "otsclient/git_gpg_wrapper.py",
+            "request_seconds": 0.07084385400000315
+          },
+          {
+            "hit": false,
+            "path": "otsclient/tests/test_git.py",
+            "request_seconds": 0.07679054199999769
+          },
+          {
+            "hit": false,
+            "path": "otsclient/git.py",
+            "request_seconds": 0.07803147200000637
+          },
+          {
+            "hit": true,
+            "path": "otsclient/tests/test_prune.py",
+            "request_seconds": 0.21884308199999225
+          }
+        ],
+        "policy_id": "dream_00002",
+        "probes": 4,
+        "resolved": true,
+        "utility": 0.8940385948799999
+      },
+      "ref": "cd71c7609421bed2a07b9642a3c02a58c9fd2cdf",
+      "repo": "opentimestamps/opentimestamps-client",
+      "run_order": [
+        "dream",
+        "baseline"
+      ],
+      "setup": {
+        "eligible_unique_lines": 185,
+        "query": "t1.attestations = {PendingAttestation(\"c\")}",
+        "setup_probes": 4,
+        "setup_request_seconds": 0.7935628259999845,
+        "target_path": "otsclient/tests/test_prune.py"
+      },
+      "task_id": "C7V2-03",
+      "valid": true
+    },
+    {
+      "baseline": {
+        "batch_fraction": 1,
+        "batch_size": 4,
+        "candidate_order": [
+          "otsclient/tests/test_prune.py",
+          "otsclient/git.py",
+          "setup.py",
+          "otsclient/git_gpg_wrapper.py"
+        ],
+        "decision_rounds": 1,
+        "found_paths": [
+          "otsclient/git.py"
+        ],
+        "information_gain_bits": 2,
+        "latency_seconds": 0.09235052799999721,
+        "observations": [
+          {
+            "hit": false,
+            "path": "otsclient/tests/test_prune.py",
+            "request_seconds": 0.09189558699999623
+          },
+          {
+            "hit": true,
+            "path": "otsclient/git.py",
+            "request_seconds": 0.07711085600000445
+          },
+          {
+            "hit": false,
+            "path": "setup.py",
+            "request_seconds": 0.08273608899999374
+          },
+          {
+            "hit": false,
+            "path": "otsclient/git_gpg_wrapper.py",
+            "request_seconds": 0.08722654700000021
+          }
+        ],
+        "policy_id": "fixed_exploration_v0",
+        "probes": 4,
+        "resolved": true,
+        "utility": 0.94815298944
+      },
+      "dream": {
+        "batch_fraction": 0.6666666666666666,
+        "batch_size": 3,
+        "candidate_order": [
+          "otsclient/tests/test_prune.py",
+          "otsclient/git.py",
+          "setup.py",
+          "otsclient/git_gpg_wrapper.py"
+        ],
+        "decision_rounds": 1,
+        "found_paths": [
+          "otsclient/git.py"
+        ],
+        "information_gain_bits": 2,
+        "latency_seconds": 0.080014362,
+        "observations": [
+          {
+            "hit": false,
+            "path": "otsclient/tests/test_prune.py",
+            "request_seconds": 0.06878232200000411
+          },
+          {
+            "hit": true,
+            "path": "otsclient/git.py",
+            "request_seconds": 0.07477665599999739
+          },
+          {
+            "hit": false,
+            "path": "setup.py",
+            "request_seconds": 0.07928003400000705
+          }
+        ],
+        "policy_id": "dream_00002",
+        "probes": 3,
+        "resolved": true,
+        "utility": 1.19839971276
+      },
+      "ref": "cd71c7609421bed2a07b9642a3c02a58c9fd2cdf",
+      "repo": "opentimestamps/opentimestamps-client",
+      "run_order": [
+        "baseline",
+        "dream"
+      ],
+      "setup": {
+        "eligible_unique_lines": 195,
+        "query": "+ hashlib.sha256(gpg_sig).digest()).digest()",
+        "setup_probes": 4,
+        "setup_request_seconds": 0.4298304710000025,
+        "target_path": "otsclient/git.py"
+      },
+      "task_id": "C7V2-04",
+      "valid": true
+    },
+    {
+      "baseline": {
+        "batch_fraction": 1,
+        "batch_size": 4,
+        "candidate_order": [
+          "src/requests/auth.py",
+          "src/requests/sessions.py",
+          "src/requests/adapters.py",
+          "src/requests/models.py"
+        ],
+        "decision_rounds": 1,
+        "found_paths": [
+          "src/requests/sessions.py"
+        ],
+        "information_gain_bits": 2,
+        "latency_seconds": 0.15673648899999648,
+        "observations": [
+          {
+            "hit": false,
+            "path": "src/requests/auth.py",
+            "request_seconds": 0.08865119200000038
+          },
+          {
+            "hit": true,
+            "path": "src/requests/sessions.py",
+            "request_seconds": 0.08231572799999753
+          },
+          {
+            "hit": false,
+            "path": "src/requests/adapters.py",
+            "request_seconds": 0.08138966699999628
+          },
+          {
+            "hit": false,
+            "path": "src/requests/models.py",
+            "request_seconds": 0.15562506799999198
+          }
+        ],
+        "policy_id": "fixed_exploration_v0",
+        "probes": 4,
+        "resolved": true,
+        "utility": 0.94686527022
+      },
+      "dream": {
+        "batch_fraction": 0.6666666666666666,
+        "batch_size": 3,
+        "candidate_order": [
+          "src/requests/auth.py",
+          "src/requests/sessions.py",
+          "src/requests/adapters.py",
+          "src/requests/models.py"
+        ],
+        "decision_rounds": 1,
+        "found_paths": [
+          "src/requests/sessions.py"
+        ],
+        "information_gain_bits": 2,
+        "latency_seconds": 0.08055544100000134,
+        "observations": [
+          {
+            "hit": false,
+            "path": "src/requests/auth.py",
+            "request_seconds": 0.08005457699999852
+          },
+          {
+            "hit": true,
+            "path": "src/requests/sessions.py",
+            "request_seconds": 0.06097325799998998
+          },
+          {
+            "hit": false,
+            "path": "src/requests/adapters.py",
+            "request_seconds": 0.0723801669999915
+          }
+        ],
+        "policy_id": "dream_00002",
+        "probes": 3,
+        "resolved": true,
+        "utility": 1.19838889118
+      },
+      "ref": "611c6162cbc4ac2020a2f91c7cfa4f3abf9bbb60",
+      "repo": "psf/requests",
+      "run_order": [
+        "dream",
+        "baseline"
+      ],
+      "setup": {
+        "eligible_unique_lines": 1193,
+        "query": "or os.environ.get(\"CURL_CA_BUNDLE\")",
+        "setup_probes": 4,
+        "setup_request_seconds": 0.5755579140000151,
+        "target_path": "src/requests/sessions.py"
+      },
+      "task_id": "C7V2-05",
+      "valid": true
+    },
+    {
+      "baseline": {
+        "batch_fraction": 1,
+        "batch_size": 4,
+        "candidate_order": [
+          "src/requests/api.py",
+          "src/requests/cookies.py",
+          "src/requests/structures.py",
+          "src/requests/utils.py"
+        ],
+        "decision_rounds": 1,
+        "found_paths": [
+          "src/requests/utils.py"
+        ],
+        "information_gain_bits": 2,
+        "latency_seconds": 0.09200695399999859,
+        "observations": [
+          {
+            "hit": false,
+            "path": "src/requests/api.py",
+            "request_seconds": 0.08792437099999972
+          },
+          {
+            "hit": false,
+            "path": "src/requests/cookies.py",
+            "request_seconds": 0.08714688400000625
+          },
+          {
+            "hit": false,
+            "path": "src/requests/structures.py",
+            "request_seconds": 0.07863958999999454
+          },
+          {
+            "hit": true,
+            "path": "src/requests/utils.py",
+            "request_seconds": 0.09086567800000012
+          }
+        ],
+        "policy_id": "fixed_exploration_v0",
+        "probes": 4,
+        "resolved": true,
+        "utility": 0.9481598609199999
+      },
+      "dream": {
+        "batch_fraction": 0.6666666666666666,
+        "batch_size": 3,
+        "candidate_order": [
+          "src/requests/api.py",
+          "src/requests/cookies.py",
+          "src/requests/structures.py",
+          "src/requests/utils.py"
+        ],
+        "decision_rounds": 2,
+        "found_paths": [
+          "src/requests/utils.py"
+        ],
+        "information_gain_bits": 2,
+        "latency_seconds": 0.2743854369999923,
+        "observations": [
+          {
+            "hit": false,
+            "path": "src/requests/api.py",
+            "request_seconds": 0.0771313000000049
+          },
+          {
+            "hit": false,
+            "path": "src/requests/cookies.py",
+            "request_seconds": 0.16179718600000115
+          },
+          {
+            "hit": false,
+            "path": "src/requests/structures.py",
+            "request_seconds": 0.07941936900000712
+          },
+          {
+            "hit": true,
+            "path": "src/requests/utils.py",
+            "request_seconds": 0.11175055500000042
+          }
+        ],
+        "policy_id": "dream_00002",
+        "probes": 4,
+        "resolved": true,
+        "utility": 0.8945122912600002
+      },
+      "ref": "611c6162cbc4ac2020a2f91c7cfa4f3abf9bbb60",
+      "repo": "psf/requests",
+      "run_order": [
+        "baseline",
+        "dream"
+      ],
+      "setup": {
+        "eligible_unique_lines": 880,
+        "query": "except (io.UnsupportedOperation, AttributeError):",
+        "setup_probes": 4,
+        "setup_request_seconds": 0.863262272,
+        "target_path": "src/requests/utils.py"
+      },
+      "task_id": "C7V2-06",
+      "valid": true
+    },
+    {
+      "baseline": {
+        "batch_fraction": 1,
+        "batch_size": 4,
+        "candidate_order": [
+          "src/flask/blueprints.py",
+          "src/flask/config.py",
+          "src/flask/app.py",
+          "src/flask/cli.py"
+        ],
+        "decision_rounds": 1,
+        "found_paths": [
+          "src/flask/app.py"
+        ],
+        "information_gain_bits": 2,
+        "latency_seconds": 0.18134384100000034,
+        "observations": [
+          {
+            "hit": false,
+            "path": "src/flask/blueprints.py",
+            "request_seconds": 0.08797714600000006
+          },
+          {
+            "hit": false,
+            "path": "src/flask/config.py",
+            "request_seconds": 0.0790639520000127
+          },
+          {
+            "hit": true,
+            "path": "src/flask/app.py",
+            "request_seconds": 0.18046635400000355
+          },
+          {
+            "hit": false,
+            "path": "src/flask/cli.py",
+            "request_seconds": 0.09267174400000044
+          }
+        ],
+        "policy_id": "fixed_exploration_v0",
+        "probes": 4,
+        "resolved": true,
+        "utility": 0.94637312318
+      },
+      "dream": {
+        "batch_fraction": 0.6666666666666666,
+        "batch_size": 3,
+        "candidate_order": [
+          "src/flask/blueprints.py",
+          "src/flask/config.py",
+          "src/flask/app.py",
+          "src/flask/cli.py"
+        ],
+        "decision_rounds": 1,
+        "found_paths": [
+          "src/flask/app.py"
+        ],
+        "information_gain_bits": 2,
+        "latency_seconds": 0.10033506999999986,
+        "observations": [
+          {
+            "hit": false,
+            "path": "src/flask/blueprints.py",
+            "request_seconds": 0.07861325600001123
+          },
+          {
+            "hit": false,
+            "path": "src/flask/config.py",
+            "request_seconds": 0.06591120000000217
+          },
+          {
+            "hit": true,
+            "path": "src/flask/app.py",
+            "request_seconds": 0.09947296600000755
+          }
+        ],
+        "policy_id": "dream_00002",
+        "probes": 3,
+        "resolved": true,
+        "utility": 1.1979932986
+      },
+      "ref": "d73fa1cdcbd8b1465c151db8924ba58b1dd14e35",
+      "repo": "pallets/flask",
+      "run_order": [
+        "dream",
+        "baseline"
+      ],
+      "setup": {
+        "eligible_unique_lines": 1379,
+        "query": "\"Request finalizing failed with an error while handling an error\"",
+        "setup_probes": 4,
+        "setup_request_seconds": 0.5624357760000152,
+        "target_path": "src/flask/app.py"
+      },
+      "task_id": "C7V2-07",
+      "valid": true
+    },
+    {
+      "baseline": {
+        "batch_fraction": 1,
+        "batch_size": 4,
+        "candidate_order": [
+          "src/flask/sessions.py",
+          "src/flask/helpers.py",
+          "src/flask/testing.py",
+          "src/flask/ctx.py"
+        ],
+        "decision_rounds": 1,
+        "found_paths": [
+          "src/flask/testing.py"
+        ],
+        "information_gain_bits": 2,
+        "latency_seconds": 0.09492566100000488,
+        "observations": [
+          {
+            "hit": false,
+            "path": "src/flask/sessions.py",
+            "request_seconds": 0.09443600100000538
+          },
+          {
+            "hit": false,
+            "path": "src/flask/helpers.py",
+            "request_seconds": 0.08307482200000038
+          },
+          {
+            "hit": true,
+            "path": "src/flask/testing.py",
+            "request_seconds": 0.08825900500001183
+          },
+          {
+            "hit": false,
+            "path": "src/flask/ctx.py",
+            "request_seconds": 0.08331092599999579
+          }
+        ],
+        "policy_id": "fixed_exploration_v0",
+        "probes": 4,
+        "resolved": true,
+        "utility": 0.9481014867799998
+      },
+      "dream": {
+        "batch_fraction": 0.6666666666666666,
+        "batch_size": 3,
+        "candidate_order": [
+          "src/flask/sessions.py",
+          "src/flask/helpers.py",
+          "src/flask/testing.py",
+          "src/flask/ctx.py"
+        ],
+        "decision_rounds": 1,
+        "found_paths": [
+          "src/flask/testing.py"
+        ],
+        "information_gain_bits": 2,
+        "latency_seconds": 0.28301562299999716,
+        "observations": [
+          {
+            "hit": false,
+            "path": "src/flask/sessions.py",
+            "request_seconds": 0.07859518000000776
+          },
+          {
+            "hit": false,
+            "path": "src/flask/helpers.py",
+            "request_seconds": 0.07013305000000969
+          },
+          {
+            "hit": true,
+            "path": "src/flask/testing.py",
+            "request_seconds": 0.28209224999999094
+          }
+        ],
+        "policy_id": "dream_00002",
+        "probes": 3,
+        "resolved": true,
+        "utility": 1.19433968754
+      },
+      "ref": "d73fa1cdcbd8b1465c151db8924ba58b1dd14e35",
+      "repo": "pallets/flask",
+      "run_order": [
+        "dream",
+        "baseline"
+      ],
+      "setup": {
+        "eligible_unique_lines": 909,
+        "query": "\"HTTP_USER_AGENT\": f\"Werkzeug/{_get_werkzeug_version()}\",",
+        "setup_probes": 4,
+        "setup_request_seconds": 0.6308001560000065,
+        "target_path": "src/flask/testing.py"
+      },
+      "task_id": "C7V2-08",
+      "valid": true
+    }
+  ],
+  "observed_by_ci": "github:kau17033/r3f-scroll-rig/actions/runs/35749591570",
+  "plan_commit": "991bdf552f81b632a83095c7ca9510f33e337b01",
+  "runner_commit": "7ce4ef909333e334dc5ec0e7dd4910a90d227ea2",
+  "evidence_status": "PROSPECTIVE_EVALUATION_CLOSED"
+}
