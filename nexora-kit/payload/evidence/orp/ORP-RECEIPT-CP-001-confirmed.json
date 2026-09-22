@@ -12,12 +12,20 @@
     968161
   ],
   "pending_attestation_count": 4,
-  "status": "BITCOIN_CONFIRMED_UNVERIFIED_BLOCK_BINDING",
+  "status": "BITCOIN_CONFIRMED_VERIFIED",
   "source_calendars": [
     "https://finney.calendar.eternitywall.com",
     "https://bob.btc.calendar.opentimestamps.org",
     "https://alice.btc.calendar.opentimestamps.org",
     "https://btc.calendar.catallaxy.com"
   ],
-  "claim_ceiling": "The official pinned OpenTimestamps implementation obtained two BitcoinBlockHeaderAttestations at height 968161. This metadata does not by itself assert Merkle-root/PoW/best-chain validity; those require independent verification."
+  "claim_ceiling": "The pinned official OpenTimestamps implementation produced two BitcoinBlockHeaderAttestations at height 968161, and the frozen upgraded proof was independently checked for anchor binding, Merkle-root binding, header hash, encoded PoW target, and local prev/next linkage. Full genesis-to-tip best-chain validation, history completeness, semantic truth, and causal benefit are not claimed.",
+  "independent_verification": {
+    "evidence": "evidence/orp/ORP-RECEIPT-CP-001-independent-confirmation.json",
+    "ci_run": "github:kau17033/r3f-scroll-rig/actions/runs/35765127791",
+    "block_height": 968161,
+    "block_hash": "00000000000000000001c5aa27792733092c27e684f399083305e32b15572dac",
+    "pow_valid": true,
+    "local_prev_next_linkage_valid": true
+  }
 }
