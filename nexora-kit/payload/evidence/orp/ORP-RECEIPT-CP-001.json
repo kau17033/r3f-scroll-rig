@@ -1,0 +1,81 @@
+{
+  "schema": "orp-receipt-checkpoint-evidence/1.0",
+  "observed_by_ci": "github:kau17033/r3f-scroll-rig/actions/runs/35747481846",
+  "observed_at": "2026-09-22",
+  "checkpoint": {
+    "schema": "nexora-evidence-checkpoint/1.0",
+    "checkpoint_id": "ORP-RECEIPT-CP-001",
+    "previous_checkpoint": null,
+    "checkpoint_hash": "3065b7b0729035ee74a037d3b5c276b53fd881d39056db0cb072fd6c779f465f",
+    "entries": [
+      {
+        "path": "control/ORP-RECEIPT-RECOVERY.md",
+        "sha256": "caaeeb4a61fed98501c536a000c079075d35854a1f426b90cdc6faffe6943920",
+        "size": 1147
+      },
+      {
+        "path": "evidence/orp/TASK-007-bitcoin-358391.json",
+        "sha256": "64d1116d3cad26985a63252fb8109610752202e9ae82c10d57154f0c9e70c858",
+        "size": 2333
+      },
+      {
+        "path": "notes/ots-observed.md",
+        "sha256": "6a4d5c42d112b64dfc30667e8f9e6f60a96df4e291681f5697452113579e42f0",
+        "size": 13581
+      },
+      {
+        "path": "spec/slice2.md",
+        "sha256": "768c9968a62cc84314372b294344cf414415c5612e1c8e14ebab935df70fed4b",
+        "size": 6146
+      },
+      {
+        "path": "spec/slice3.md",
+        "sha256": "0934d9f6df06c769ab940767592b91bd434437519b24ee8066bf3c53399335fd",
+        "size": 4893
+      },
+      {
+        "path": "tests/test_bitcoin_header_recon.py",
+        "sha256": "80d48feb9f9f1d988d2be5d827746bdef4258fd7951d6efbea3802c71f08c948",
+        "size": 1156
+      },
+      {
+        "path": "tests/test_evidence_checkpoint.py",
+        "sha256": "b103bad6da2f50503de0236149229744e6f3a810c531f03bf09e8f374815bdc0",
+        "size": 2655
+      },
+      {
+        "path": "tests/test_ots_observed.py",
+        "sha256": "6130dc6ce32979064d57ea233eafbe9f899c124f7b22be1fa2e3715148806d15",
+        "size": 1945
+      },
+      {
+        "path": "testvectors/ots-observed.json",
+        "sha256": "62f2137fbaeb69c72ec83ab2a89233064b88ef04c64a2e9366e8381691c0bb5b",
+        "size": 2077
+      },
+      {
+        "path": "tools/bitcoin_header_recon.py",
+        "sha256": "cf227ded3cb4220bfa10667fa2e7397f500121607dc90f6549d2f159571928ce",
+        "size": 6927
+      },
+      {
+        "path": "tools/evidence_checkpoint.py",
+        "sha256": "5fbd5e1b93c582585ac689f859b34c282971a5213c029515dfd4e1426e59f189",
+        "size": 5524
+      },
+      {
+        "path": "tools/ots_observed.py",
+        "sha256": "e2c25be9258bb6434153cb682b90c29cbbb7b1135022be2fc47006f42b61a99b",
+        "size": 4862
+      }
+    ]
+  },
+  "baseline_verified": true,
+  "corruption_injected": "testvectors/ots-observed.json one-bit same-size mutation",
+  "corruption_detected": true,
+  "recovery_source": "independent temporary backup copy populated before corruption",
+  "atomic_restore": true,
+  "post_recovery_verified": true,
+  "files": 12,
+  "claim_ceiling": "Proves deterministic identity and tested hash-verified recovery for this checkpoint file set; does not prove history completeness, semantic truth, or independent failure-domain durability."
+}
