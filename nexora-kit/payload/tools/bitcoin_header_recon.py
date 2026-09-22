@@ -105,9 +105,12 @@ def main():
     # Bitcoin Core's MTP check for block N uses the prior 11 block timestamps.
     prev11 = [int(by_height[h]["timestamp"]) for h in range(HEIGHT - 11, HEIGHT)]
     mtp_prev11 = int(statistics.median(prev11))
-    api_mtp = int(block["mediantime"])
-    if mtp_prev11 != api_mtp:
-        raise AssertionError("computed MTP != API mediantime")
+    # Explorer/Core "mediantime" on block N is N's own GetMedianTimePast()
+    # (N plus the preceding ten). The consensus validity check for N instead
+    # compares against pindexPrev->GetMedianTimePast(), so compare with N-1.
+    api_prev_mtp = int(by_height[HEIGHT - 1]["mediantime"])
+    if mtp_prev11 != api_prev_mtp:
+        raise AssertionError("computed previous-block MTP != API mediantime at N-1")
     if not header["timestamp"] > mtp_prev11:
         raise AssertionError("time-too-old consensus rule would fail")
 
@@ -146,6 +149,8 @@ def main():
             "header_timestamp": header["timestamp"],
             "prev11_timestamps": prev11,
             "mtp_prev11": mtp_prev11,
+            "api_prev_block_mediantime": api_prev_mtp,
+            "api_current_block_mediantime": int(block["mediantime"]),
             "header_minus_mtp_seconds": header["timestamp"] - mtp_prev11,
             "height_n_plus_11": HEIGHT + 11,
             "mtp_n_plus_11": mtp_nplus11,
