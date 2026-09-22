@@ -1,0 +1,31 @@
+{
+  "schema": "orp-receipt-ots-anchor/1.0",
+  "generated_by_ci": "github:kau17033/r3f-scroll-rig/actions/runs/35747869630",
+  "generated_at": "2026-09-22",
+  "checkpoint_id": "ORP-RECEIPT-CP-001",
+  "checkpoint_hash": "3065b7b0729035ee74a037d3b5c276b53fd881d39056db0cb072fd6c779f465f",
+  "anchor_payload_path": "evidence/orp/ORP-RECEIPT-CP-001.anchor.txt",
+  "anchor_payload_sha256": "0812bb926f9a449d2b92e1a6c2e1251b81a483907d2caeedda34ca2acf24b38e",
+  "proof_encoding": "base64",
+  "proof_bytes": 805,
+  "attestations": [
+    {
+      "type": "PendingAttestation",
+      "uri": "https://finney.calendar.eternitywall.com"
+    },
+    {
+      "type": "PendingAttestation",
+      "uri": "https://bob.btc.calendar.opentimestamps.org"
+    },
+    {
+      "type": "PendingAttestation",
+      "uri": "https://alice.btc.calendar.opentimestamps.org"
+    },
+    {
+      "type": "PendingAttestation",
+      "uri": "https://btc.calendar.catallaxy.com"
+    }
+  ],
+  "bitcoin_confirmation": "PENDING",
+  "claim_ceiling": "Calendar commitments are externally submitted and recoverable from the stored proof. No Bitcoin block attestation or historical existence bound is claimed until the proof is upgraded and independently verified."
+}
