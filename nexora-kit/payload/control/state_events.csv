@@ -23,4 +23,5 @@ EV-0200,2026-09-22,TRANSITION,TR-01,BLOCKED_EVIDENCE,NO_TELEPORTATION,control/CO
 EV-0201,2026-09-22,TRANSITION,TR-02,NOT_EXECUTED,NO_TELEPORTATION,control/CONVERGED-SSOT.md,LoopCell Phase 0 not executed
 EV-0202,2026-09-22,TRANSITION,TR-03,FORMAL_ONLY,NO_TELEPORTATION,control/CONVERGED-SSOT.md,Capability empirical state absent and controller not prospectively evaluated
 EV-0203,2026-09-22,TRANSITION,TR-04,SUPPORTING_ONLY,NO_TELEPORTATION,control/orp_namespaces.md,Receipt infrastructure is orthogonal and cannot promote scientific layers
-EV-0012,2026-09-22,NEXORA,T-005,VERIFIED,CI,github:kau17033/r3f-scroll-rig/actions/runs/35728612031,Reducer snapshot and full CI suite passed\nEV-0109,2026-09-22,GATE,C1,PARTIAL,CI,github:kau17033/r3f-scroll-rig/actions/runs/35728612031,Deterministic reducer is verified; final host migration and fresh external repository validation remain open\n
+EV-0012,2026-09-22,NEXORA,T-005,VERIFIED,CI,github:kau17033/r3f-scroll-rig/actions/runs/35728612031,Reducer snapshot and full CI suite passed
+EV-0109,2026-09-22,GATE,C1,PARTIAL,CI,github:kau17033/r3f-scroll-rig/actions/runs/35728612031,Deterministic reducer is verified; final host migration and fresh external repository validation remain open
