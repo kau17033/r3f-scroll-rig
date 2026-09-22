@@ -13,7 +13,7 @@ class ConflictCheck(unittest.TestCase):
             capture_output=True, text=True,
         )
         self.assertEqual(0, r.returncode, r.stdout + r.stderr)
-        self.assertIn("18/18 classified", r.stdout)
+        self.assertIn("19/19 classified", r.stdout)
         self.assertIn("human_gated=3", r.stdout)
 
 
