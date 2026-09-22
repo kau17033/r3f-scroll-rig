@@ -7,6 +7,6 @@ R-04,W2,PROPOSAL-001 の適用可否が人間により判断された,HUMAN,PEND
 R-05,W2,HD-53 First-Completion 宣言が人間により行われた,HUMAN,PENDING,W2
 R-06,W2,155-pair 確証実験の GO が人間により与えられた（または不要と裁定された）,HUMAN,PENDING,W2
 R-07,W3,LOOPCELL_API_KEY が実行環境で参照可能である,HUMAN,PENDING,W3
-R-08,W3,C-06（experiment_repo.name）が人間により裁定された,HUMAN,PENDING,W3
+R-08,W3,C-06 の既存 provenance-only 修正 commit 48bf6de が t0 前に人間により追認または棄却された,HUMAN,PENDING,W3
 R-09,W3,LoopCell の API 呼び出しに対する課金承認が与えられた,HUMAN,PENDING,W3
-R-10,W3,analyze / report（SPEC §15）が実装された,HUMAN,PENDING,W3
+R-10,W3,analyze / report（SPEC §15）の検証済み実装 PR #2 が承認済み実行commitへ取り込まれた,HUMAN,PENDING,W3
