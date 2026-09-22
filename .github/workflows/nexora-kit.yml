@@ -35,6 +35,9 @@ jobs:
       - name: Dream-Replay bootstrap
         run: python3 tools/dream_replay.py --bootstrap-check > /tmp/dream-replay.json
 
+      - name: section disposition convergence
+        run: python3 tools/disposition_check.py
+
       - name: converged state snapshot
         run: python3 tools/state_reduce.py --check
 
