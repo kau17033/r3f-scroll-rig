@@ -29,6 +29,12 @@ jobs:
       - name: unit tests
         run: python3 -m unittest discover -s tests -t tests -v
 
+      - name: source registry convergence
+        run: python3 tools/source_registry_check.py
+
+      - name: Dream-Replay bootstrap
+        run: python3 tools/dream_replay.py --bootstrap-check > /tmp/dream-replay.json
+
       - name: converged state snapshot
         run: python3 tools/state_reduce.py --check
 
