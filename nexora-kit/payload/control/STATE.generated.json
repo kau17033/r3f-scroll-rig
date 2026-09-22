@@ -293,10 +293,10 @@
       "evidence_ref": "github:kau17033/r3f-scroll-rig/actions/runs/35747481846"
     },
     "ORP/Receipt:EXTERNAL_CHECKPOINT": {
-      "state": "PENDING_CONFIRMATION",
+      "state": "VERIFIED",
       "observed_at": "2026-09-23",
       "evidence_class": "NETWORK_ANCHOR",
-      "evidence_ref": "evidence/orp/ORP-RECEIPT-CP-001-OTS.json"
+      "evidence_ref": "evidence/orp/ORP-RECEIPT-CP-001-independent-confirmation.json"
     },
     "ORP/Receipt:OTS_TASK006": {
       "state": "VERIFIED",
@@ -368,10 +368,10 @@
     },
     "C6": {
       "name": "ORP/Receipt",
-      "status": "PARTIAL_PASS",
+      "status": "PASS",
       "predicate": "Receipt identity signature interoperability checkpoint recovery and verification boundaries are closed",
-      "evidence_ref": "evidence/orp/ORP-RECEIPT-CP-001-OTS.json",
-      "notes": "Receipt identity signatures real OTS parse Bitcoin historical vector checkpoint recovery and external calendar submission are evidenced; Bitcoin confirmation of CP-001 and production best-chain scope remain open"
+      "evidence_ref": "evidence/orp/ORP-RECEIPT-CP-001-independent-confirmation.json",
+      "notes": "Receipt identity signature interoperability external checkpoint recovery and explicit verification boundaries are closed for the implemented bounded scope; universal OTS coverage full genesis-to-tip best-chain verification completeness semantic truth and causal benefit remain outside the claim"
     },
     "C7": {
       "name": "ORP/Controller",
@@ -410,8 +410,8 @@
       "to": "ORP/Controller",
       "status": "FORMAL_ONLY",
       "promotion_predicate": "capability identity|validity|applicability|cost|limitations|actionability",
-      "evidence_ref": "control/CONVERGED-SSOT.md",
-      "notes": "Capability empirical state absent and controller not prospectively evaluated"
+      "evidence_ref": "evidence/controller/C7-v2-result.json",
+      "notes": "Controller prospective evaluation now passes independently but Capability empirical state remains absent so Capability-to-Controller promotion remains FORMAL_ONLY"
     },
     "TR-04": {
       "from": "ORP/Receipt",
