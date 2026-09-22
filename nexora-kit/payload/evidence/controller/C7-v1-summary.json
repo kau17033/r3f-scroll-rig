@@ -1,0 +1,36 @@
+{
+  "schema": "nexora-c7-prospective-v1-summary/1.0",
+  "plan": "control/C7-PROSPECTIVE-PLAN-v1.json",
+  "plan_commit": "c3da2236f6fa2b40fa7a670784ed40e45799d865",
+  "live_run": "github:kau17033/r3f-scroll-rig/actions/runs/35749013564",
+  "status": "INVALID_OR_INCOMPLETE",
+  "reason": "Two preregistered exact-string targets were absent from all four candidate files (C7-04 and C7-08), so the preregistered minimum_valid_tasks=8 closure rule was not met.",
+  "summary": {
+    "valid_tasks": 6,
+    "invalid_tasks": [
+      "C7-04",
+      "C7-08"
+    ],
+    "baseline_resolution_rate": 1,
+    "dream_resolution_rate": 1,
+    "baseline_mean_utility": 0.9454996645833332,
+    "dream_mean_utility": 1.0954786792266666,
+    "mean_utility_difference": 0.1499790146433334,
+    "baseline_total_probes": 24,
+    "dream_total_probes": 20,
+    "probe_difference": -4,
+    "evaluation_closure": false,
+    "controller_improved": false,
+    "controller_result": "INVALID_OR_INCOMPLETE"
+  },
+  "historical_prediction": {
+    "replay_incumbent_reward": 0.4023333333,
+    "replay_selected_reward": 0.4023333333,
+    "replay_predicted_reward_gain": 0,
+    "predicted_cost_direction": "dream<=baseline",
+    "selected_policy_id": "dream_00002",
+    "selected_batch_fraction": 0.6666666666666666
+  },
+  "interpretation": "The six valid tasks are diagnostic only. Their positive utility/probe difference MUST NOT be promoted as prospective C7 improvement because v1 failed its 8/8 validity requirement.",
+  "next_rule": "Do not repair v1 in place. A new v2 must be preregistered before any v2 live outcomes and must use newly generated held-out queries."
+}
