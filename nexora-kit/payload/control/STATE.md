@@ -28,8 +28,13 @@ If this prose disagrees with generated state, generated state is authoritative f
 
 ## Next executable work
 
-1. T-020 / T-040 / T-050 / T-060 / T-100 are **VERIFIED** by CI run `35739331939`.
-2. Requirement coverage is **1652/1652**; conflict classification is **19/19** with 3 scientific conflicts isolated behind HG-*; traceability is **1652/1652** and does not imply satisfaction.
-3. External canonical validation is **35/35 MATCH**.
-4. T-070 is now the next convergence task. Its gate must distinguish control-plane convergence from C2-C8 scientific/operational completion; human gates remain fail-closed.
+1. T-020 / T-040 / T-050 / T-060 / T-100 are **VERIFIED**.
+2. T-070 direct convergence gate was verified by CI run `35740020637`:
+   **7/8 structural checks PASS; the sole blocker is `NEXORA:FINAL_HOST`.**
+3. Final target remains DEC-002's private repository `kau17033/nexora-core`.
+   The currently available GitHub connector has no repository-creation action, so this physical-host
+   creation cannot be completed autonomously from this session.
+4. Migration procedure is frozen in `control/FINAL-HOST-MIGRATION.md`.
+5. The 7 HG-* scientific/cost/legal gates remain pending and are **not** part of T-070 structural convergence.
+   Global C2-C8 completion remains fail-closed.
 
