@@ -9,7 +9,7 @@ ROOT = os.path.realpath(os.path.join(os.path.dirname(os.path.abspath(__file__)),
 CONFLICTS = os.path.join(ROOT, "control", "conflicts.md")
 HUMAN = os.path.join(ROOT, "control", "human_gates.csv")
 
-ROW = re.compile(r"^\|\s*(CONF-\d{2})\s*\|(.+?)\|(.+?)\|(.+?)\|\s*(DEC-\d{3})\s*\|(.+?)\|\s*$")
+ROW = re.compile(r"^\\|\\s*(CONF-\\d{2})\\s*\\|(.+?)\\|(.+?)\\|(.+?)\\|(.+?)\\|(.+?)\\|\\s*$")
 ALLOWED_TERMINAL = ("RESOLVED", "SUPERSEDED")
 OPEN_TO_HG = {
     "CONF-04": "HG-VEA-ESTIMAND",
