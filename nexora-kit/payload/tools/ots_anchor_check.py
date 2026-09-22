@@ -12,7 +12,7 @@ PENDING_TAG="83dfe30d2ef90c8e"
 
 def main():
     anchor=open(ANCHOR,"rb").read()
-    proof=base64.b64decode(open(B64,encoding="ascii").read(),validate=True)
+    proof=base64.b64decode(open(B64,encoding="ascii").read().strip(),validate=True)
     meta=json.load(open(META,encoding="utf-8"))
     parsed=parse_detached(proof)
     digest=hashlib.sha256(anchor).hexdigest()
