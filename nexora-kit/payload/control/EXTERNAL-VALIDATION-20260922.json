@@ -13,7 +13,7 @@
   "entries": [
     {
       "src_id": "SRC-02",
-      "repo": "kau17033/VEA-G3",
+      "repo": "kau17033/vea-g3",
       "path": "SSOT.md",
       "expected_blob_sha": "b338cee8f6490ef2140d8fe39af19d92288ce2e0",
       "actual_blob_sha": "b338cee8f6490ef2140d8fe39af19d92288ce2e0",
@@ -21,7 +21,7 @@
     },
     {
       "src_id": "SRC-02",
-      "repo": "kau17033/VEA-G3",
+      "repo": "kau17033/vea-g3",
       "path": "SPEC.md",
       "expected_blob_sha": "e233bfff0012698b625c0389a17f749326052c5a",
       "actual_blob_sha": "e233bfff0012698b625c0389a17f749326052c5a",
@@ -29,7 +29,7 @@
     },
     {
       "src_id": "SRC-02",
-      "repo": "kau17033/VEA-G3",
+      "repo": "kau17033/vea-g3",
       "path": "PROTOCOL_LOCK.md",
       "expected_blob_sha": "e535476b4f981f3ca1f8dff9efb92253797c0a39",
       "actual_blob_sha": "e535476b4f981f3ca1f8dff9efb92253797c0a39",
@@ -37,7 +37,7 @@
     },
     {
       "src_id": "SRC-02",
-      "repo": "kau17033/VEA-G3",
+      "repo": "kau17033/vea-g3",
       "path": "PREREGISTRATION.md",
       "expected_blob_sha": "19338e80d2acf808c819d4a3385bc6bae1c888c6",
       "actual_blob_sha": "19338e80d2acf808c819d4a3385bc6bae1c888c6",
@@ -45,7 +45,7 @@
     },
     {
       "src_id": "SRC-02",
-      "repo": "kau17033/VEA-G3",
+      "repo": "kau17033/vea-g3",
       "path": "COMPLIANCE_MANIFEST.md",
       "expected_blob_sha": "92d3cbc635b314a1622e3aa12c6aabcbf68c4fbb",
       "actual_blob_sha": "92d3cbc635b314a1622e3aa12c6aabcbf68c4fbb",
@@ -53,7 +53,7 @@
     },
     {
       "src_id": "SRC-02",
-      "repo": "kau17033/VEA-G3",
+      "repo": "kau17033/vea-g3",
       "path": "GATE_C_SPECIFICATION.md",
       "expected_blob_sha": "21360c157c6e62b367cf18c39e4a5292590c113d",
       "actual_blob_sha": "21360c157c6e62b367cf18c39e4a5292590c113d",
@@ -61,7 +61,7 @@
     },
     {
       "src_id": "SRC-02",
-      "repo": "kau17033/VEA-G3",
+      "repo": "kau17033/vea-g3",
       "path": "GATE_STATUS.json",
       "expected_blob_sha": "0c57fe58eaac06939f725f6a6a9bd1386e188518",
       "actual_blob_sha": "0c57fe58eaac06939f725f6a6a9bd1386e188518",
@@ -69,7 +69,7 @@
     },
     {
       "src_id": "SRC-02",
-      "repo": "kau17033/VEA-G3",
+      "repo": "kau17033/vea-g3",
       "path": "CLAIM_STATUS.md",
       "expected_blob_sha": "d9d12567971a82a276065ee0dc4f65d8320d60fb",
       "actual_blob_sha": "d9d12567971a82a276065ee0dc4f65d8320d60fb",
@@ -77,7 +77,7 @@
     },
     {
       "src_id": "SRC-02",
-      "repo": "kau17033/VEA-G3",
+      "repo": "kau17033/vea-g3",
       "path": "RESEARCH_STATE.md",
       "expected_blob_sha": "10be79430cef3ef1d7a56eff72d15bb525d7d0a3",
       "actual_blob_sha": "10be79430cef3ef1d7a56eff72d15bb525d7d0a3",
@@ -85,7 +85,7 @@
     },
     {
       "src_id": "SRC-02",
-      "repo": "kau17033/VEA-G3",
+      "repo": "kau17033/vea-g3",
       "path": "ENVIRONMENT_LOCK.md",
       "expected_blob_sha": "09953d85fc6d1d507c69f1525804a41b0495788f",
       "actual_blob_sha": "09953d85fc6d1d507c69f1525804a41b0495788f",
@@ -93,7 +93,7 @@
     },
     {
       "src_id": "SRC-02",
-      "repo": "kau17033/VEA-G3",
+      "repo": "kau17033/vea-g3",
       "path": "FIRST_COMPLETION_CONTRACT.md",
       "expected_blob_sha": "bddadfaf6055342facd5a25a47db0b5b09e568d7",
       "actual_blob_sha": "bddadfaf6055342facd5a25a47db0b5b09e568d7",
@@ -101,7 +101,7 @@
     },
     {
       "src_id": "SRC-02",
-      "repo": "kau17033/VEA-G3",
+      "repo": "kau17033/vea-g3",
       "path": "RECONCILIATION.md",
       "expected_blob_sha": "fb9cf9a4fee1cf5b3ce7673b2f1fc9ebb9833e82",
       "actual_blob_sha": "fb9cf9a4fee1cf5b3ce7673b2f1fc9ebb9833e82",
@@ -109,7 +109,7 @@
     },
     {
       "src_id": "SRC-02",
-      "repo": "kau17033/VEA-G3",
+      "repo": "kau17033/vea-g3",
       "path": "CORPUS_CONVERGED_SPEC.md",
       "expected_blob_sha": "3f98c8df998e110fe527f5a929f4376226341281",
       "actual_blob_sha": "3f98c8df998e110fe527f5a929f4376226341281",
@@ -117,7 +117,7 @@
     },
     {
       "src_id": "SRC-02",
-      "repo": "kau17033/VEA-G3",
+      "repo": "kau17033/vea-g3",
       "path": "SERVICE_IMPLEMENTATION_SSOT.md",
       "expected_blob_sha": "38e79e1c5b16e44e2f5f35cf945c649605b14591",
       "actual_blob_sha": "38e79e1c5b16e44e2f5f35cf945c649605b14591",
@@ -125,7 +125,7 @@
     },
     {
       "src_id": "SRC-02",
-      "repo": "kau17033/VEA-G3",
+      "repo": "kau17033/vea-g3",
       "path": "SUPREME_OBJECTIVE.md",
       "expected_blob_sha": "19710285f5c28b44e5890350527860668bab51c4",
       "actual_blob_sha": "19710285f5c28b44e5890350527860668bab51c4",
@@ -133,7 +133,7 @@
     },
     {
       "src_id": "SRC-02",
-      "repo": "kau17033/VEA-G3",
+      "repo": "kau17033/vea-g3",
       "path": "RESEARCH_ENGINE.md",
       "expected_blob_sha": "247b87bff9925470c4c29048ab98cef9e8f7ca46",
       "actual_blob_sha": "247b87bff9925470c4c29048ab98cef9e8f7ca46",
@@ -141,7 +141,7 @@
     },
     {
       "src_id": "SRC-02",
-      "repo": "kau17033/VEA-G3",
+      "repo": "kau17033/vea-g3",
       "path": "MSP_EXECUTION_MODEL.md",
       "expected_blob_sha": "6c09188793f7f7b9e42a0dad54fdbe410707854e",
       "actual_blob_sha": "6c09188793f7f7b9e42a0dad54fdbe410707854e",
@@ -149,7 +149,7 @@
     },
     {
       "src_id": "SRC-02",
-      "repo": "kau17033/VEA-G3",
+      "repo": "kau17033/vea-g3",
       "path": "HDR.md",
       "expected_blob_sha": "eda2d3df407b3bc87f3ce5a11b248fe1295f1ac0",
       "actual_blob_sha": "eda2d3df407b3bc87f3ce5a11b248fe1295f1ac0",
@@ -157,7 +157,7 @@
     },
     {
       "src_id": "SRC-02",
-      "repo": "kau17033/VEA-G3",
+      "repo": "kau17033/vea-g3",
       "path": "MGC.md",
       "expected_blob_sha": "80c58732817c8ed3e2f4e3301487aaf54a547d45",
       "actual_blob_sha": "80c58732817c8ed3e2f4e3301487aaf54a547d45",
@@ -165,7 +165,7 @@
     },
     {
       "src_id": "SRC-02",
-      "repo": "kau17033/VEA-G3",
+      "repo": "kau17033/vea-g3",
       "path": "EXPERIMENT_MIGRATION.md",
       "expected_blob_sha": "83238f038d4f8133cfc6c408e91fd14022e7913d",
       "actual_blob_sha": "83238f038d4f8133cfc6c408e91fd14022e7913d",
@@ -173,7 +173,7 @@
     },
     {
       "src_id": "SRC-02",
-      "repo": "kau17033/VEA-G3",
+      "repo": "kau17033/vea-g3",
       "path": "VEA-G3-FINAL-MANUSCRIPT.md",
       "expected_blob_sha": "3bd32f137efbc958175dca578bdef0ca48622fbe",
       "actual_blob_sha": "3bd32f137efbc958175dca578bdef0ca48622fbe",
@@ -181,7 +181,7 @@
     },
     {
       "src_id": "SRC-02",
-      "repo": "kau17033/VEA-G3",
+      "repo": "kau17033/vea-g3",
       "path": "CHANGELOG.md",
       "expected_blob_sha": "d66a9c6473cad31b79fa9e99e18cb3dafb1261a0",
       "actual_blob_sha": "d66a9c6473cad31b79fa9e99e18cb3dafb1261a0",
@@ -189,7 +189,7 @@
     },
     {
       "src_id": "SRC-02",
-      "repo": "kau17033/VEA-G3",
+      "repo": "kau17033/vea-g3",
       "path": "RUNBOOK.md",
       "expected_blob_sha": "38fe285c48d6a1868f05f6e91ec81ceab8a75963",
       "actual_blob_sha": "38fe285c48d6a1868f05f6e91ec81ceab8a75963",
@@ -197,7 +197,7 @@
     },
     {
       "src_id": "SRC-02",
-      "repo": "kau17033/VEA-G3",
+      "repo": "kau17033/vea-g3",
       "path": "evidence/reports/SOURCE_SELECTION_ROOT_CAUSE.md",
       "expected_blob_sha": "49e61dbc7bd1d4b47b9a69b7e49d3f725f90029a",
       "actual_blob_sha": "49e61dbc7bd1d4b47b9a69b7e49d3f725f90029a",
@@ -205,7 +205,7 @@
     },
     {
       "src_id": "SRC-02",
-      "repo": "kau17033/VEA-G3",
+      "repo": "kau17033/vea-g3",
       "path": "evidence/reports/SERIAL_SPINE_R5_640_RESULT.md",
       "expected_blob_sha": "d114bafda18c93c7eb59dab16921c662b2b8f362",
       "actual_blob_sha": "d114bafda18c93c7eb59dab16921c662b2b8f362",
@@ -213,7 +213,7 @@
     },
     {
       "src_id": "SRC-02",
-      "repo": "kau17033/VEA-G3",
+      "repo": "kau17033/vea-g3",
       "path": "src/veag3_dk/llm_client.py",
       "expected_blob_sha": "5b9bdde382d1766ae242e4de6e66c26c08c1e9cf",
       "actual_blob_sha": "5b9bdde382d1766ae242e4de6e66c26c08c1e9cf",
@@ -221,7 +221,7 @@
     },
     {
       "src_id": "SRC-04",
-      "repo": "kau17033/LoopCell",
+      "repo": "kau17033/loopcell",
       "path": "experiments/loopcell_phase0/spec/SPEC_v1.1.md",
       "expected_blob_sha": "6c1342f0f99f9d3ab874b25e466f9fc8e34457f1",
       "actual_blob_sha": "6c1342f0f99f9d3ab874b25e466f9fc8e34457f1",
@@ -229,7 +229,7 @@
     },
     {
       "src_id": "SRC-04",
-      "repo": "kau17033/LoopCell",
+      "repo": "kau17033/loopcell",
       "path": "experiments/loopcell_phase0/spec/FREEZE_MANIFEST.json",
       "expected_blob_sha": "a11ca914c471197b10a6d9b1064736b7b53dd7af",
       "actual_blob_sha": "a11ca914c471197b10a6d9b1064736b7b53dd7af",
@@ -237,7 +237,7 @@
     },
     {
       "src_id": "SRC-04",
-      "repo": "kau17033/LoopCell",
+      "repo": "kau17033/loopcell",
       "path": "experiments/loopcell_phase0/spec/reference/assertions.json",
       "expected_blob_sha": "d2e8be98f213597a3281784eb4c444decc06b2b5",
       "actual_blob_sha": "d2e8be98f213597a3281784eb4c444decc06b2b5",
@@ -245,7 +245,7 @@
     },
     {
       "src_id": "SRC-04",
-      "repo": "kau17033/LoopCell",
+      "repo": "kau17033/loopcell",
       "path": "experiments/loopcell_phase0/spec/reference/reject_reasons.json",
       "expected_blob_sha": "1934c71b10b9a9c6ad5f96227f1f34d214c7c33b",
       "actual_blob_sha": "1934c71b10b9a9c6ad5f96227f1f34d214c7c33b",
@@ -253,7 +253,7 @@
     },
     {
       "src_id": "SRC-04",
-      "repo": "kau17033/LoopCell",
+      "repo": "kau17033/loopcell",
       "path": "experiments/loopcell_phase0/DECISIONS/decision-log.md",
       "expected_blob_sha": "e77b81bbc6f0efc584a3153c520ed060323d6156",
       "actual_blob_sha": "e77b81bbc6f0efc584a3153c520ed060323d6156",
@@ -261,7 +261,7 @@
     },
     {
       "src_id": "SRC-04",
-      "repo": "kau17033/LoopCell",
+      "repo": "kau17033/loopcell",
       "path": "experiments/loopcell_phase0/DECISIONS/contradictions.md",
       "expected_blob_sha": "005124bfaa080a9cd3a937e286b2f2bf91c3794a",
       "actual_blob_sha": "005124bfaa080a9cd3a937e286b2f2bf91c3794a",
@@ -269,7 +269,7 @@
     },
     {
       "src_id": "SRC-04",
-      "repo": "kau17033/LoopCell",
+      "repo": "kau17033/loopcell",
       "path": "experiments/loopcell_phase0/AUDIT/completeness.md",
       "expected_blob_sha": "53b4ad69f6e8c72b0ce1576248e559877f66db1d",
       "actual_blob_sha": "53b4ad69f6e8c72b0ce1576248e559877f66db1d",
@@ -277,7 +277,7 @@
     },
     {
       "src_id": "SRC-04",
-      "repo": "kau17033/LoopCell",
+      "repo": "kau17033/loopcell",
       "path": "README.md",
       "expected_blob_sha": "92de74dfc7b5ea3198b87a720e09c5b20361c2e4",
       "actual_blob_sha": "92de74dfc7b5ea3198b87a720e09c5b20361c2e4",
@@ -285,7 +285,7 @@
     },
     {
       "src_id": "SRC-02",
-      "repo": "kau17033/VEA-G3",
+      "repo": "kau17033/vea-g3",
       "path": "src/veag3_dk/derive.py",
       "expected_blob_sha": "4b529381a26b9e70a6d7e32fbe9e75d029fc00af",
       "actual_blob_sha": "4b529381a26b9e70a6d7e32fbe9e75d029fc00af",
