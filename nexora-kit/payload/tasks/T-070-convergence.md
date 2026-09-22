@@ -1,26 +1,42 @@
-# T-070 — 収束成果物
+# T-070 — cross-repository convergence closure
 
-- blocked_by: T-050, T-060, DEC-008
-- unlocks: 研究実行（SRC-01 SOV§181 順）
+blocked_by: T-050, T-060, DEC-008  
+unlocks: migration into the final canonical host, then scoped research execution
 
-## 目的
-「完遂」を宣言できる状態か否かを機械判定する。
+## Objective
 
-## 完了条件（断定条件）
+Determine whether the **control plane itself** has converged. Do not conflate this with
+scientific/operational completion C2-C8.
+
+## Acceptance
+
 ```bash
-python3 tools/gate_check.py   # exit 0 であること
+python3 tools/convergence_gate.py
 ```
-- G1 SOURCES_INTEGRITY = PASS
-- G2 disposition PENDING = 0
-- G3 decisions PENDING = 0
-- G4 traceability 完備
-- G5 AUDIT§70 の 11 項目がすべて 0（`control/audit70.csv`。SRC-01 投入後に項目名を転記する）
 
-## 出力
-- 収束レポート（上記 5 条件の実測出力を貼る）
-- 残存 DEC / OQ / DEV の一覧
-- 次フェーズ（SOV§181 の 1–15）の開始可否
+Required structural checks:
 
-## 禁止
-- 1 つでも BLOCK が残る状態で「完遂」と書かない。
-- 優先順位は DEC-008 の決定に従う。SOV§114 と SOV§181 を混在させない。
+1. source registry / immutable-source evidence passes;
+2. section disposition passes;
+3. 1,652/1,652 requirement normalization passes;
+4. all recorded conflicts are terminal or explicitly HG-bound;
+5. 1,652/1,652 traceability passes without claiming satisfaction;
+6. HG registry is structurally valid;
+7. deterministic state projection passes;
+8. the final canonical physical host is verified.
+
+As of 2026-09-22, checks 1-7 pass. Check 8 is blocked because DEC-002's
+`kau17033/nexora-core` repository has not been created/verified.
+
+## Separation from global completion
+
+`tools/gate_check.py` remains the stricter global completion/release gate and may remain
+BLOCKED while C2-C8, scientific transitions, security/recovery, or human gates remain open.
+
+T-070 MUST NOT zero `audit70.csv` merely to unlock engineering work.
+
+## Human/scientific boundary
+
+HG-* gates are **out of scope for structural convergence**. They continue to block only the
+specific experimental, paid, legal, or human-authority actions listed in
+`control/human_gates.csv`.
