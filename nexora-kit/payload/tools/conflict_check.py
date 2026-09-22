@@ -30,12 +30,15 @@ def parse():
             m = ROW.match(raw.rstrip("\n"))
             if not m:
                 continue
-            cid, conflict, source, resolution, decision, status = m.groups()
+            cid, conflict, source, resolution, decision_cell, status = m.groups()
+            dm = re.search(r"DEC-\\d{3}", decision_cell)
+            if not dm:
+                continue
             out[cid] = {
                 "conflict": conflict.strip(),
                 "source": source.strip(),
                 "resolution": resolution.strip(),
-                "decision": decision.strip(),
+                "decision": dm.group(0),
                 "status": status.replace("*", "").replace(chr(96), "").strip(),
             }
     return out
