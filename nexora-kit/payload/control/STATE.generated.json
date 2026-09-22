@@ -1,0 +1,293 @@
+{
+  "schema_version": "1.0",
+  "as_of": "2026-09-22",
+  "sources": {
+    "SRC-01": {
+      "scope": "NEXORA",
+      "artifact": "ULTRACODE / 指示",
+      "authority_class": "CROSS_PROGRAM_DIRECTIVE",
+      "status": "RECEIVED_UNHASHED",
+      "immutable_ref": "",
+      "locator": "file:file_00000000536481f794fe36687678cee7"
+    },
+    "SRC-02A": {
+      "scope": "VEA-G3",
+      "artifact": "SSOT.md",
+      "authority_class": "FROZEN_EXPERIMENTAL_SSOT",
+      "status": "VERIFIED_IMMUTABLE",
+      "immutable_ref": "b338cee8f6490ef2140d8fe39af19d92288ce2e0",
+      "locator": "github:kau17033/vea-g3:SSOT.md"
+    },
+    "SRC-02B": {
+      "scope": "VEA-G3",
+      "artifact": "PROTOCOL_LOCK.md",
+      "authority_class": "FROZEN_PROTOCOL_LOCK",
+      "status": "VERIFIED_IMMUTABLE",
+      "immutable_ref": "e535476b4f981f3ca1f8dff9efb92253797c0a39",
+      "locator": "github:kau17033/vea-g3:PROTOCOL_LOCK.md"
+    },
+    "SRC-03": {
+      "scope": "NEXORA",
+      "artifact": "論文4",
+      "authority_class": "RESEARCH_DOCUMENT",
+      "status": "RECEIVED_UNHASHED",
+      "immutable_ref": "",
+      "locator": "file:file_00000000b0a482099041705491424ff3"
+    },
+    "SRC-04A": {
+      "scope": "LoopCell",
+      "artifact": "SPEC_v1.1.md",
+      "authority_class": "FROZEN_EXPERIMENTAL_SSOT",
+      "status": "VERIFIED_IMMUTABLE",
+      "immutable_ref": "6c1342f0f99f9d3ab874b25e466f9fc8e34457f1",
+      "locator": "github:kau17033/loopcell:experiments/loopcell_phase0/spec/SPEC_v1.1.md"
+    },
+    "SRC-04B": {
+      "scope": "LoopCell",
+      "artifact": "FREEZE_MANIFEST.json",
+      "authority_class": "FROZEN_PROTOCOL_LOCK",
+      "status": "VERIFIED_IMMUTABLE",
+      "immutable_ref": "a11ca914c471197b10a6d9b1064736b7b53dd7af",
+      "locator": "github:kau17033/loopcell:experiments/loopcell_phase0/spec/FREEZE_MANIFEST.json"
+    },
+    "SRC-05": {
+      "scope": "FOCAL",
+      "artifact": "FOCAL",
+      "authority_class": "PRODUCT_RESEARCH_DOCUMENT",
+      "status": "RECEIVED_UNHASHED",
+      "immutable_ref": "",
+      "locator": "file:file_00000000e29c82079b7fdf0bdb99adc1"
+    },
+    "SRC-06": {
+      "scope": "VEA-G3",
+      "artifact": "VEA 実装仕様のSSOT",
+      "authority_class": "ATTACHED_REFERENCE",
+      "status": "RECEIVED_UNHASHED",
+      "immutable_ref": "",
+      "locator": "file:file_0000000021708207b4956f1af0c663d4"
+    },
+    "SRC-07": {
+      "scope": "LoopCell",
+      "artifact": "LoopCellについて",
+      "authority_class": "ATTACHED_REFERENCE",
+      "status": "RECEIVED_UNHASHED",
+      "immutable_ref": "",
+      "locator": "file:file_0000000045888206b6e6933200dc8567"
+    },
+    "SRC-08": {
+      "scope": "NEXORA",
+      "artifact": "NEXORA_ECD_Model_v1.md",
+      "authority_class": "FORMAL_ADDENDUM",
+      "status": "FORMAL_ESTABLISHED",
+      "immutable_ref": "",
+      "locator": "file:file_00000000945881fbb65cd6039fa35f2b"
+    },
+    "SRC-09": {
+      "scope": "VEA-G3",
+      "artifact": "VEA_G3_Execution_Recovery_20260921.md",
+      "authority_class": "RECOVERY_INDEX",
+      "status": "RECOVERED",
+      "immutable_ref": "",
+      "locator": "file:file_000000006c2c82069433f442e9d30788"
+    },
+    "SRC-10": {
+      "scope": "ORP/Receipt",
+      "artifact": "outlier-orp-spec-v2.0-consolidated",
+      "authority_class": "WORK_IMPLEMENTATION_SPEC",
+      "status": "PARTIAL_PASS",
+      "immutable_ref": "",
+      "locator": "file:file_0000000074c481fb9a33592c44322cde"
+    },
+    "SRC-11": {
+      "scope": "NEXORA",
+      "artifact": "evidence-kernel COMPLETION_REGISTER",
+      "authority_class": "WORK_AUDIT",
+      "status": "RECOVERED",
+      "immutable_ref": "",
+      "locator": "file:file_00000000631482079850db1b8dbda9c9"
+    },
+    "SRC-12": {
+      "scope": "NEXORA",
+      "artifact": "MATH_SPEC",
+      "authority_class": "FORMAL_ADDENDUM",
+      "status": "FORMAL_ESTABLISHED",
+      "immutable_ref": "",
+      "locator": "file:file_00000000325c822fa6c98a7cc9f6d77b"
+    },
+    "SRC-13": {
+      "scope": "ORP/Receipt",
+      "artifact": "TASK-005 execution report",
+      "authority_class": "WORK_IMPLEMENTATION_REPORT",
+      "status": "PARTIAL_PASS",
+      "immutable_ref": "",
+      "locator": "file:file_000000006fc882098df5f2bebaa61dc3"
+    }
+  },
+  "subjects": {
+    "Capability:ECD_T1_T8": {
+      "state": "FORMAL_ESTABLISHED",
+      "observed_at": "2026-09-22",
+      "evidence_class": "FORMAL",
+      "evidence_ref": "file:file_00000000945881fbb65cd6039fa35f2b"
+    },
+    "Capability:EMPIRICAL_ACCUMULATION": {
+      "state": "NOT_EXECUTED",
+      "observed_at": "2026-09-22",
+      "evidence_class": "EXECUTION_STATUS",
+      "evidence_ref": "control/completion_gates.csv"
+    },
+    "LoopCell:PHASE0": {
+      "state": "NOT_EXECUTED",
+      "observed_at": "2026-09-22",
+      "evidence_class": "EXECUTION_STATUS",
+      "evidence_ref": "control/REPO-007-loopcell-gaps.md"
+    },
+    "NEXORA:CANONICAL_CONVERGENCE": {
+      "state": "AUTHORIZED",
+      "observed_at": "2026-09-22",
+      "evidence_class": "HUMAN_DIRECTIVE",
+      "evidence_ref": "conversation:2026-09-22"
+    },
+    "NEXORA:EXTERNAL_SOURCES": {
+      "state": "VERIFIED",
+      "observed_at": "2026-09-17",
+      "evidence_class": "IMMUTABLE_REF",
+      "evidence_ref": "nexora-kit/payload/sources/EXTERNAL.csv"
+    },
+    "NEXORA:T-000": {
+      "state": "VERIFIED",
+      "observed_at": "2026-09-17",
+      "evidence_class": "CI",
+      "evidence_ref": "github:kau17033/r3f-scroll-rig/actions/runs/35190376080"
+    },
+    "ORP/Controller:ACTION_SELECTION": {
+      "state": "FORMAL_ONLY",
+      "observed_at": "2026-09-22",
+      "evidence_class": "FORMAL",
+      "evidence_ref": "file:file_00000000945881fbb65cd6039fa35f2b"
+    },
+    "ORP/Receipt:OTS_TASK006": {
+      "state": "NOT_EXECUTED",
+      "observed_at": "2026-09-22",
+      "evidence_class": "EXECUTION_STATUS",
+      "evidence_ref": "file:file_000000006fc882098df5f2bebaa61dc3"
+    },
+    "ORP/Receipt:SLICE1": {
+      "state": "PARTIAL_PASS",
+      "observed_at": "2026-09-21",
+      "evidence_class": "IMPLEMENTATION_TEST",
+      "evidence_ref": "file:file_0000000074c481fb9a33592c44322cde"
+    },
+    "VEA-G3:G4": {
+      "state": "CLOSED_NOT_DETERMINABLE",
+      "observed_at": "2026-09-09",
+      "evidence_class": "EMPIRICAL",
+      "evidence_ref": "control/REPO-004-gate-status.md"
+    },
+    "VEA-G3:HD-53": {
+      "state": "PENDING_HUMAN",
+      "observed_at": "2026-09-22",
+      "evidence_class": "HUMAN_GATE",
+      "evidence_ref": "control/readiness.csv"
+    }
+  },
+  "completion_gates": {
+    "C0": {
+      "name": "Corpus Convergence",
+      "status": "PARTIAL",
+      "predicate": "All authoritative sources are identified and immutable where required; no silent source substitution",
+      "evidence_ref": "control/source_registry.csv",
+      "notes": "Work/Library sources received but not content-hash frozen; full disposition incomplete"
+    },
+    "C1": {
+      "name": "Repository Truth",
+      "status": "PARTIAL",
+      "predicate": "Current state is a deterministic projection of append-only evidence and agrees across repositories",
+      "evidence_ref": "control/state_events.csv",
+      "notes": "Reducer baseline being installed; external repositories still require fresh validation for closure"
+    },
+    "C2": {
+      "name": "VEA Research Closure",
+      "status": "PARTIAL",
+      "predicate": "Frozen execution evidence claim ceiling and required human closure are resolved",
+      "evidence_ref": "control/REPO-004-gate-status.md",
+      "notes": "VEA research terminal state exists; HD-53 remains human-only"
+    },
+    "C3": {
+      "name": "VEA to LoopCell",
+      "status": "BLOCKED_EVIDENCE",
+      "predicate": "Artifact identity provenance retrieval verification application and measured benefit are demonstrated end-to-end",
+      "evidence_ref": "control/transitions.csv",
+      "notes": "No end-to-end VEA artifact has closed identity-to-measured-benefit chain into LoopCell"
+    },
+    "C4": {
+      "name": "LoopCell",
+      "status": "NOT_EXECUTED",
+      "predicate": "STORE IDENTIFY RETRIEVE VERIFY APPLY MEASURE REUSE are separately demonstrated",
+      "evidence_ref": "control/REPO-007-loopcell-gaps.md",
+      "notes": "Canonical LoopCell Phase 0 not executed"
+    },
+    "C5": {
+      "name": "Capability",
+      "status": "FORMAL_ONLY",
+      "predicate": "K_t has locked definition baseline repeated measurement retention generalization interference and cost",
+      "evidence_ref": "file:file_00000000945881fbb65cd6039fa35f2b",
+      "notes": "Capability formal model exists; empirical K_t accumulation absent"
+    },
+    "C6": {
+      "name": "ORP/Receipt",
+      "status": "PARTIAL_PASS",
+      "predicate": "Receipt identity signature interoperability checkpoint recovery and verification boundaries are closed",
+      "evidence_ref": "control/orp_namespaces.md",
+      "notes": "Receipt Slice 1 strong; OTS/checkpoint/recovery path not closed"
+    },
+    "C7": {
+      "name": "ORP/Controller",
+      "status": "FORMAL_ONLY",
+      "predicate": "Action selection is prospectively evaluated against a locked baseline using actual information and cost outcomes",
+      "evidence_ref": "control/transitions.csv",
+      "notes": "Controller logic formal only; predicted-vs-actual information/cost experiment not run"
+    },
+    "C8": {
+      "name": "Operational Release",
+      "status": "BLOCKED",
+      "predicate": "C0-C7 plus authority security recovery reproducibility cost ceiling rollback and final audit are closed",
+      "evidence_ref": "control/completion_gates.csv",
+      "notes": "C0-C7 are not all closed"
+    }
+  },
+  "transitions": {
+    "TR-01": {
+      "from": "VEA-G3",
+      "to": "LoopCell",
+      "status": "BLOCKED_EVIDENCE",
+      "promotion_predicate": "validity|identity|provenance|retrieval|verification|application|measured benefit",
+      "evidence_ref": "control/CONVERGED-SSOT.md",
+      "notes": "No measured end-to-end VEA-to-LoopCell reuse chain"
+    },
+    "TR-02": {
+      "from": "LoopCell",
+      "to": "Capability",
+      "status": "NOT_EXECUTED",
+      "promotion_predicate": "verified reuse|operational K_t|baseline|repeated measurement|retention|generalization|interference",
+      "evidence_ref": "control/CONVERGED-SSOT.md",
+      "notes": "LoopCell Phase 0 not executed"
+    },
+    "TR-03": {
+      "from": "Capability",
+      "to": "ORP/Controller",
+      "status": "FORMAL_ONLY",
+      "promotion_predicate": "capability identity|validity|applicability|cost|limitations|actionability",
+      "evidence_ref": "control/CONVERGED-SSOT.md",
+      "notes": "Capability empirical state absent and controller not prospectively evaluated"
+    },
+    "TR-04": {
+      "from": "ORP/Receipt",
+      "to": "Evidence Plane",
+      "status": "SUPPORTING_ONLY",
+      "promotion_predicate": "canonical identity|signature|provenance or checkpoint|verification boundary",
+      "evidence_ref": "control/orp_namespaces.md",
+      "notes": "Receipt infrastructure is orthogonal and cannot promote scientific layers"
+    }
+  }
+}
