@@ -14,7 +14,7 @@
 | T-040 | 要求正規化 | T-030 | `requirements.csv` 全行 verifiable 判定済 | **DONE**（CI run 35739331939: 1652/1652） |
 | T-050 | 矛盾監査 | T-040 | `conflicts.md` 全件 DEC 紐付け | **DONE**（CI run 35739331939: 19/19、OPEN 3件はHGへ隔離） |
 | T-060 | 実態照合（リポジトリ vs 要求） | T-040, DEC-002 | `traceability.csv` 全行埋め | **DONE**（CI run 35739331939: 1652/1652、satisfaction非含意） |
-| T-070 | 収束成果物 | T-050, T-060, DEC-008 | `tools/convergence_gate.py`; scientific execution gates remain separate | **BLOCKED_FINAL_HOST**（CI 35740020637: structural 7/8 PASS、`nexora-core`のみBLOCK） |
+| T-070 | 収束成果物 | T-050, T-060, DEC-008 | `tools/convergence_gate.py`; scientific execution gates remain separate | **IN_PROGRESS_FINAL_HOST_MIGRATION**（DEC-012 target `kau17033/kau17033-nexora-core`; preflight CI 35788103422 PASS） |
 | T-100 | seed 導出の原文照合 | T-010 | ゴールデン再検証 PASS | **DONE**（CI run 35739331939: 13 frozen checks; source verified） |
 | T-110 | VEA-G3 Phase A / confirmatory gate | T-020, HG-VEA-ESTIMAND, HG-VEA-FREEZE-SCOPE, HG-VEA-WS-C, HG-VEA-HD53 | frozen values preserved + human gates satisfied | BLOCKED_HUMAN |
 | T-200 | LoopCell Phase 0 execution readiness | HG-LOOP-C06, HG-LOOP-PAID | frozen SSOT intact + environment/paid human gates satisfied | BLOCKED_HUMAN |
