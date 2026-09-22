@@ -160,6 +160,12 @@
       "evidence_class": "CI",
       "evidence_ref": "github:kau17033/r3f-scroll-rig/actions/runs/35190376080"
     },
+    "NEXORA:T-005": {
+      "state": "VERIFIED",
+      "observed_at": "2026-09-22",
+      "evidence_class": "CI",
+      "evidence_ref": "github:kau17033/r3f-scroll-rig/actions/runs/35728612031"
+    },
     "ORP/Controller:ACTION_SELECTION": {
       "state": "FORMAL_ONLY",
       "observed_at": "2026-09-22",
