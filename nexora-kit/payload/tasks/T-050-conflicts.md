@@ -19,4 +19,4 @@ continues to block the exact scientific execution listed by that human gate.
 
 python3 tools/conflict_check.py
 
-Expected: CONFLICTS: PASS (18/18 classified; open_scientific=3 human_gated=3)
+Expected: CONFLICTS: PASS (19/19 classified; open_scientific=3 human_gated=3)
