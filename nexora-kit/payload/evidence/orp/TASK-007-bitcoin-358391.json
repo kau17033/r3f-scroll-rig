@@ -1,0 +1,57 @@
+{
+  "schema": "orp-bitcoin-recon/1.0",
+  "observed_by_ci": "github:kau17033/r3f-scroll-rig/actions/runs/35747066563",
+  "observed_at": "2026-09-22",
+  "source": "mempool.space public REST API",
+  "bitcoin_core_reference_commit": "995da8678a02aeae66b4724d8926dd3d03ed682d",
+  "height": 358391,
+  "block_hash": "000000000000000003e892881a8cdcdc117c06d444057c98b6f04a9ee75a2319",
+  "header_hex": "02000000b96394585a281b7e5f438fd1c9ed492645a1fd61cb3802040000000000000000007ee445d23ad061af4a36b809501fab1ac4f2d7e7a739817dd0cbb7ec661b8a1e376755f58616186272def6",
+  "header": {
+    "version": 2,
+    "previousblockhash": "0000000000000000040238cb61fda1452649edc9d18f435f7e1b285a589463b9",
+    "merkle_root_display": "8a1b66ecb7cbd07d8139a7e7d7f2c41aab1f5009b8364aaf61d03ad245e47e00",
+    "merkle_root_internal": "007ee445d23ad061af4a36b809501fab1ac4f2d7e7a739817dd0cbb7ec661b8a",
+    "timestamp": 1432827678,
+    "bits": 404129525,
+    "nonce": 4141773410
+  },
+  "pow": {
+    "target_hex": "00000000000000001686f5000000000000000000000000000000000000000000",
+    "hash_as_target_integer_hex": "000000000000000003e892881a8cdcdc117c06d444057c98b6f04a9ee75a2319",
+    "valid": true,
+    "difficulty_from_bits": 48807487244.68138,
+    "api_difficulty": 48807487244.68138
+  },
+  "chain_window": {
+    "min_height": 358380,
+    "max_height": 358402,
+    "linked": true
+  },
+  "time": {
+    "header_timestamp": 1432827678,
+    "prev11_timestamps": [
+      1432820482,
+      1432820586,
+      1432820787,
+      1432821406,
+      1432822665,
+      1432823346,
+      1432824115,
+      1432824649,
+      1432825972,
+      1432826241,
+      1432826832
+    ],
+    "mtp_prev11": 1432823346,
+    "api_prev_block_mediantime": 1432823346,
+    "api_current_block_mediantime": 1432824115,
+    "header_minus_mtp_seconds": 4332,
+    "height_n_plus_11": 358402,
+    "mtp_n_plus_11": 1432829553,
+    "consensus_observation": "header timestamp must be strictly greater than previous-11 MTP",
+    "future_time_rule": "Bitcoin Core rejects a header more than 2h ahead of node clock at validation time; that node clock is not committed in this historical header.",
+    "strict_historical_upper_bound_from_header_alone": null
+  },
+  "claim_ceiling": "Header/PoW/chain/MTP facts are reproducible. No strict wall-clock upper bound is inferred from header bytes alone."
+}
