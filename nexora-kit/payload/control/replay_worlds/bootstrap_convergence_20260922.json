@@ -1,0 +1,102 @@
+{
+  "schema": "nexora-replay-world/1.0",
+  "world_id": "bootstrap-convergence-20260922",
+  "scientific_status": "DIAGNOSTIC_ONLY",
+  "root_id": "r",
+  "max_parallelism": 3,
+  "objective": {
+    "cost_weight": 0.08,
+    "risk_weight": 0.08,
+    "parallel_weight": 0.05
+  },
+  "nodes": [
+    {
+      "id": "r",
+      "parent_id": null,
+      "created_index": 0,
+      "score": 0,
+      "evidence_gain": 0,
+      "cost": 0,
+      "risk": 0,
+      "status": "root",
+      "evidence_ref": "conversation:2026-09-22"
+    },
+    {
+      "id": "perm-gitdata",
+      "parent_id": "r",
+      "created_index": 1,
+      "score": 0.03,
+      "evidence_gain": 0,
+      "cost": 1,
+      "risk": 0.05,
+      "status": "failed",
+      "evidence_ref": "conversation:github-gitdata-403"
+    },
+    {
+      "id": "perm-contents",
+      "parent_id": "r",
+      "created_index": 2,
+      "score": 0.05,
+      "evidence_gain": 0,
+      "cost": 1,
+      "risk": 0.05,
+      "status": "failed",
+      "evidence_ref": "conversation:github-contents-403"
+    },
+    {
+      "id": "small-write",
+      "parent_id": "r",
+      "created_index": 3,
+      "score": 0.3,
+      "evidence_gain": 1,
+      "cost": 1,
+      "risk": 0.03,
+      "status": "success",
+      "evidence_ref": "github:commit/8869b70dc75a0d554f868bc647c7569091e2cf19"
+    },
+    {
+      "id": "first-ci",
+      "parent_id": "small-write",
+      "created_index": 4,
+      "score": 0.42,
+      "evidence_gain": 1,
+      "cost": 1,
+      "risk": 0.03,
+      "status": "failed_repairable",
+      "evidence_ref": "github:actions/runs/35728476138"
+    },
+    {
+      "id": "compat-repair",
+      "parent_id": "first-ci",
+      "created_index": 5,
+      "score": 0.72,
+      "evidence_gain": 3,
+      "cost": 1,
+      "risk": 0.02,
+      "status": "success",
+      "evidence_ref": "github:actions/runs/35728612031"
+    },
+    {
+      "id": "fresh-external-validation",
+      "parent_id": "compat-repair",
+      "created_index": 6,
+      "score": 0.92,
+      "evidence_gain": 4,
+      "cost": 1,
+      "risk": 0.01,
+      "status": "success",
+      "evidence_ref": "control/EXTERNAL-VALIDATION-20260922.json"
+    },
+    {
+      "id": "final-host-check",
+      "parent_id": "r",
+      "created_index": 7,
+      "score": 0.56,
+      "evidence_gain": 2,
+      "cost": 1,
+      "risk": 0.01,
+      "status": "success",
+      "evidence_ref": "github:kau17033/nexora-core"
+    }
+  ]
+}
