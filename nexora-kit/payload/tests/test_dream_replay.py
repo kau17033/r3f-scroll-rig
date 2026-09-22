@@ -27,6 +27,7 @@ class DreamReplay(unittest.TestCase):
             result["selected"]["result"]["reward"],
             result["incumbent"]["result"]["reward"],
         )
+        self.assertEqual([], result["selected"]["result"]["mandatory_missing"])
 
     def test_prefix_only_first_decision_cannot_see_hidden_scores(self):
         world_a = load_world(WORLD)
@@ -40,6 +41,13 @@ class DreamReplay(unittest.TestCase):
             select_batch(world_a, revealed, INCUMBENT),
             select_batch(world_b, revealed, INCUMBENT),
         )
+
+    def test_mandatory_actions_cannot_be_optimized_away(self):
+        world = load_world(WORLD)
+        result = improve_policy(world)
+        self.assertEqual([], result["selected"]["result"]["mandatory_missing"])
+        self.assertIn("final-host-check", result["selected"]["result"]["revealed_order"])
+        self.assertIn("fresh-external-validation", result["selected"]["result"]["revealed_order"])
 
     def test_adaptive_budget_conserves_when_live_score_improves(self):
         history = [
