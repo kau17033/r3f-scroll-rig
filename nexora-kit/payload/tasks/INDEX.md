@@ -5,7 +5,7 @@
 
 | ID | タスク | blocked_by | 判定 | 状態 |
 |---|---|---|---|---|
-| T-000 | キット自己検証 | — | `tools/kit_check.py` exit 0 | **DONE**（CI run 35190376080） |\n| T-005 | 横断現在地の決定論的収束 | T-000 | `tools/state_reduce.py --check` exit 0 + full tests | **IN_PROGRESS** |
+| T-000 | キット自己検証 | — | `tools/kit_check.py` exit 0 | **DONE**（CI run 35190376080） |\n| T-005 | 横断現在地の決定論的収束 | T-000 | `tools/state_reduce.py --check` exit 0 + full tests | **DONE**（CI run 35728612031） |
 | T-010 | 状態固定（原文投入・履歴照合） | T-005, DEC-002 | `tools/manifest.py verify` PASS | BLOCKED |
 | T-020 | VEA-G3 Compliance Manifest **照合**（作成ではない） | T-010 | 既存 Manifest の 42 項目 + Addendum を一次資料と突合 | **REDEFINED**（REPO-001 §1: 既存 Manifest は完成済） |
 | T-030 | 全節 disposition | T-010 | `disposition.csv` PENDING=0 | BLOCKED |
