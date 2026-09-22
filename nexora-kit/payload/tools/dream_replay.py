@@ -75,7 +75,7 @@ def validate_world(world):
     if int(world.get("max_parallelism", 0)) < 1:
         raise ValueError("max_parallelism must be >=1")
     obj = world.get("objective") or {}
-    for key in ("cost_weight", "risk_weight", "parallel_weight"):
+    for key in ("cost_weight", "risk_weight", "parallel_weight", "mandatory_miss_penalty"):
         if not isinstance(obj.get(key), (int, float)) or obj[key] < 0:
             raise ValueError("objective.%s must be non-negative number" % key)
 
@@ -204,11 +204,16 @@ def replay(world, policy):
     work = len(nodes)
     risk = sum(n["risk"] for n in nodes)
     obj = world["objective"]
+    mandatory_missing = sorted(
+        n["id"] for n in world["nodes"]
+        if n.get("mandatory") is True and n["id"] not in revealed
+    )
     reward = (
         best
         - obj["cost_weight"] * work
         - obj["risk_weight"] * risk
         + obj["parallel_weight"] * (work / max(1, rounds))
+        - obj["mandatory_miss_penalty"] * len(mandatory_missing)
     )
     return {
         "reward": round(reward, 10),
@@ -218,6 +223,7 @@ def replay(world, policy):
         "risk_sum": round(risk, 10),
         "revealed_order": order,
         "best_history": best_history,
+        "mandatory_missing": mandatory_missing,
     }
 
 
@@ -313,6 +319,9 @@ def main(argv=None):
             return 1
         if not result["replay_non_decrease"]:
             print("BOOTSTRAP: FAIL — selected replay policy worse than incumbent", file=sys.stderr)
+            return 1
+        if result["selected"]["result"]["mandatory_missing"]:
+            print("BOOTSTRAP: FAIL — selected policy omitted mandatory actions", file=sys.stderr)
             return 1
         if result["candidate_count"] < 1000:
             print("BOOTSTRAP: FAIL — policy search unexpectedly small", file=sys.stderr)
