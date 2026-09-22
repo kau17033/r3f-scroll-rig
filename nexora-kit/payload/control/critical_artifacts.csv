@@ -12,5 +12,5 @@ CA-10,Traceability ledger,Complete req-id coverage + no false satisfaction,trace
 CA-11,Conflict ledger,Exhaustive ID check + scoped human gates,conflict_check.py,control/conflicts.md
 CA-12,Dream-Replay policy substrate,Git history + prefix-only regression tests,dream_replay.py --bootstrap-check,control/DREAM-RSI-ADAPTER.md
 CA-13,VEA seed derivation mirror,Frozen derive blob + source-verified golden vectors,seed_derive.py --selftest,tests/golden/seed_vectors.json
-CA-14,External validation record,Git history + exact expected/actual blob comparison,source_registry_check.py,control/EXTERNAL-VALIDATION-20260922.json
+CA-14,External validation record,Git history + exact expected/actual blob comparison,source_registry_check.py,control/EXTERNAL-VALIDATION-20260922-35.json
 CA-15,ORP recovered implementation/audit inputs,SHA-256 content identity,source_registry_check.py,control/source_registry.csv
