@@ -1,0 +1,2 @@
+section_id,source_id,heading,start,end,section_sha256,disposition,rationale
+SRC-04B:L000001,SRC-04B,WHOLE_SOURCE,1,104,source_blob:a11ca914c471197b10a6d9b1064736b7b53dd7af,SCOPE_AUTHORITY,Frozen LoopCell manifest; machine-readable freeze authority for LoopCell Phase 0
