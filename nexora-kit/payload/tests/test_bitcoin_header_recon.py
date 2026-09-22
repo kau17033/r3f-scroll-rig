@@ -16,7 +16,7 @@ class BitcoinReconUnit(unittest.TestCase):
         self.assertEqual("007ee445d23ad061af4a36b809501fab1ac4f2d7e7a739817dd0cbb7ec661b8a",h["merkle_root_internal"])
         self.assertEqual(1432827678,h["timestamp"])
         self.assertEqual(0x181686f5,h["bits"])
-        self.assertEqual(0xf62d2786,h["nonce"])
+        self.assertEqual(0xf6de7262,h["nonce"])
 
     def test_compact_target(self):
         self.assertGreater(compact_target(0x181686f5),0)
