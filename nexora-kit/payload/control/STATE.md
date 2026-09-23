@@ -1,6 +1,16 @@
+> # SUPERSEDED — NON_CANONICAL / READ_ONLY_REFERENCE
+>
+> Canonical NEXORA integration state moved to private repository
+> `kau17033/kau17033-nexora-core`.
+> Final canonical convergence is VERIFIED by destination CI run `35901481833`
+> after post-cutover convergence run `35900985370`.
+> This carrier is historical evidence only. **Do not append current-state authority events here,
+> do not resume T-070 here, and do not treat this branch as a writable SSOT.**
+> Frozen VEA-G3 / LoopCell authorities remain unchanged.
+>
 # STATE — current convergence projection
 
-- Phase: **P0.5 / CONVERGENCE_BASELINE**
+- Phase: **HISTORICAL / SUPERSEDED_BOOTSTRAP_CARRIER**
 - Canonical cross-repo SSOT: **control/CONVERGED-SSOT.md**
 - Machine-readable source/evidence state: **source_registry.csv + state_events.csv**
 - Gate definitions: **completion_gates.csv + transitions.csv**

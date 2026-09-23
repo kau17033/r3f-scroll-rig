@@ -1,9 +1,26 @@
+> # SUPERSEDED — NON_CANONICAL / READ_ONLY_REFERENCE
+>
+> Canonical NEXORA integration state moved to private repository
+> `kau17033/kau17033-nexora-core`.
+> Final canonical convergence is VERIFIED by destination CI run `35901481833`
+> after post-cutover convergence run `35900985370`.
+> This carrier is historical evidence only. **Do not append current-state authority events here,
+> do not resume T-070 here, and do not treat this branch as a writable SSOT.**
+> Frozen VEA-G3 / LoopCell authorities remain unchanged.
+>
 # NEXORA — Claude Code Constitution v1.0
 
 本書は `sources/` 原文の運用要約である。原文と矛盾する場合は原文を優先し、`control/conflicts.md` に記録して停止する。
 引用表記: SRC-01 `CONV§`/`AUDIT§`/`SOV§`、SRC-02 `ISO§`/`SPEC§`。行番号は `SRC-xx:L開始-L終了`。
 
-## 0. セッション開始時
+## 0. Carrier decommission rule
+
+This bootstrap carrier is **read-only historical reference** after canonical cutover.
+For any current NEXORA work, stop here and move to `kau17033/kau17033-nexora-core`.
+Only preservation/forensic reading of this carrier is allowed; do not create current-state events,
+scientific decisions, or implementation work here.
+
+## 0.1 Historical session-start rules
 1. SessionStart 出力を読む。`SOURCES_INTEGRITY` が `PASS` 以外なら、いかなる変更も行わず報告して停止する。
 2. `control/STATE.md` で現在 Phase と次タスクを確認する（未作成なら T-000 のみ実行可）。
 3. 会話履歴・過去セッション・記憶を仕様または証拠として使わない（SRC-02 ISO§2）。

@@ -1,6 +1,16 @@
+> # SUPERSEDED — NON_CANONICAL / READ_ONLY_REFERENCE
+>
+> Canonical NEXORA integration state moved to private repository
+> `kau17033/kau17033-nexora-core`.
+> Final canonical convergence is VERIFIED by destination CI run `35901481833`
+> after post-cutover convergence run `35900985370`.
+> This carrier is historical evidence only. **Do not append current-state authority events here,
+> do not resume T-070 here, and do not treat this branch as a writable SSOT.**
+> Frozen VEA-G3 / LoopCell authorities remain unchanged.
+>
 # NEXORA CONVERGED SSOT v1.0
 
-Status: **CROSS-REPO CANONICAL CONTROL PLANE**  
+Status: **SUPERSEDED BOOTSTRAP SNAPSHOT — NON_CANONICAL**  
 Effective: **2026-09-22**  
 Scope: **VEA-G3 / LoopCell / Capability Accumulation / ORP / NEXORA integration**
 
@@ -54,11 +64,17 @@ the generated state wins for cross-repository current-state reporting.
 
 ## 2.1 Physical hosting
 
-The logical canonical control plane is now singular, but its final physical host is not yet converged.
-DEC-012 supersedes only DEC-002's physical locator: the final integration repository is `kau17033/kau17033-nexora-core`. DEC-002's architecture and authority split remain unchanged.
-Until that repository exists and migration is hash-verified, this PR branch is the **BOOTSTRAP_CANONICAL_CARRIER**.
-Migration MUST be a move-with-verification: do not leave two writable canonical copies.
-C0 cannot close while final-host convergence is incomplete.
+This file is a historical bootstrap snapshot only.
+
+The final physical integration host is `kau17033/kau17033-nexora-core`.
+Source payload migration froze this carrier at HEAD
+`a4f36e61b387be5e752699d69e87f86a83fdbca6`, payload tree
+`8664dfc1dcc8a0aee2fea60c50f1d0f6087b8be4`.
+Destination validation culminated in CI `35901481833` SUCCESS.
+
+Do not write new current-state authority events in this carrier.
+Consult the final host for `control/state_events.csv`, `control/STATE.generated.json`,
+`control/CONVERGED-SSOT.md`, and subsequent work.
 
 ## 3. Layer model
 
