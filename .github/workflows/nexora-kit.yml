@@ -85,6 +85,9 @@ jobs:
       - name: C7 v2 prospective controller evaluation
         run: python3 tools/c7_prospective_v2.py
 
+      - name: SRC-01 instruction completion artifacts
+        run: python3 tools/instruction_completion_check.py
+
       - name: Final-host migration preflight
         run: python3 tools/final_host_preflight.py > /tmp/final-host-preflight.json
 
