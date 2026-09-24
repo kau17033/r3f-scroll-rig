@@ -1,0 +1,7 @@
+{"id":"EVID-001","class":"SOURCE","ref":"control/source_registry.csv","claim":"authoritative source identities/content hashes"}
+{"id":"EVID-002","class":"STATE","ref":"control/state_events.csv","claim":"append-only observed state history"}
+{"id":"EVID-003","class":"PROJECTION","ref":"control/STATE.generated.json","claim":"deterministic current-state projection"}
+{"id":"EVID-004","class":"ORP_RECEIPT","ref":"evidence/orp/ORP-RECEIPT-CP-001-independent-confirmation.json","claim":"bounded receipt/checkpoint verification"}
+{"id":"EVID-005","class":"CONTROLLER","ref":"evidence/controller/C7-v2-result.json","claim":"scoped prospective action-selection evaluation"}
+{"id":"EVID-006","class":"HUMAN_GATE","ref":"control/human_gates.csv","claim":"unresolved human authority boundaries"}
+{"id":"EVID-007","class":"SCIENTIFIC_GATE","ref":"control/completion_gates.csv","claim":"C2-C5 remain not fully closed"}

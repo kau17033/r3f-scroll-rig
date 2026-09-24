@@ -1,0 +1,13 @@
+{
+  "schema": "nexora-research-manifest/1.0",
+  "instruction_sha256": "0a76facfbacf09ce4011e0f6b7d19846bbe5c967e51b986e9f1075439c4b8f02",
+  "carrier_repository": "kau17033/r3f-scroll-rig",
+  "carrier_head": "31e8fc719cd0e2ee1ea0175157c7cc3ec160fc4a",
+  "state_projection": "control/STATE.generated.json",
+  "event_ledger": "control/state_events.csv",
+  "source_registry": "control/source_registry.csv",
+  "gate_registry": "control/completion_gates.csv",
+  "transition_registry": "control/transitions.csv",
+  "human_gate_registry": "control/human_gates.csv",
+  "final_artifact_root": "final/"
+}

@@ -1,0 +1,22 @@
+{
+  "schema": "nexora-gate-status/1.0",
+  "as_of": "2026-09-23",
+  "gates": {
+    "C0": "PARTIAL",
+    "C1": "PASS",
+    "C2": "PARTIAL",
+    "C3": "BLOCKED_EVIDENCE",
+    "C4": "NOT_EXECUTED",
+    "C5": "FORMAL_ONLY",
+    "C6": "PASS",
+    "C7": "PASS",
+    "C8": "BLOCKED"
+  },
+  "transitions": {
+    "TR-01": "BLOCKED_EVIDENCE",
+    "TR-02": "NOT_EXECUTED",
+    "TR-03": "FORMAL_ONLY",
+    "TR-04": "SUPPORTING_ONLY"
+  },
+  "source": "control/STATE.generated.json"
+}

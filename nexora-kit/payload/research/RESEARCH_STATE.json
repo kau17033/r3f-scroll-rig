@@ -1,0 +1,17 @@
+{
+  "schema": "nexora-research-state/1.0",
+  "as_of": "2026-09-23",
+  "scientific_truth": {
+    "vea_closure": "PARTIAL",
+    "vea_to_loopcell": "BLOCKED_EVIDENCE",
+    "loopcell": "NOT_EXECUTED",
+    "capability": "FORMAL_ONLY"
+  },
+  "engineering_truth": {
+    "repository_truth": "PASS",
+    "orp_receipt": "PASS_BOUNDED_SCOPE",
+    "orp_controller": "PASS_BOUNDED_BENCHMARK"
+  },
+  "final_host": "PENDING_PHYSICAL_CUTOVER",
+  "state_projection": "control/STATE.generated.json"
+}
