@@ -1,1 +1,1 @@
-qwen3-8b-model.part-01
+qwen3-8b-model.part-02
