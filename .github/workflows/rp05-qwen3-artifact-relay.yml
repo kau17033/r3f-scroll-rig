@@ -1,0 +1,68 @@
+name: RP05 qwen3 single-chunk relay
+
+on:
+  push:
+    branches: ['nexora/rp05-qwen3-ferry-20260925']
+    paths:
+      - '.rp05-ferry/current-asset.txt'
+      - '.github/workflows/rp05-qwen3-artifact-relay.yml'
+
+permissions:
+  contents: read
+  actions: write
+
+jobs:
+  relay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Delete prior relay artifacts
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh api --paginate "/repos/$GITHUB_REPOSITORY/actions/artifacts?per_page=100" \
+            --jq '.artifacts[] | select(.name | startswith("rp05-qwen3-relay-")) | .id' \
+            | while read -r id; do
+                [ -n "$id" ] && gh api -X DELETE "/repos/$GITHUB_REPOSITORY/actions/artifacts/$id"
+              done
+
+      - name: Download and verify selected release asset
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          asset="$(tr -d '\r\n' < .rp05-ferry/current-asset.txt)"
+          case "$asset" in
+            qwen3-8b-model.part-[0-9][0-9]) ;;
+            *) echo "invalid asset: $asset" >&2; exit 2 ;;
+          esac
+          out="$RUNNER_TEMP/relay"
+          mkdir -p "$out"
+          tag='nexora-rp05-qwen3-ferry-20260925'
+          gh release download "$tag" --repo "$GITHUB_REPOSITORY" --pattern "$asset" --dir "$out"
+          gh release download "$tag" --repo "$GITHUB_REPOSITORY" --pattern 'SHA256SUMS.txt' --dir "$out"
+          gh release download "$tag" --repo "$GITHUB_REPOSITORY" --pattern 'IDENTITY.txt' --dir "$out"
+          gh release download "$tag" --repo "$GITHUB_REPOSITORY" --pattern 'ollama-qwen3-8b-metadata.tar.gz' --dir "$out"
+          expected="$(grep "  $asset$" "$out/SHA256SUMS.txt" | awk '{print $1}')"
+          test -n "$expected"
+          observed="$(sha256sum "$out/$asset" | awk '{print $1}')"
+          test "$observed" = "$expected"
+          echo "asset=$asset" >> "$GITHUB_ENV"
+          echo "expected_sha=$expected" >> "$GITHUB_ENV"
+
+      - name: Upload exactly one relay artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp05-qwen3-relay-${{ env.asset }}
+          path: |
+            ${{ runner.temp }}/relay/${{ env.asset }}
+            ${{ runner.temp }}/relay/SHA256SUMS.txt
+            ${{ runner.temp }}/relay/IDENTITY.txt
+            ${{ runner.temp }}/relay/ollama-qwen3-8b-metadata.tar.gz
+          compression-level: 0
+          if-no-files-found: error
+          retention-days: 1
