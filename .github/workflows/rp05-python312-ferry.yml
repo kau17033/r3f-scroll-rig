@@ -1,0 +1,35 @@
+name: RP05 free CPython 3.12.10 ferry
+
+on:
+  push:
+    branches: ['nexora/rp05-python312-ferry-20260925']
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download official standalone CPython 3.12.10
+        shell: bash
+        run: |
+          set -euo pipefail
+          base='https://github.com/astral-sh/python-build-standalone/releases/download/20250529'
+          asset='cpython-3.12.10+20250529-x86_64-unknown-linux-gnu-install_only_stripped.tar.gz'
+          curl -L --fail --retry 3 -o "$RUNNER_TEMP/$asset" "$base/cpython-3.12.10%2B20250529-x86_64-unknown-linux-gnu-install_only_stripped.tar.gz"
+          curl -L --fail --retry 3 -o "$RUNNER_TEMP/$asset.sha256" "$base/cpython-3.12.10%2B20250529-x86_64-unknown-linux-gnu-install_only_stripped.tar.gz.sha256"
+          expected="$(tr -d '\r\n ' < "$RUNNER_TEMP/$asset.sha256")"
+          observed="$(sha256sum "$RUNNER_TEMP/$asset" | awk '{print $1}')"
+          test "$observed" = "$expected"
+          mkdir -p "$RUNNER_TEMP/out"
+          cp "$RUNNER_TEMP/$asset" "$RUNNER_TEMP/out/"
+          cp "$RUNNER_TEMP/$asset.sha256" "$RUNNER_TEMP/out/"
+          printf '%s\n' "$observed  $asset" > "$RUNNER_TEMP/out/VERIFIED_SHA256.txt"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cpython-3.12.10-linux-x86_64-verified
+          path: ${{ runner.temp }}/out
+          if-no-files-found: error
+          retention-days: 1
