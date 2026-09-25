@@ -1,0 +1,31 @@
+name: RP05 release ferry probe
+
+on:
+  push:
+    branches: ['nexora/rp05-python312-ferry-20260925']
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create probe asset
+        shell: bash
+        run: |
+          set -euo pipefail
+          printf 'rp05-release-ferry-probe-v1\n' > "$RUNNER_TEMP/probe.txt"
+          sha256sum "$RUNNER_TEMP/probe.txt" > "$RUNNER_TEMP/probe.txt.sha256"
+
+      - name: Create/update temporary release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          tag='nexora-rp05-ferry-probe-20260925'
+          if ! gh release view "$tag" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release create "$tag" --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" --title 'Temporary RP05 ferry probe' --notes 'Temporary zero-cost transport probe.'
+          fi
+          gh release upload "$tag" "$RUNNER_TEMP/probe.txt" "$RUNNER_TEMP/probe.txt.sha256" --repo "$GITHUB_REPOSITORY" --clobber
