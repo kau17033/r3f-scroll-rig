@@ -1,0 +1,91 @@
+name: RP05 free qwen3 8b release ferry
+
+on:
+  push:
+    branches: ['nexora/rp05-qwen3-ferry-20260925']
+    paths:
+      - '.github/workflows/rp05-qwen3-release-ferry.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install exact Ollama 0.32.13 CPU runtime
+        shell: bash
+        run: |
+          set -euo pipefail
+          runtime="$RUNNER_TEMP/ollama-runtime"
+          mkdir -p "$runtime"
+          curl -L --fail --retry 3 -o "$RUNNER_TEMP/ollama.tar.zst" \
+            https://github.com/ollama/ollama/releases/download/v0.32.13/ollama-linux-amd64.tar.zst
+          echo '0fd1dece38a1c6242e8013ce20b597345c5de072ae6b320160edb0e729ef1de1  '"$RUNNER_TEMP/ollama.tar.zst" | sha256sum -c -
+          tar --zstd -xf "$RUNNER_TEMP/ollama.tar.zst" -C "$runtime"
+          rm -f "$RUNNER_TEMP/ollama.tar.zst"
+          find "$runtime" -type d \( -iname '*cuda*' -o -iname '*rocm*' -o -iname '*mlx*' \) -prune -exec rm -rf {} +
+          echo "$runtime/bin" >> "$GITHUB_PATH"
+          echo "OLLAMA_MODELS=$RUNNER_TEMP/models" >> "$GITHUB_ENV"
+          echo "OLLAMA_HOST=127.0.0.1:11434" >> "$GITHUB_ENV"
+          "$runtime/bin/ollama" --version 2>&1 | tee "$RUNNER_TEMP/ollama-version.txt"
+          grep -q '0.32.13' "$RUNNER_TEMP/ollama-version.txt"
+
+      - name: Pull and verify exact qwen3:8b
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$OLLAMA_MODELS"
+          nohup ollama serve >"$RUNNER_TEMP/ollama.log" 2>&1 &
+          for i in {1..60}; do
+            curl -fsS http://127.0.0.1:11434/api/version >/dev/null && break
+            sleep 1
+          done
+          curl -fsS http://127.0.0.1:11434/api/version
+          ollama pull qwen3:8b
+          python3 - <<'PY'
+          import json, urllib.request
+          with urllib.request.urlopen('http://127.0.0.1:11434/api/tags') as r:
+              data=json.load(r)
+          m=next(x for x in data['models'] if x.get('name')=='qwen3:8b' or x.get('model')=='qwen3:8b')
+          expected='500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41'
+          assert m['digest']==expected, (m['digest'],expected)
+          print(json.dumps(m,sort_keys=True))
+          PY
+          blob="$OLLAMA_MODELS/blobs/sha256-a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f"
+          test -f "$blob"
+          echo 'a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f  '"$blob" | sha256sum -c -
+          stat --printf='%s\n' "$blob" | tee "$RUNNER_TEMP/model-size.txt"
+
+      - name: Build transport release assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          out="$RUNNER_TEMP/release"
+          mkdir -p "$out/meta"
+          blob="$OLLAMA_MODELS/blobs/sha256-a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f"
+          cp -a "$OLLAMA_MODELS/manifests" "$out/meta/"
+          find "$OLLAMA_MODELS/blobs" -maxdepth 1 -type f ! -name 'sha256-a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f' -exec cp -a {} "$out/meta/" \;
+          tar -C "$out/meta" -czf "$out/ollama-qwen3-8b-metadata.tar.gz" .
+          split -b 400000000 -d -a 2 "$blob" "$out/qwen3-8b-model.part-"
+          (cd "$out" && sha256sum qwen3-8b-model.part-* ollama-qwen3-8b-metadata.tar.gz > SHA256SUMS.txt)
+          printf '%s\n' 'full_model_sha256=a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f' > "$out/IDENTITY.txt"
+          printf '%s\n' 'ollama_manifest_digest=500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41' >> "$out/IDENTITY.txt"
+          printf 'full_model_size=' >> "$out/IDENTITY.txt"
+          cat "$RUNNER_TEMP/model-size.txt" >> "$out/IDENTITY.txt"
+          ls -lh "$out"
+
+      - name: Publish temporary public release assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          tag='nexora-rp05-qwen3-ferry-20260925'
+          if gh release view "$tag" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release delete "$tag" --repo "$GITHUB_REPOSITORY" --cleanup-tag -y
+          fi
+          gh release create "$tag" --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" \
+            --title 'Temporary RP05 qwen3:8b zero-cost ferry' \
+            --notes 'Public upstream model transport only. Temporary; no private VEA-G3 source included.'
+          gh release upload "$tag" "$RUNNER_TEMP"/release/* --repo "$GITHUB_REPOSITORY"
