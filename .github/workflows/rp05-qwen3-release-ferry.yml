@@ -67,6 +67,7 @@ jobs:
           cp -a "$OLLAMA_MODELS/manifests" "$out/meta/"
           find "$OLLAMA_MODELS/blobs" -maxdepth 1 -type f ! -name 'sha256-a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f' -exec cp -a {} "$out/meta/" \;
           tar -C "$out/meta" -czf "$out/ollama-qwen3-8b-metadata.tar.gz" .
+          rm -rf "$out/meta"
           split -b 400000000 -d -a 2 "$blob" "$out/qwen3-8b-model.part-"
           (cd "$out" && sha256sum qwen3-8b-model.part-* ollama-qwen3-8b-metadata.tar.gz > SHA256SUMS.txt)
           printf '%s\n' 'full_model_sha256=a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f' > "$out/IDENTITY.txt"
